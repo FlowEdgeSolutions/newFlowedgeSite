@@ -831,7 +831,7 @@
 
   .hero-visual {
     height: auto;
-    min-height: 300px;
+    min-height: 450px;
     padding: 0;
     justify-content: center;
     position: relative;
@@ -854,10 +854,56 @@
     height: 240px;
   }
   
-  // Cards komplett ausblenden auf Mobile
-  .industry-cards,
-  .card-flip-container,
+  // Cards auf Mobile anzeigen und anpassen
   .floating-features {
+    display: block;
+    height: 420px;
+  }
+  
+  .feature-card {
+    width: 140px;
+    padding: 1.25rem;
+    gap: 0.75rem;
+    
+    &.feature-1 {
+      top: 20px;
+      right: 10%;
+      left: auto;
+    }
+    
+    &.feature-2 {
+      top: 220px;
+      right: 5%;
+      left: auto;
+    }
+    
+    &.feature-3 {
+      top: 100px;
+      left: 8%;
+      right: auto;
+    }
+  }
+  
+  .feature-icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .feature-icon {
+    font-size: 20px;
+  }
+  
+  .feature-title {
+    font-size: 0.85rem;
+  }
+  
+  .feature-desc {
+    font-size: 0.7rem;
+  }
+  
+  // Industry Cards ausblenden auf Mobile
+  .industry-cards,
+  .card-flip-container {
     display: none;
   }
 }

@@ -60,6 +60,36 @@
       <div class="solutions-grid">
         @for (solution of solutions; track solution.title; let i = $index) {
           <div class="solution-card animate-slide-up-{{ i + 1 }}" [id]="i === 0 ? 'strategy' : i === 1 ? 'automation' : i === 2 ? 'intelligence' : 'change'">
+            <!-- Image Section for first card -->
+            @if (i === 0) {
+              <div class="solution-image-wrapper">
+                <img src="/AIStrategiePicture/campaign-creators-gMsnXqILjp4-unsplash.jpg" 
+                     alt="Strategische KI-Beratung" 
+                     class="solution-image">
+                <div class="image-overlay"></div>
+              </div>
+            }
+            
+            <!-- Image Section for second card -->
+            @if (i === 1) {
+              <div class="solution-image-wrapper">
+                <img src="/AIStrategiePicture/coding2.jpg" 
+                     alt="Automatisierung & Prozessoptimierung" 
+                     class="solution-image">
+                <div class="image-overlay"></div>
+              </div>
+            }
+            
+            <!-- Image Section for third card -->
+            @if (i === 2) {
+              <div class="solution-image-wrapper">
+                <img src="/AIStrategiePicture/ai.jpg" 
+                     alt="KI-Entwicklung & Integration" 
+                     class="solution-image">
+                <div class="image-overlay"></div>
+              </div>
+            }
+            
             <!-- Card Header -->
             <div class="solution-header">
               <div class="solution-number">{{ String(i + 1).padStart(2, '0') }}</div>
