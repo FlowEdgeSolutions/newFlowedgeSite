@@ -1,0 +1,41 @@
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Was unsere Kunden über die Zusammenarbeit sagen</h2>
+      <p class="section-subtitle">
+        Vertrauen durch Ergebnisse – echte Erfahrungen von echten Kunden.
+      </p>
+    </div>
+
+    <div class="testimonials-grid">
+      @for (testimonial of testimonials; track testimonial.author) {
+        <div class="testimonial-card">
+          <div class="quote-icon">
+            <svg width="40" height="40" viewBox="0 0 48 48" fill="none">
+              <path d="M21.66 36.84C16.26 36.84 12.18 34.62 9.42 30.18C6.78 25.74 5.46 19.62 5.46 11.82H11.64C11.64 17.34 12.18 21.36 13.26 23.88C14.46 26.28 16.38 27.48 18.9 27.48C21.66 27.48 23.94 26.46 25.74 24.42C27.54 22.26 28.44 19.5 28.44 16.14C28.44 12.66 27.54 9.96 25.74 8.04C24.06 6 21.78 4.98 18.9 4.98C16.74 4.98 14.76 5.58 12.96 6.78L8.88 2.7C11.28 0.899999 14.4 0 18.24 0C22.92 0 26.64 1.5 29.4 4.5C32.16 7.5 33.54 11.4 33.54 16.2C33.54 20.88 32.1 24.72 29.22 27.72C26.46 30.72 22.8 32.22 18.24 32.22C16.08 32.22 14.22 31.74 12.66 30.78C14.1 33.66 16.62 35.1 20.22 35.1C22.38 35.1 24.66 34.44 27.06 33.12L28.74 37.2C25.5 38.28 22.5 38.82 19.74 38.82L21.66 36.84Z" fill="currentColor" opacity="0.1"/>
+              <path d="M46.26 36.84C40.86 36.84 36.78 34.62 34.02 30.18C31.38 25.74 30.06 19.62 30.06 11.82H36.24C36.24 17.34 36.78 21.36 37.86 23.88C39.06 26.28 40.98 27.48 43.5 27.48C46.26 27.48 48.54 26.46 50.34 24.42C52.14 22.26 53.04 19.5 53.04 16.14C53.04 12.66 52.14 9.96 50.34 8.04C48.66 6 46.38 4.98 43.5 4.98C41.34 4.98 39.36 5.58 37.56 6.78L33.48 2.7C35.88 0.899999 39 0 42.84 0C47.52 0 51.24 1.5 54 4.5C56.76 7.5 58.14 11.4 58.14 16.2C58.14 20.88 56.7 24.72 53.82 27.72C51.06 30.72 47.4 32.22 42.84 32.22C40.68 32.22 38.82 31.74 37.26 30.78C38.7 33.66 41.22 35.1 44.82 35.1C46.98 35.1 49.26 34.44 51.66 33.12L53.34 37.2C50.1 38.28 47.1 38.82 44.34 38.82L46.26 36.84Z" fill="currentColor" opacity="0.05" transform="translate(-12, 0)"/>
+            </svg>
+          </div>
+          
+          <div class="stars">
+            @for (star of [1,2,3,4,5]; track star) {
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            }
+          </div>
+          
+          <p class="quote-text">{{ testimonial.quote }}</p>
+          
+          <div class="author-info">
+            <div class="author-avatar">{{ testimonial.author.charAt(0) }}</div>
+            <div class="author-details">
+              <p class="author-name">{{ testimonial.author }}</p>
+              <p class="author-position">{{ testimonial.position }} · {{ testimonial.company }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

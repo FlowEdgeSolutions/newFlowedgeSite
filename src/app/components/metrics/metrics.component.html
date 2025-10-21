@@ -1,0 +1,12 @@
+<section class="metrics">
+  <div class="container">
+    <div class="metrics-grid-modern">
+      @for (metric of metrics; track metric.label) {
+        <div class="metric-card-modern">
+          <div class="metric-value-large">{{ metric.value }}</div>
+          <div class="metric-label-modern">{{ metric.label }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,166 @@
+<div class="contact-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-animated-bg">
+      <div class="flow-particle particle-1"></div>
+      <div class="flow-particle particle-2"></div>
+      <div class="flow-particle particle-3"></div>
+    </div>
+    
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-headline animate-fade-in">
+          Lassen Sie uns <span class="gradient-text">sprechen</span>
+        </h1>
+        <p class="hero-subline animate-slide-up">
+          Ob erste Idee oder konkretes Projekt – wir freuen uns auf Ihre Nachricht.<br>
+          <strong>Gemeinsam finden wir die richtige Lösung für Ihr Unternehmen.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="form-container animate-slide-left">
+          <div class="form-card">
+            <h2 class="section-title">Ihre Nachricht</h2>
+            <p class="section-subtitle">Füllen Sie das Formular aus und wir melden uns zeitnah bei Ihnen.</p>
+            
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name" class="form-label">Name *</label>
+                  <input 
+                    type="text" 
+                    id="name" 
+                    formControlName="name" 
+                    class="form-input"
+                    [class.error]="f['name'].touched && f['name'].errors"
+                    placeholder="Ihr Name"
+                  />
+                  @if (f['name'].touched && f['name'].errors) {
+                    <span class="error-message">Bitte geben Sie Ihren Namen ein</span>
+                  }
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form-label">E-Mail *</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    formControlName="email" 
+                    class="form-input"
+                    [class.error]="f['email'].touched && f['email'].errors"
+                    placeholder="ihre@email.de"
+                  />
+                  @if (f['email'].touched && f['email'].errors) {
+                    <span class="error-message">Bitte geben Sie eine gültige E-Mail ein</span>
+                  }
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="company" class="form-label">Unternehmen</label>
+                  <input 
+                    type="text" 
+                    id="company" 
+                    formControlName="company" 
+                    class="form-input"
+                    placeholder="Ihr Unternehmen"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone" class="form-label">Telefon</label>
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    formControlName="phone" 
+                    class="form-input"
+                    placeholder="+49 123 456789"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Ihre Nachricht *</label>
+                <textarea 
+                  id="message" 
+                  formControlName="message" 
+                  class="form-textarea"
+                  [class.error]="f['message'].touched && f['message'].errors"
+                  placeholder="Beschreiben Sie Ihr Anliegen..."
+                  rows="6"
+                ></textarea>
+                @if (f['message'].touched && f['message'].errors) {
+                  <span class="error-message">Bitte geben Sie eine Nachricht ein</span>
+                }
+              </div>
+
+              <button 
+                type="submit" 
+                class="submit-button"
+                [class.submitted]="isSubmitted"
+              >
+                @if (isSubmitted) {
+                  <ng-icon name="heroCheckCircle" size="24"></ng-icon>
+                  <span>Nachricht gesendet!</span>
+                } @else {
+                  <span>Nachricht senden</span>
+                }
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="info-container animate-slide-right">
+          <div class="info-card">
+            <h2 class="section-title">Kontaktinformationen</h2>
+            <p class="section-subtitle">Erreichen Sie uns direkt über eine der folgenden Möglichkeiten.</p>
+            
+            <div class="contact-items">
+              @for (item of contactInfo; track item.label) {
+                <a 
+                  [href]="item.link || 'javascript:void(0)'" 
+                  [class.no-link]="!item.link"
+                  class="contact-item"
+                >
+                  <div class="icon-wrapper">
+                    <ng-icon [name]="item.icon" size="24"></ng-icon>
+                  </div>
+                  <div class="contact-details">
+                    <div class="contact-label">{{ item.label }}</div>
+                    <div class="contact-value">{{ item.value }}</div>
+                  </div>
+                </a>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section (optional placeholder) -->
+  <section class="map-section">
+    <div class="map-placeholder">
+      <div class="map-overlay">
+        <h3 class="map-title">Besuchen Sie uns in Düsseldorf</h3>
+        <p class="map-address">Königsallee 63–65 · 40215 Düsseldorf</p>
+        <a 
+          href="https://maps.google.com/?q=Königsallee+63-65+Düsseldorf" 
+          target="_blank" 
+          class="map-button"
+        >
+          Route planen
+        </a>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,90 @@
+<section id="contact" class="contact bg-gray">
+  <div class="container">
+    <div class="section-title">
+      <h2>Kontakt</h2>
+    </div>
+    <p class="section-subtitle">
+      Lassen Sie uns gemeinsam Ihre KI-Strategie entwickeln.
+    </p>
+
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h3>FlowEdge AI</h3>
+        <div class="info-item">
+          <span class="icon">📍</span>
+          <div>
+            <strong>Adresse</strong>
+            <p>Königsallee 63-65<br>40215 Düsseldorf</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="icon">📧</span>
+          <div>
+            <strong>E-Mail</strong>
+            <p><a href="mailto:info@flowedge.de">info@flowedge.de</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="icon">📞</span>
+          <div>
+            <strong>Telefon</strong>
+            <p><a href="tel:+4921197532540">+49 15560 814 385</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <form class="contact-form" (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input 
+              type="text" 
+              id="name" 
+              [(ngModel)]="formData.name" 
+              name="name"
+              required
+              placeholder="Ihr Name"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-Mail *</label>
+            <input 
+              type="email" 
+              id="email" 
+              [(ngModel)]="formData.email" 
+              name="email"
+              required
+              placeholder="ihre.email@beispiel.de"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="company">Unternehmen</label>
+            <input 
+              type="text" 
+              id="company" 
+              [(ngModel)]="formData.company" 
+              name="company"
+              placeholder="Ihr Unternehmen"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="message">Nachricht *</label>
+            <textarea 
+              id="message" 
+              [(ngModel)]="formData.message" 
+              name="message"
+              rows="5"
+              required
+              placeholder="Beschreiben Sie kurz Ihr Anliegen..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Nachricht senden</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

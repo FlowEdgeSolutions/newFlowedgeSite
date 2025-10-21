@@ -1,0 +1,25 @@
+<header class="header" [class.scrolled]="isScrolled()">
+  <div class="container">
+    <nav class="nav">
+      <div class="logo" (click)="navigateToHome()" style="cursor: pointer;">
+        <div class="logo-container">
+          <img src="/Logo/logo_icon.png" alt="FlowEdge AI Icon" class="logo-icon">
+          <span class="logo-text-gradient">FlowEdge AI</span>
+        </div>
+      </div>
+
+      <button class="mobile-menu-btn" (click)="toggleMobileMenu()" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu" [class.active]="isMobileMenuOpen()">
+        <li><a routerLink="/" (click)="closeMobileMenu()">Home</a></li>
+        <li><a routerLink="/philosophie" (click)="closeMobileMenu()">Mission</a></li>
+        <li><a routerLink="/loesungen" (click)="closeMobileMenu()">Lösungen</a></li>
+        <li><a routerLink="/kontakt" (click)="closeMobileMenu()">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

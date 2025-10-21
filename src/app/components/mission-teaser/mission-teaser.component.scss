@@ -1,0 +1,139 @@
+.mission-teaser {
+  padding: 100px 0;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(16, 56, 140, 0.2) 50%, transparent 100%);
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.mission-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mission-text {
+  flex: 1;
+}
+
+.mission-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.mission-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: rgba(40, 47, 61, 0.8);
+  margin-bottom: 1rem;
+}
+
+.mission-tagline {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--primary-dark);
+  margin-top: 1.5rem;
+
+  strong {
+    font-weight: 600;
+  }
+}
+
+.mission-link {
+  flex-shrink: 0;
+}
+
+.mission-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #10388c 0%, #6095c6 100%);
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(16, 56, 140, 0.2);
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(16, 56, 140, 0.3);
+
+    svg {
+      transform: translateX(4px);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Responsive
+@media (max-width: 968px) {
+  .mission-teaser {
+    padding: 80px 0;
+  }
+
+  .mission-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .mission-title {
+    font-size: 2rem;
+  }
+
+  .mission-description,
+  .mission-tagline {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .mission-teaser {
+    padding: 60px 0;
+  }
+
+  .mission-title {
+    font-size: 1.75rem;
+  }
+
+  .mission-button {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}

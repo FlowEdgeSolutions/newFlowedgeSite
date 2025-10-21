@@ -1,0 +1,47 @@
+.change {
+  background-color: var(--background);
+}
+
+.change-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.change-card {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-light);
+  }
+}
+
+.change-icon {
+  font-size: 3rem;
+  margin-bottom: 1.25rem;
+}
+
+.change-card h3 {
+  font-size: 1.125rem;
+  color: var(--text-dark);
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .change-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .change-card {
+    padding: 2rem 1.5rem;
+  }
+}

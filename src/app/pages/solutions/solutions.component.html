@@ -1,0 +1,143 @@
+<div class="solutions-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <!-- Animated Background -->
+    <div class="hero-animated-bg">
+      <div class="flow-particle particle-1"></div>
+      <div class="flow-particle particle-2"></div>
+      <div class="flow-particle particle-3"></div>
+      <div class="flow-particle particle-4"></div>
+      <div class="flow-particle particle-5"></div>
+    </div>
+    
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-headline animate-fade-in">
+          Der FlowEdge-Ansatz
+        </h1>
+        <p class="hero-subline animate-slide-up">
+          Unser Ansatz verbindet <strong>Bewegung</strong>, <strong>Präzision</strong> und <strong>Intelligenz</strong> – in drei Schritten:
+        </p>
+        
+        <!-- Glass Cards -->
+        <div class="approach-cards-grid">
+          @for (step of approachSteps; track step.number; let i = $index) {
+            <div class="approach-glass-card animate-pop-{{ i + 1 }}" (click)="scrollToSection(step.section)">
+              <!-- Glass Effect Layers -->
+              <div class="glass-layer"></div>
+              <div class="glass-shimmer"></div>
+              <div class="glass-border"></div>
+              
+              <!-- Card Content -->
+              <div class="card-content">
+                <div class="card-number">{{ step.number }}</div>
+                <div class="card-icon-wrapper">
+                  <ng-icon [name]="step.icon" size="40" class="card-icon"></ng-icon>
+                </div>
+                <h3 class="card-title">{{ step.title }}</h3>
+                <p class="card-description">{{ step.description }}</p>
+                
+                <!-- Click Indicator -->
+                <div class="click-indicator">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+              
+              <!-- Hover Glow -->
+              <div class="card-glow"></div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Section -->
+  <section class="solutions-section">
+    <div class="container">
+      <div class="solutions-grid">
+        @for (solution of solutions; track solution.title; let i = $index) {
+          <div class="solution-card animate-slide-up-{{ i + 1 }}" [id]="i === 0 ? 'strategy' : i === 1 ? 'automation' : i === 2 ? 'intelligence' : 'change'">
+            <!-- Card Header -->
+            <div class="solution-header">
+              <div class="solution-number">{{ String(i + 1).padStart(2, '0') }}</div>
+              <div class="icon-wrapper">
+                <ng-icon [name]="solution.icon" size="32" class="solution-icon"></ng-icon>
+              </div>
+            </div>
+            
+            <!-- Card Content -->
+            <div class="solution-content">
+              <h3 class="solution-title">{{ solution.title }}</h3>
+              <p class="solution-subtitle">{{ solution.subtitle }}</p>
+              <p class="solution-description">{{ solution.description }}</p>
+              
+              <!-- Benefits -->
+              <div class="benefits-section">
+                <h4 class="benefits-label">Unsere Leistungen</h4>
+                <ul class="benefits-list">
+                  @for (benefit of solution.benefits; track benefit) {
+                    <li class="benefit-item">{{ benefit }}</li>
+                  }
+                </ul>
+              </div>
+              
+              <!-- Result -->
+              <div class="result-box">
+                <div class="result-label">{{ solution.resultLabel }}</div>
+                <p class="result-text">{{ solution.result }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="final-cta-section">
+    <div class="wave-background">
+      <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(96, 149, 198, 0.1)" d="M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,128C672,107,768,85,864,90.7C960,96,1056,128,1152,133.3C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+          <animate attributeName="d" 
+                   dur="10s"
+                   repeatCount="indefinite"
+                   values="M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,128C672,107,768,85,864,90.7C960,96,1056,128,1152,133.3C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                           M0,128L48,122.7C96,117,192,107,288,112C384,117,480,139,576,133.3C672,128,768,96,864,101.3C960,107,1056,149,1152,154.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                           M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,128C672,107,768,85,864,90.7C960,96,1056,128,1152,133.3C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
+        </path>
+      </svg>
+    </div>
+    
+    <div class="container">
+      <div class="cta-content animate-fade-in-delay">
+        <h2 class="cta-headline">Bereit für den nächsten Schritt?</h2>
+        <p class="cta-text">
+          Lassen Sie uns gemeinsam Ihre individuelle Lösung entwickeln –<br>
+          <strong>strategisch durchdacht, technologisch präzise, und praxisnah umgesetzt.</strong>
+        </p>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <span class="contact-value">+49 15560 814 385</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📩</span>
+            <span class="contact-value">info@flowedge.de</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span class="contact-value">Königsallee 63–65 · 40215 Düsseldorf</span>
+          </div>
+        </div>
+        
+        <button (click)="scrollToContact()" class="cta-button-large">
+          Jetzt Beratungsgespräch vereinbaren
+        </button>
+      </div>
+    </div>
+  </section>
+</div>

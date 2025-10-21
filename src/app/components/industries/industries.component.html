@@ -1,0 +1,20 @@
+<section id="industries" class="industries bg-gray">
+  <div class="container">
+    <div class="section-title">
+      <h2>Wo unsere Lösungen wirken</h2>
+    </div>
+    <p class="section-subtitle">
+      FlowEdge AI arbeitet branchenübergreifend – mit Fokus auf Prozesse, in denen KI und Automatisierung tatsächlich Nutzen stiften.
+    </p>
+
+    <div class="industries-grid">
+      @for (industry of industries; track industry.title) {
+        <div class="industry-card card">
+          <div class="industry-icon">{{ industry.icon }}</div>
+          <h3>{{ industry.title }}</h3>
+          <p>{{ industry.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,606 @@
+// ========================================
+// FLOW PHILOSOPHY SECTION
+// ========================================
+
+.flow-philosophy {
+  position: relative;
+  padding: 120px 0;
+  background: linear-gradient(180deg, #f8faff 0%, #ffffff 50%, #f0f4ff 100%);
+  overflow: hidden;
+}
+
+// ========================================
+// ANIMATED BACKGROUND - RIVER FLOW
+// ========================================
+
+.flow-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+// Logo Watermark
+.logo-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  max-width: 600px;
+  z-index: 1;
+  opacity: 0.06;
+  animation: logoFloat 8s ease-in-out infinite;
+}
+
+.watermark-icon {
+  width: 100%;
+  height: auto;
+  filter: blur(1px);
+  opacity: 0.8;
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -52%) scale(1.05);
+  }
+}
+
+.river-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.flow-particles {
+  position: absolute;
+  inset: 0;
+  
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, rgba(96, 149, 198, 0.8) 0%, rgba(96, 149, 198, 0.3) 50%, transparent 100%);
+    border-radius: 50%;
+    animation: particleFlow 15s linear infinite;
+    
+    &:nth-child(1) {
+      top: 15%;
+      left: 5%;
+      animation-delay: 0s;
+      animation-duration: 18s;
+    }
+    
+    &:nth-child(2) {
+      top: 25%;
+      left: 15%;
+      animation-delay: 3s;
+      animation-duration: 16s;
+    }
+    
+    &:nth-child(3) {
+      top: 45%;
+      left: 10%;
+      animation-delay: 6s;
+      animation-duration: 20s;
+    }
+    
+    &:nth-child(4) {
+      top: 55%;
+      left: 20%;
+      animation-delay: 2s;
+      animation-duration: 17s;
+    }
+    
+    &:nth-child(5) {
+      top: 70%;
+      left: 8%;
+      animation-delay: 8s;
+      animation-duration: 19s;
+    }
+    
+    &:nth-child(6) {
+      top: 35%;
+      left: 25%;
+      animation-delay: 5s;
+      animation-duration: 21s;
+    }
+    
+    &:nth-child(7) {
+      top: 80%;
+      left: 12%;
+      animation-delay: 10s;
+      animation-duration: 15s;
+    }
+    
+    &:nth-child(8) {
+      top: 60%;
+      left: 18%;
+      animation-delay: 4s;
+      animation-duration: 22s;
+    }
+  }
+}
+
+// ========================================
+// SECTION HEADER
+// ========================================
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  
+  background: linear-gradient(
+    135deg,
+    #10388c 0%,
+    #4a7fc8 50%,
+    #6095c6 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease-in-out infinite;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #10388c 0%, #6095c6 100%);
+  margin: 0 auto;
+  border-radius: 2px;
+  animation: underlineExpand 1.2s ease-out;
+}
+
+// ========================================
+// PHILOSOPHY CONTENT
+// ========================================
+
+.philosophy-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.intro-text {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.lead-paragraph {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  
+  strong {
+    font-weight: 700;
+    color: var(--primary-dark);
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(16, 56, 140, 0.3), rgba(96, 149, 198, 0.3));
+    }
+  }
+}
+
+.main-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: rgba(40, 47, 61, 0.85);
+}
+
+// ========================================
+// FLOW TIMELINE
+// ========================================
+
+.flow-timeline {
+  margin: 5rem 0;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    0 8px 32px rgba(16, 56, 140, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.timeline-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+.flow-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.flow-step {
+  flex: 1;
+  min-width: 200px;
+  max-width: 240px;
+  text-align: center;
+  position: relative;
+}
+
+.step-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: rgba(16, 56, 140, 0.06);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(96, 149, 198, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(16, 56, 140, 0.08);
+  
+  &:hover {
+    transform: translateY(-8px) scale(1.05);
+    background: rgba(16, 56, 140, 0.1);
+    box-shadow: 0 12px 32px rgba(16, 56, 140, 0.15);
+    
+    .step-icon {
+      color: var(--primary-light);
+      transform: rotate(5deg);
+    }
+  }
+}
+
+.step-icon {
+  color: var(--primary-dark);
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  padding: 0 0.5rem;
+}
+
+.step-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.step-subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.step-description {
+  font-size: 0.95rem;
+  color: rgba(40, 47, 61, 0.75);
+  line-height: 1.5;
+}
+
+.flow-arrow {
+  position: absolute;
+  top: 35px;
+  right: -50px;
+  animation: arrowPulse 2s ease-in-out infinite;
+}
+
+.timeline-explanation {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: rgba(240, 244, 255, 0.5);
+  border-radius: 16px;
+  border-left: 4px solid var(--primary-light);
+  
+  p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin: 0;
+  }
+  
+  .highlight {
+    font-weight: 600;
+    color: var(--primary-dark);
+    background: linear-gradient(90deg, rgba(96, 149, 198, 0.15), rgba(16, 56, 140, 0.1));
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+}
+
+// ========================================
+// CONCLUSION
+// ========================================
+
+.conclusion-text {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(16, 56, 140, 0.05), rgba(96, 149, 198, 0.08));
+  border-radius: 20px;
+  border: 1px solid rgba(96, 149, 198, 0.2);
+  box-shadow: 0 8px 24px rgba(16, 56, 140, 0.06);
+}
+
+.conclusion-statement {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin: 0;
+  font-weight: 400;
+}
+
+.flow-highlight {
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #10388c 0%, #6095c6 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 3s ease-in-out infinite;
+}
+
+// ========================================
+// ANIMATIONS
+// ========================================
+
+@keyframes particleFlow {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100vw, 0) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes underlineExpand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+@keyframes arrowPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(5px);
+  }
+}
+
+// Animation Klassen
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-slide-up-delay {
+  animation: slideUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay {
+  animation: fadeIn 1s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.animate-pop-delay-1 {
+  animation: pop 0.6s ease-out 0.8s forwards;
+  opacity: 0;
+}
+
+.animate-pop-delay-2 {
+  animation: pop 0.6s ease-out 1s forwards;
+  opacity: 0;
+}
+
+.animate-pop-delay-3 {
+  animation: pop 0.6s ease-out 1.2s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .lead-paragraph {
+    font-size: 1.25rem;
+  }
+  
+  .flow-timeline {
+    padding: 2rem;
+  }
+  
+  .flow-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .flow-philosophy {
+    padding: 80px 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .lead-paragraph {
+    font-size: 1.125rem;
+  }
+  
+  .main-text {
+    font-size: 1rem;
+  }
+  
+  .flow-timeline {
+    padding: 1.5rem;
+  }
+  
+  .flow-steps {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .flow-step {
+    max-width: 100%;
+  }
+  
+  .timeline-title {
+    font-size: 1.125rem;
+  }
+  
+  .conclusion-statement {
+    font-size: 1.25rem;
+  }
+  
+  .flow-highlight {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .flow-philosophy {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .lead-paragraph {
+    font-size: 1rem;
+  }
+  
+  .flow-timeline {
+    padding: 1.25rem;
+  }
+  
+  .step-icon-wrapper {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .conclusion-text {
+    padding: 1.5rem;
+  }
+}

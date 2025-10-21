@@ -1,0 +1,19 @@
+<section id="change" class="change">
+  <div class="container">
+    <div class="section-title">
+      <h2>Technologie funktioniert nur mit Menschen.</h2>
+    </div>
+    <p class="section-subtitle">
+      Wir begleiten Ihr Team durch den Wandel – mit klarer Kommunikation, Schulungen und sicherem Datenschutz.
+    </p>
+
+    <div class="change-grid">
+      @for (service of services; track service.title) {
+        <div class="change-card card">
+          <div class="change-icon">{{ service.icon }}</div>
+          <h3>{{ service.title }}</h3>
+        </div>
+      }
+    </div>
+  </div>
+</section>

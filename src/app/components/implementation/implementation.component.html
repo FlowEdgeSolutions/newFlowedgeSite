@@ -1,0 +1,23 @@
+<section id="implementation" class="implementation bg-gray">
+  <div class="container">
+    <div class="section-title">
+      <h2>Von der Strategie zur Lösung</h2>
+    </div>
+    <p class="section-subtitle">
+      Wir setzen KI-Strategien technisch um – nahtlos integriert in Ihre IT-Landschaft.
+      Unsere Lösungen sind skalierbar, dokumentiert und vollständig EU-konform.
+    </p>
+
+    <div class="solutions-list">
+      @for (solution of solutions; track solution.title) {
+        <div class="solution-item card">
+          <div class="solution-marker">✓</div>
+          <div class="solution-content">
+            <h3>{{ solution.title }}</h3>
+            <p>{{ solution.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

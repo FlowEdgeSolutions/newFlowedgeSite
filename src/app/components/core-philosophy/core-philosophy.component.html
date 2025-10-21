@@ -1,0 +1,89 @@
+<section class="core-philosophy">
+  <!-- Logo Watermark Background -->
+  <div class="philosophy-background">
+    <div class="logo-watermark">
+      <img src="/Logo/logo_icon.png" alt="FlowEdge AI" class="watermark-icon">
+    </div>
+    
+    <!-- Flowing lines animation -->
+    <div class="flowing-lines">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+      <div class="line line-3"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header animate-fade-in">
+      <h2 class="section-title">Die FlowEdge AI Philosophie</h2>
+      <p class="section-tagline">Wo <strong>Bewegung</strong>, <strong>Präzision</strong> und <strong>Intelligenz</strong> verschmelzen</p>
+    </div>
+
+    <!-- Core Concepts Grid -->
+    <div class="concepts-grid animate-slide-up">
+      @for (concept of coreConcepts; track concept.title; let i = $index) {
+        <div class="concept-card concept-{{ i + 1 }}" [class.animate-pop-delay-{{ i + 1 }}]="true">
+          <div class="card-glow"></div>
+          
+          <div class="card-header">
+            <div class="icon-wrapper">
+              <ng-icon [name]="concept.icon" size="56" class="concept-icon"></ng-icon>
+            </div>
+            <div class="title-group">
+              <h3 class="concept-title">{{ concept.title }}</h3>
+              <p class="concept-subtitle">{{ concept.subtitle }}</p>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p class="concept-description">{{ concept.description }}</p>
+            <p class="concept-details">{{ concept.details }}</p>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Philosophy Statement -->
+    <div class="philosophy-statement animate-fade-in-delay">
+      <div class="statement-box">
+        <div class="quote-mark">"</div>
+        <p class="statement-text">
+          <strong>Flow</strong> bringt <span class="highlight">Dynamik</span>,<br>
+          <strong>Edge</strong> gibt <span class="highlight">Richtung</span>,<br>
+          <strong>AI</strong> schafft <span class="highlight">Intelligenz</span>.
+        </p>
+        <p class="statement-conclusion">
+          Gemeinsam bilden sie das Fundament intelligenter Organisationen.
+        </p>
+      </div>
+    </div>
+
+    <!-- Main Philosophy Text -->
+    <div class="philosophy-main animate-slide-up-delay-2">
+      <div class="main-content">
+        <h3 class="philosophy-heading">Intelligente Bewegung in präziser Struktur</h3>
+        <div class="philosophy-paragraphs">
+          <p>
+            Wir glauben, dass erfolgreiche Unternehmen nicht stehen, sondern <strong>fließen</strong>.
+            Dass Systeme nicht nebeneinander existieren, sondern <strong>miteinander denken</strong>.
+          </p>
+          <p>
+            <em>Flow</em> ist der Zustand, in dem Technologie und Mensch synchron arbeiten.
+            <em>Edge</em> ist der Punkt, an dem Entscheidungen entstehen – klar, schnell, bewusst.
+            <em>AI</em> ist das, was beides verbindet: sie macht Bewegung intelligent und Präzision lernfähig.
+          </p>
+          <p class="final-statement">
+            So entsteht eine neue Form der Unternehmensführung:<br>
+            <strong>dynamisch</strong>, <strong>datenbasiert</strong>, <strong>menschlich</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Statement -->
+    <div class="bottom-statement animate-fade-in-delay-3">
+      <h2 class="manifesto">FlowEdge AI – wo Intelligenz Gestalt annimmt.</h2>
+    </div>
+  </div>
+</section>

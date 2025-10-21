@@ -1,0 +1,568 @@
+// ========================================
+// CORE PHILOSOPHY SECTION
+// ========================================
+
+.core-philosophy {
+  position: relative;
+  padding: 100px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f8faff 50%, #ffffff 100%);
+  overflow: hidden;
+}
+
+// ========================================
+// BACKGROUND
+// ========================================
+
+.philosophy-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.logo-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 500px;
+  opacity: 0.04;
+  animation: logoFloat 10s ease-in-out infinite;
+}
+
+.watermark-icon {
+  width: 100%;
+  height: auto;
+  filter: blur(2px);
+}
+
+.flowing-lines {
+  position: absolute;
+  inset: 0;
+  
+  .line {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(96, 149, 198, 0.3) 50%, 
+      transparent 100%);
+    animation: flowLine 12s linear infinite;
+    
+    &.line-1 {
+      top: 20%;
+      width: 60%;
+      animation-delay: 0s;
+    }
+    
+    &.line-2 {
+      top: 50%;
+      width: 80%;
+      animation-delay: 4s;
+    }
+    
+    &.line-3 {
+      top: 80%;
+      width: 70%;
+      animation-delay: 8s;
+    }
+  }
+}
+
+// ========================================
+// SECTION HEADER
+// ========================================
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  
+  background: linear-gradient(
+    135deg,
+    #10388c 0%,
+    #4a7fc8 50%,
+    #6095c6 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease-in-out infinite;
+}
+
+.section-tagline {
+  font-size: 1.25rem;
+  color: rgba(40, 47, 61, 0.8);
+  line-height: 1.6;
+  
+  strong {
+    font-weight: 700;
+    color: var(--primary-dark);
+  }
+}
+
+// ========================================
+// CONCEPTS GRID
+// ========================================
+
+.concepts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.concept-card {
+  position: relative;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 8px 32px rgba(16, 56, 140, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+      0 16px 48px rgba(16, 56, 140, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 1);
+    
+    .card-glow {
+      opacity: 1;
+    }
+    
+    .concept-icon {
+      transform: scale(1.1) rotate(5deg);
+      color: var(--primary-light);
+    }
+  }
+}
+
+.card-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+    circle,
+    rgba(96, 149, 198, 0.4) 0%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.icon-wrapper {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(16, 56, 140, 0.08);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.concept-icon {
+  color: var(--primary-dark);
+  transition: all 0.3s ease;
+}
+
+.title-group {
+  flex: 1;
+}
+
+.concept-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  letter-spacing: -0.01em;
+  margin: 0 0 0.25rem 0;
+}
+
+.concept-subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.card-body {
+  border-top: 1px solid rgba(16, 56, 140, 0.1);
+  padding-top: 1.5rem;
+}
+
+.concept-description {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.concept-details {
+  font-size: 0.9375rem;
+  color: rgba(40, 47, 61, 0.7);
+  line-height: 1.6;
+  margin: 0;
+}
+
+// ========================================
+// PHILOSOPHY STATEMENT
+// ========================================
+
+.philosophy-statement {
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.statement-box {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(16, 56, 140, 0.05), rgba(96, 149, 198, 0.08));
+  border-radius: 24px;
+  border: 1px solid rgba(96, 149, 198, 0.2);
+  position: relative;
+  text-align: center;
+}
+
+.quote-mark {
+  position: absolute;
+  top: -20px;
+  left: 30px;
+  font-size: 6rem;
+  font-family: Georgia, serif;
+  color: rgba(96, 149, 198, 0.15);
+  line-height: 1;
+}
+
+.statement-text {
+  font-size: 1.375rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  
+  strong {
+    font-weight: 700;
+    color: var(--primary-dark);
+  }
+  
+  .highlight {
+    background: linear-gradient(90deg, rgba(96, 149, 198, 0.2), rgba(16, 56, 140, 0.15));
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: var(--primary-dark);
+  }
+}
+
+.statement-conclusion {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: rgba(40, 47, 61, 0.85);
+  margin: 0;
+  line-height: 1.7;
+}
+
+// ========================================
+// MAIN PHILOSOPHY TEXT
+// ========================================
+
+.philosophy-main {
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.philosophy-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.philosophy-paragraphs {
+  p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    strong {
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+    
+    em {
+      font-style: italic;
+      font-weight: 600;
+      color: var(--primary-light);
+    }
+  }
+  
+  .final-statement {
+    text-align: center;
+    font-size: 1.1875rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(16, 56, 140, 0.15);
+    
+    strong {
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+  }
+}
+
+// ========================================
+// BOTTOM STATEMENT
+// ========================================
+
+.bottom-statement {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.manifesto {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  
+  background: linear-gradient(90deg, #10388c 0%, #6095c6 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 4s ease-in-out infinite;
+}
+
+// ========================================
+// ANIMATIONS
+// ========================================
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.04;
+  }
+  50% {
+    transform: translate(-50%, -52%) scale(1.05);
+    opacity: 0.06;
+  }
+}
+
+@keyframes flowLine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Animation Classes
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-slide-up-delay-2 {
+  animation: slideUp 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay {
+  animation: fadeIn 1s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-3 {
+  animation: fadeIn 1s ease-out 0.8s forwards;
+  opacity: 0;
+}
+
+.animate-pop-delay-1 {
+  animation: pop 0.6s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.animate-pop-delay-2 {
+  animation: pop 0.6s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+.animate-pop-delay-3 {
+  animation: pop 0.6s ease-out 0.7s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// ========================================
+// RESPONSIVE
+// ========================================
+
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+  
+  .concepts-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .concept-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .core-philosophy {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-tagline {
+    font-size: 1.125rem;
+  }
+  
+  .concept-card {
+    padding: 2rem;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .icon-wrapper {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .statement-box {
+    padding: 2rem;
+  }
+  
+  .statement-text {
+    font-size: 1.125rem;
+  }
+  
+  .manifesto {
+    font-size: 1.5rem;
+  }
+}

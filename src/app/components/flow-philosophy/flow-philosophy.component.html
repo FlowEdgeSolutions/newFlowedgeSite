@@ -1,0 +1,156 @@
+<section class="flow-philosophy">
+  <!-- Animated Background with River Flow -->
+  <div class="flow-background">
+    <!-- Logo Watermark -->
+    <div class="logo-watermark">
+      <img src="/Logo/logo_icon.png" alt="FlowEdge AI" class="watermark-icon">
+    </div>
+    
+    <!-- SVG River Paths -->
+    <svg class="river-svg" viewBox="0 0 1440 800" preserveAspectRatio="none">
+      <defs>
+        <!-- Gradient for river flow -->
+        <linearGradient id="riverGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgba(96, 149, 198, 0.15);stop-opacity:0" />
+          <stop offset="25%" style="stop-color:rgba(96, 149, 198, 0.25);stop-opacity:1" />
+          <stop offset="50%" style="stop-color:rgba(16, 56, 140, 0.2);stop-opacity:1" />
+          <stop offset="75%" style="stop-color:rgba(96, 149, 198, 0.25);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgba(96, 149, 198, 0.15);stop-opacity:0" />
+          <animate attributeName="x1" values="0%;100%;0%" dur="20s" repeatCount="indefinite" />
+          <animate attributeName="x2" values="100%;200%;100%" dur="20s" repeatCount="indefinite" />
+        </linearGradient>
+        
+        <linearGradient id="riverGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgba(16, 56, 140, 0.1);stop-opacity:0" />
+          <stop offset="30%" style="stop-color:rgba(96, 149, 198, 0.18);stop-opacity:1" />
+          <stop offset="70%" style="stop-color:rgba(16, 56, 140, 0.15);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgba(96, 149, 198, 0.1);stop-opacity:0" />
+          <animate attributeName="x1" values="0%;100%;0%" dur="25s" repeatCount="indefinite" />
+          <animate attributeName="x2" values="100%;200%;100%" dur="25s" repeatCount="indefinite" />
+        </linearGradient>
+        
+        <linearGradient id="riverGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgba(96, 149, 198, 0.12);stop-opacity:0" />
+          <stop offset="40%" style="stop-color:rgba(16, 56, 140, 0.2);stop-opacity:1" />
+          <stop offset="60%" style="stop-color:rgba(96, 149, 198, 0.18);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgba(16, 56, 140, 0.1);stop-opacity:0" />
+          <animate attributeName="x1" values="0%;100%;0%" dur="30s" repeatCount="indefinite" />
+          <animate attributeName="x2" values="100%;200%;100%" dur="30s" repeatCount="indefinite" />
+        </linearGradient>
+      </defs>
+      
+      <!-- River Path 1 (Upper flow) -->
+      <path d="M0,120 Q360,80 720,120 T1440,120 L1440,220 Q1080,260 720,220 T0,220 Z" 
+            fill="url(#riverGradient1)" opacity="0.6">
+        <animate attributeName="d" 
+                 values="M0,120 Q360,80 720,120 T1440,120 L1440,220 Q1080,260 720,220 T0,220 Z;
+                         M0,120 Q360,140 720,100 T1440,120 L1440,220 Q1080,240 720,240 T0,220 Z;
+                         M0,120 Q360,80 720,120 T1440,120 L1440,220 Q1080,260 720,220 T0,220 Z"
+                 dur="15s" repeatCount="indefinite" />
+      </path>
+      
+      <!-- River Path 2 (Middle flow) -->
+      <path d="M0,400 Q360,360 720,400 T1440,400 L1440,480 Q1080,520 720,480 T0,480 Z" 
+            fill="url(#riverGradient2)" opacity="0.5">
+        <animate attributeName="d" 
+                 values="M0,400 Q360,360 720,400 T1440,400 L1440,480 Q1080,520 720,480 T0,480 Z;
+                         M0,400 Q360,420 720,380 T1440,400 L1440,480 Q1080,500 720,500 T0,480 Z;
+                         M0,400 Q360,360 720,400 T1440,400 L1440,480 Q1080,520 720,480 T0,480 Z"
+                 dur="18s" repeatCount="indefinite" />
+      </path>
+      
+      <!-- River Path 3 (Lower flow) -->
+      <path d="M0,640 Q360,600 720,640 T1440,640 L1440,720 Q1080,760 720,720 T0,720 Z" 
+            fill="url(#riverGradient3)" opacity="0.4">
+        <animate attributeName="d" 
+                 values="M0,640 Q360,600 720,640 T1440,640 L1440,720 Q1080,760 720,720 T0,720 Z;
+                         M0,640 Q360,660 720,620 T1440,640 L1440,720 Q1080,740 720,740 T0,720 Z;
+                         M0,640 Q360,600 720,640 T1440,640 L1440,720 Q1080,760 720,720 T0,720 Z"
+                 dur="22s" repeatCount="indefinite" />
+      </path>
+    </svg>
+    
+    <!-- Flowing Particles (river droplets) -->
+    <div class="flow-particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Titel -->
+    <div class="section-header animate-fade-in">
+      <h2 class="section-title">Warum der Fluss</h2>
+      <div class="title-underline"></div>
+    </div>
+
+    <!-- Haupttext -->
+    <div class="philosophy-content animate-slide-up">
+      <div class="intro-text">
+        <p class="lead-paragraph">
+          Ein Fluss steht für <strong>Bewegung</strong>, <strong>Verbindung</strong> und <strong>Richtung</strong> – genau das, was Unternehmen in der digitalen Transformation brauchen.
+        </p>
+        <p class="main-text">
+          Bei FlowEdge AI ist der Fluss unser Leitbild: Wir bringen Strategien in Bewegung, verbinden Systeme und schaffen intelligente Abläufe, die sich ständig weiterentwickeln.
+        </p>
+      </div>
+
+      <!-- Flow Timeline -->
+      <div class="flow-timeline animate-slide-up-delay">
+        <div class="timeline-header">
+          <h3 class="timeline-title">Unsere Methodik folgt dem natürlichen Prinzip jedes erfolgreichen Flusses:</h3>
+        </div>
+
+        <div class="flow-steps">
+          @for (step of flowSteps; track step.title; let i = $index) {
+            <div class="flow-step" [class.animate-pop-delay-{{ i + 1 }}]="true">
+              <div class="step-icon-wrapper">
+                <ng-icon [name]="step.icon" size="48" class="step-icon"></ng-icon>
+              </div>
+              
+              <div class="step-content">
+                <h4 class="step-title">{{ step.title }}</h4>
+                <p class="step-subtitle">{{ step.subtitle }}</p>
+                <p class="step-description">{{ step.description }}</p>
+              </div>
+
+              @if (i < flowSteps.length - 1) {
+                <div class="flow-arrow">
+                  <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+                    <path d="M0 12h36m0 0-8-8m8 8-8 8" stroke="url(#arrowGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                      <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#6095c6;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#10388c;stop-opacity:1" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Erklärungstext unter Timeline -->
+        <div class="timeline-explanation">
+          <p>
+            Aus einer klaren Quelle <span class="highlight">(Strategie)</span> entsteht ein stetiger Strom effizienter Prozesse <span class="highlight">(Automatisierung)</span>, der schließlich in ein lernfähiges, datenbasiertes System mündet <span class="highlight">(Intelligenz)</span>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Schlusstext -->
+      <div class="conclusion-text animate-fade-in-delay">
+        <p class="conclusion-statement">
+          So entsteht <strong class="flow-highlight">Flow</strong> – ein Unternehmen, das denkt, reagiert und wächst.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
