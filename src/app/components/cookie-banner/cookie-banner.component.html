@@ -1,0 +1,133 @@
+<!-- Cookie Banner -->
+<div class="cookie-banner" *ngIf="showBanner" [@slideIn]>
+  <div class="cookie-container">
+    <!-- Icon -->
+    <div class="cookie-icon">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"/>
+        <circle cx="8.5" cy="10.5" r="1.5" fill="currentColor"/>
+        <circle cx="15.5" cy="10.5" r="1.5" fill="currentColor"/>
+        <circle cx="12" cy="15" r="1.5" fill="currentColor"/>
+        <circle cx="9" cy="13" r="1" fill="currentColor"/>
+        <circle cx="15" cy="13" r="1" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <!-- Content -->
+    <div class="cookie-content">
+      <h3 class="cookie-title">🍪 Wir nutzen Cookies</h3>
+      <p class="cookie-text">
+        Wir verwenden Cookies und ähnliche Technologien, um Ihnen die bestmögliche Nutzung unserer Website zu ermöglichen. 
+        <span *ngIf="!showSettings">
+          Einige sind notwendig, andere helfen uns, diese Website und Ihre Erfahrung zu verbessern.
+        </span>
+      </p>
+      <p class="cookie-text-small">
+        Weitere Informationen finden Sie in unserer 
+        <a routerLink="/datenschutz" class="cookie-link">Datenschutzerklärung</a>.
+      </p>
+
+      <!-- Erweiterte Einstellungen -->
+      <div class="cookie-settings" *ngIf="showSettings">
+        <div class="setting-item">
+          <div class="setting-header">
+            <label class="setting-label">
+              <input 
+                type="checkbox" 
+                [checked]="cookieSettings.necessary" 
+                disabled
+                class="setting-checkbox"
+              >
+              <span class="setting-name">Notwendige Cookies</span>
+              <span class="setting-badge required">Erforderlich</span>
+            </label>
+          </div>
+          <p class="setting-description">
+            Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden.
+          </p>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-header">
+            <label class="setting-label">
+              <input 
+                type="checkbox" 
+                [(ngModel)]="cookieSettings.analytics"
+                class="setting-checkbox"
+              >
+              <span class="setting-name">Analyse & Statistik</span>
+              <span class="setting-badge optional">Optional</span>
+            </label>
+          </div>
+          <p class="setting-description">
+            Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren, indem anonyme Informationen gesammelt werden.
+          </p>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-header">
+            <label class="setting-label">
+              <input 
+                type="checkbox" 
+                [(ngModel)]="cookieSettings.marketing"
+                class="setting-checkbox"
+              >
+              <span class="setting-name">Marketing & Personalisierung</span>
+              <span class="setting-badge optional">Optional</span>
+            </label>
+          </div>
+          <p class="setting-description">
+            Diese Cookies werden verwendet, um Ihnen relevante Werbung und personalisierte Inhalte anzuzeigen.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="cookie-actions">
+      <button 
+        *ngIf="!showSettings"
+        (click)="acceptAll()" 
+        class="btn btn-accept-all"
+      >
+        Alle akzeptieren
+      </button>
+      
+      <button 
+        *ngIf="!showSettings"
+        (click)="acceptNecessary()" 
+        class="btn btn-necessary"
+      >
+        Nur notwendige
+      </button>
+      
+      <button 
+        *ngIf="!showSettings"
+        (click)="toggleSettings()" 
+        class="btn btn-settings"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        Einstellungen
+      </button>
+
+      <button 
+        *ngIf="showSettings"
+        (click)="saveSettings()" 
+        class="btn btn-save"
+      >
+        Auswahl speichern
+      </button>
+      
+      <button 
+        *ngIf="showSettings"
+        (click)="toggleSettings()" 
+        class="btn btn-back"
+      >
+        Zurück
+      </button>
+    </div>
+  </div>
+</div>

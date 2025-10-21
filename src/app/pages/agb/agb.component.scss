@@ -1,0 +1,74 @@
+// ========================================
+// AGB PAGE STYLES
+// ========================================
+
+// Importiere gemeinsame Legal-Styles
+@import '../impressum/impressum.component.scss';
+
+// AGB-spezifische Ergänzungen
+.agb-page {
+  .subsection-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    margin: 1.5rem 0 0.75rem;
+  }
+
+  .footer-info {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid rgba(16, 56, 140, 0.1);
+    
+    .info-block {
+      background: rgba(96, 149, 198, 0.05);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(16, 56, 140, 0.1);
+      
+      p {
+        margin-bottom: 0.5rem;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .agb-page {
+    .subsection-title {
+      font-size: 1rem;
+      margin: 1.25rem 0 0.5rem;
+    }
+    
+    .footer-info {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      
+      .info-block {
+        padding: 1.25rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .agb-page {
+    .subsection-title {
+      font-size: 0.95rem;
+    }
+    
+    .footer-info {
+      .info-block {
+        padding: 1rem;
+        
+        p {
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+}
