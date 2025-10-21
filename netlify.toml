@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "dist/angular_flowedge/browser"
+  publish = "dist/angular_FlowEdge_AI/browser"
 
 [[redirects]]
   from = "/*"
