@@ -1,0 +1,108 @@
+<section class="contact-form-section">
+  <div class="container">
+    <div class="form-header">
+      <h2 class="section-title">Bereit durchzustarten?</h2>
+      <p class="section-subtitle">Lassen Sie uns gemeinsam Ihre Workflows optimieren</p>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" *ngIf="isSubmitted">
+      <div class="success-icon">✓</div>
+      <h3>Nachricht erfolgreich gesendet!</h3>
+      <p>Vielen Dank für Ihre Anfrage. Wir melden uns schnellstmöglich bei Ihnen.</p>
+      <button class="btn-secondary" (click)="resetForm()">Neue Nachricht senden</button>
+    </div>
+
+    <!-- Contact Form -->
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="!isSubmitted" class="contact-form">
+      <div class="form-grid">
+        <!-- Name -->
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input 
+            type="text" 
+            id="name" 
+            formControlName="name"
+            placeholder="Ihr vollständiger Name"
+            [class.error]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+          />
+          <span class="error-message" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+            Bitte geben Sie Ihren Namen ein (mind. 2 Zeichen)
+          </span>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">E-Mail *</label>
+          <input 
+            type="email" 
+            id="email" 
+            formControlName="email"
+            placeholder="ihre.email@beispiel.de"
+            [class.error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+          />
+          <span class="error-message" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+            Bitte geben Sie eine gültige E-Mail-Adresse ein
+          </span>
+        </div>
+
+        <!-- Company -->
+        <div class="form-group">
+          <label for="company">Unternehmen</label>
+          <input 
+            type="text" 
+            id="company" 
+            formControlName="company"
+            placeholder="Ihr Unternehmen (optional)"
+          />
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+          <label for="phone">Telefon</label>
+          <input 
+            type="tel" 
+            id="phone" 
+            formControlName="phone"
+            placeholder="+49 123 456789 (optional)"
+          />
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="form-group full-width">
+        <label for="message">Ihre Nachricht *</label>
+        <textarea 
+          id="message" 
+          formControlName="message"
+          rows="4"
+          placeholder="Beschreiben Sie Ihr Anliegen..."
+          [class.error]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+        ></textarea>
+        <span class="error-message" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+          Bitte geben Sie eine Nachricht ein (mind. 10 Zeichen)
+        </span>
+      </div>
+
+      <!-- Error Message -->
+      <div class="error-banner" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <button 
+          type="submit" 
+          class="btn-primary" 
+          [disabled]="contactForm.invalid || isLoading"
+        >
+          <span *ngIf="!isLoading">Nachricht senden</span>
+          <span *ngIf="isLoading" class="loading-spinner">
+            <span class="spinner"></span>
+            Wird gesendet...
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

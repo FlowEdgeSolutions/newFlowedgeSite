@@ -5,6 +5,7 @@ import { SolutionsComponent } from './components/solutions/solutions.component';
 import { CtaSectionComponent } from './components/cta-section/cta-section.component';
 import { MissionTeaserComponent } from './components/mission-teaser/mission-teaser.component';
 import { WaveDividerComponent } from './components/wave-divider/wave-divider.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { PhilosophyComponent } from './pages/philosophy/philosophy.component';
 import { SolutionsComponent as SolutionsPageComponent } from './pages/solutions/solutions.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -21,7 +22,8 @@ import { AgbComponent } from './pages/agb/agb.component';
     SolutionsComponent,
     CtaSectionComponent,
     MissionTeaserComponent,
-    WaveDividerComponent
+    WaveDividerComponent,
+    ContactFormComponent
   ],
   template: `
     <main>
@@ -30,6 +32,7 @@ import { AgbComponent } from './pages/agb/agb.component';
       <app-cta-section></app-cta-section>
       <app-mission-teaser></app-mission-teaser>
       <app-wave-divider></app-wave-divider>
+      <app-contact-form></app-contact-form>
     </main>
   `
 })

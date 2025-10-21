@@ -21,8 +21,8 @@ export class EmailService {
   // 4. Kopiere deinen Public Key (Account → General)
   
   private readonly SERVICE_ID = 'service_3sythiy';           // Outlook Service
-  private readonly TEMPLATE_NOTIFICATION = 'template_spgd84g';  // Template 1: An dich (Auto-Reply)
-  private readonly TEMPLATE_CONFIRMATION = 'template_924xkrg';  // Template 2: An Kunde (Welcome)
+  private readonly TEMPLATE_NOTIFICATION = 'template_spgd84g';  // Template: An dich (Auto-Reply = Benachrichtigung)
+  private readonly TEMPLATE_CONFIRMATION = 'template_924xkrg';  // Template: An Kunde (Welcome = Bestätigung)
   private readonly PUBLIC_KEY = 'o3pAfQOWRpEuNjHBK';            // Public Key
 
   constructor() {
@@ -38,29 +38,35 @@ export class EmailService {
         from_email: data.from_email,
         company: data.company || 'Nicht angegeben',
         phone: data.phone || 'Nicht angegeben',
-        message: data.message
+        message: data.message,
+        to_email: 'info@flowedge.de' // Explizit für Notification-Template
       };
 
+      console.log('Sende E-Mails mit Parametern:', templateParams);
+
       // 1. Benachrichtigung an dich (info@flowedge.de)
+      // Dieses Template hat Auto-Reply AUS in EmailJS
       const notificationResponse = await emailjs.send(
         this.SERVICE_ID,
         this.TEMPLATE_NOTIFICATION,
         templateParams
       );
 
+      console.log('✅ Benachrichtigung an dich gesendet:', notificationResponse.status);
+
       // 2. Bestätigung an den Kunden
+      // Dieses Template hat Auto-Reply EIN in EmailJS (geht an {{from_email}})
       const confirmationResponse = await emailjs.send(
         this.SERVICE_ID,
         this.TEMPLATE_CONFIRMATION,
         templateParams
       );
 
-      console.log('Benachrichtigung gesendet:', notificationResponse);
-      console.log('Bestätigung gesendet:', confirmationResponse);
+      console.log('✅ Bestätigung an Kunde gesendet:', confirmationResponse.status);
       
       return notificationResponse.status === 200 && confirmationResponse.status === 200;
     } catch (error) {
-      console.error('Fehler beim E-Mail-Versand:', error);
+      console.error('❌ Fehler beim E-Mail-Versand:', error);
       return false;
     }
   }

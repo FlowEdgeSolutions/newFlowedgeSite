@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
+import { ContactFormComponent } from '../../components/contact-form/contact-form.component';
 import { 
   heroArrowTrendingUp,
   heroSparkles,
@@ -18,7 +19,7 @@ import {
 @Component({
   selector: 'app-philosophy',
   standalone: true,
-  imports: [CommonModule, NgIconComponent],
+  imports: [CommonModule, NgIconComponent, ContactFormComponent],
   templateUrl: './philosophy.component.html',
   styleUrl: './philosophy.component.scss',
   viewProviders: [provideIcons({ 

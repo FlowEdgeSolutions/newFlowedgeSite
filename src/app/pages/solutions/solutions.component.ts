@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
+import { ContactFormComponent } from '../../components/contact-form/contact-form.component';
 import { 
   heroLightBulb,
   heroRocketLaunch,
@@ -38,7 +39,7 @@ interface ApproachStep {
 @Component({
   selector: 'app-solutions',
   standalone: true,
-  imports: [CommonModule, NgIconComponent],
+  imports: [CommonModule, NgIconComponent, ContactFormComponent],
   templateUrl: './solutions.component.html',
   styleUrl: './solutions.component.scss',
   viewProviders: [provideIcons({ 
