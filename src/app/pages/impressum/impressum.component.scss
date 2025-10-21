@@ -1,0 +1,222 @@
+// ========================================
+// LEGAL PAGE STYLES - Impressum & Datenschutz
+// ========================================
+
+.impressum-page,
+.datenschutz-page {
+  min-height: 100vh;
+  padding: 140px 0 80px;
+  background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+  position: relative;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+// ========================================
+// PAGE HEADER
+// ========================================
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.page-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.page-subtitle {
+  font-size: 1.125rem;
+  color: rgba(16, 56, 140, 0.7);
+  font-weight: 500;
+}
+
+// ========================================
+// CONTENT CARD - Glasmorphismus
+// ========================================
+
+.content-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 
+    0 8px 32px rgba(16, 56, 140, 0.1),
+    0 0 0 1px rgba(16, 56, 140, 0.05),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+// ========================================
+// SECTIONS
+// ========================================
+
+.section {
+  margin-bottom: 2.5rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.subsection-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  margin: 1.5rem 0 0.75rem;
+}
+
+.info-block {
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(16, 56, 140, 0.85);
+    margin-bottom: 0.75rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    strong {
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+  }
+}
+
+// ========================================
+// LINKS
+// ========================================
+
+.legal-link {
+  color: var(--primary-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(96, 149, 198, 0.3);
+  
+  &:hover {
+    color: var(--primary-dark);
+    border-bottom-color: var(--primary-dark);
+  }
+}
+
+// ========================================
+// ANIMATIONS
+// ========================================
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ========================================
+// RESPONSIVE
+// ========================================
+
+@media (max-width: 768px) {
+  .impressum-page,
+  .datenschutz-page {
+    padding: 120px 0 60px;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .page-title {
+    font-size: 2.25rem;
+  }
+  
+  .page-subtitle {
+    font-size: 1rem;
+  }
+  
+  .content-card {
+    padding: 2rem;
+    border-radius: 20px;
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+  }
+  
+  .subsection-title {
+    font-size: 1rem;
+  }
+  
+  .info-block p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .impressum-page,
+  .datenschutz-page {
+    padding: 100px 0 40px;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .page-title {
+    font-size: 1.875rem;
+  }
+  
+  .page-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .content-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .section {
+    margin-bottom: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .subsection-title {
+    font-size: 0.95rem;
+    margin: 1.25rem 0 0.5rem;
+  }
+  
+  .info-block p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+}
