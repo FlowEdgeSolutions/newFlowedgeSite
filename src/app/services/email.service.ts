@@ -39,32 +39,28 @@ export class EmailService {
         company: data.company || 'Nicht angegeben',
         phone: data.phone || 'Nicht angegeben',
         message: data.message,
-        to_email: 'info@flowedge.de' // Explizit für Notification-Template
+        to_name: data.from_name, // Für personalisierte Kundenmail
+        reply_to: data.from_email // Wichtig für Auto-Reply
       };
 
-      console.log('Sende E-Mails mit Parametern:', templateParams);
+      console.log('📧 Sende E-Mail mit Parametern:', templateParams);
 
-      // 1. Benachrichtigung an dich (info@flowedge.de)
-      // Dieses Template hat Auto-Reply AUS in EmailJS
-      const notificationResponse = await emailjs.send(
+      // Sende NUR das Notification-Template
+      // Die Kundenbestätigung wird automatisch via Auto-Reply in EmailJS gesendet
+      const response = await emailjs.send(
         this.SERVICE_ID,
-        this.TEMPLATE_NOTIFICATION,
+        this.TEMPLATE_NOTIFICATION, // Template: Auto-Reply (mit aktivierter Auto-Reply Funktion)
         templateParams
       );
 
-      console.log('✅ Benachrichtigung an dich gesendet:', notificationResponse.status);
-
-      // 2. Bestätigung an den Kunden
-      // Dieses Template hat Auto-Reply EIN in EmailJS (geht an {{from_email}})
-      const confirmationResponse = await emailjs.send(
-        this.SERVICE_ID,
-        this.TEMPLATE_CONFIRMATION,
-        templateParams
-      );
-
-      console.log('✅ Bestätigung an Kunde gesendet:', confirmationResponse.status);
+      console.log('✅ E-Mail-Status:', response.status, response.text);
       
-      return notificationResponse.status === 200 && confirmationResponse.status === 200;
+      if (response.status === 200) {
+        console.log('✅ Benachrichtigung gesendet + Auto-Reply aktiviert');
+        return true;
+      }
+      
+      return false;
     } catch (error) {
       console.error('❌ Fehler beim E-Mail-Versand:', error);
       return false;
