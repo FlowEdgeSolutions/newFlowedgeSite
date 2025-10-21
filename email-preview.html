@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Mail Template Vorschau - FlowEdge Solutions</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+        
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+            background: #e5e7eb;
+            transition: background-color 0.3s ease;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #1a1f2e;
+            }
+        }
+        .preview-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .preview-container {
+                background: #242938;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            }
+        }
+        .preview-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #10388c;
+        }
+        .preview-header h1 {
+            color: #10388c;
+            margin: 0 0 10px 0;
+        }
+        .preview-header p {
+            color: #666;
+            margin: 0;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .preview-header {
+                border-bottom-color: #6095c6;
+            }
+            .preview-header h1 {
+                color: #6095c6;
+            }
+            .preview-header p {
+                color: #9ca3af;
+            }
+        }
+        .controls {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8faff;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .controls h3 {
+            margin-top: 0;
+            color: #10388c;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .controls {
+                background: #1f2433;
+            }
+            .controls h3 {
+                color: #6095c6;
+            }
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #282f3d;
+            transition: color 0.3s ease;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .form-group label {
+                color: #e5e7eb;
+            }
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 14px;
+            background: white;
+            color: #282f3d;
+            transition: all 0.3s ease;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .form-group input,
+            .form-group textarea {
+                background: #2d3346;
+                border-color: #3f4558;
+                color: #e5e7eb;
+            }
+            
+            .form-group input:focus,
+            .form-group textarea:focus {
+                border-color: #6095c6;
+                outline: none;
+            }
+        }
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .btn-update {
+            background: linear-gradient(135deg, #10388c, #6095c6);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn-update:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        
+        .mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #10388c, #6095c6);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(16, 56, 140, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .mode-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 56, 140, 0.4);
+        }
+        iframe {
+            width: 100%;
+            height: 800px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            iframe {
+                border-color: #3f4558;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <button class="mode-toggle" onclick="toggleDarkMode()" id="modeToggle">
+        🌙 Dark Mode
+    </button>
+    
+    <div class="preview-container">
+        <div class="preview-header">
+            <h1>📧 E-Mail Template Vorschau</h1>
+            <p>FlowEdge Solutions Kontaktformular</p>
+        </div>
+
+        <div class="controls">
+            <h3>Test-Daten eingeben:</h3>
+            <div class="form-group">
+                <label for="from_name">Name:</label>
+                <input type="text" id="from_name" value="Max Mustermann">
+            </div>
+            <div class="form-group">
+                <label for="from_email">E-Mail:</label>
+                <input type="email" id="from_email" value="max.mustermann@beispiel.de">
+            </div>
+            <div class="form-group">
+                <label for="company">Unternehmen:</label>
+                <input type="text" id="company" value="Beispiel GmbH">
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefon:</label>
+                <input type="tel" id="phone" value="+49 123 456789">
+            </div>
+            <div class="form-group">
+                <label for="message">Nachricht:</label>
+                <textarea id="message">Hallo,
+
+ich interessiere mich für Ihre IT-Beratungsleistungen im Bereich Prozessautomatisierung. 
+
+Könnten wir einen Termin für ein unverbindliches Erstgespräch vereinbaren?
+
+Mit freundlichen Grüßen
+Max Mustermann</textarea>
+            </div>
+            <button class="btn-update" onclick="updatePreview()">Vorschau aktualisieren</button>
+        </div>
+
+        <iframe id="preview-frame" frameborder="0"></iframe>
+    </div>
+
+    <script>
+        // Dark Mode Toggle
+        let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        function toggleDarkMode() {
+            isDarkMode = !isDarkMode;
+            const toggle = document.getElementById('modeToggle');
+            
+            if (isDarkMode) {
+                document.documentElement.style.colorScheme = 'dark';
+                toggle.innerHTML = '☀️ Light Mode';
+            } else {
+                document.documentElement.style.colorScheme = 'light';
+                toggle.innerHTML = '🌙 Dark Mode';
+            }
+            
+            updatePreview();
+        }
+        
+        // Initialize toggle button text
+        window.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('modeToggle');
+            if (isDarkMode) {
+                toggle.innerHTML = '☀️ Light Mode';
+            }
+        });
+        
+        function updatePreview() {
+            const templateContent = `<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neue Kontaktanfrage - FlowEdge Solutions</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
+        
+        :root {
+            color-scheme: ${isDarkMode ? 'dark' : 'light'};
+            
+            --bg-body: ${isDarkMode ? '#1a1f2e' : '#f0f4ff'};
+            --bg-container: ${isDarkMode ? '#242938' : '#ffffff'};
+            --bg-header-start: #10388c;
+            --bg-header-end: #6095c6;
+            --bg-info-card-start: ${isDarkMode ? 'rgba(96, 149, 198, 0.08)' : 'rgba(16, 56, 140, 0.03)'};
+            --bg-info-card-end: ${isDarkMode ? 'rgba(16, 56, 140, 0.12)' : 'rgba(96, 149, 198, 0.05)'};
+            --bg-message-box: ${isDarkMode ? '#2d3346' : '#ffffff'};
+            --bg-footer: ${isDarkMode ? '#1f2433' : '#f8faff'};
+            
+            --text-primary: #ffffff;
+            --text-secondary: ${isDarkMode ? '#e5e7eb' : '#282f3d'};
+            --text-muted: ${isDarkMode ? 'rgba(229, 231, 235, 0.7)' : 'rgba(40, 47, 61, 0.7)'};
+            --text-label: ${isDarkMode ? 'rgba(96, 149, 198, 0.9)' : 'rgba(16, 56, 140, 0.7)'};
+            
+            --border-color: ${isDarkMode ? 'rgba(96, 149, 198, 0.3)' : 'rgba(96, 149, 198, 0.2)'};
+            --border-accent: ${isDarkMode ? '#6095c6' : '#10388c'};
+            --divider-color: ${isDarkMode ? 'rgba(96, 149, 198, 0.2)' : 'rgba(96, 149, 198, 0.3)'};
+            
+            --link-color: ${isDarkMode ? '#6095c6' : '#10388c'};
+            --link-hover: ${isDarkMode ? '#8ab4db' : '#6095c6'};
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f0f4ff;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(16, 56, 140, 0.15);
+        }
+        
+        .email-header {
+            background: linear-gradient(135deg, #10388c 0%, #6095c6 100%);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .email-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -30px); }
+        }
+        
+        .logo-wrapper {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 16px;
+        }
+        
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-subtitle {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 8px 0 0 0;
+            font-weight: 500;
+        }
+        
+        .email-content {
+            padding: 40px 30px;
+        }
+        
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #10388c;
+            margin: 0 0 24px 0;
+            letter-spacing: -0.01em;
+        }
+        
+        .info-card {
+            background: linear-gradient(135deg, rgba(16, 56, 140, 0.03), rgba(96, 149, 198, 0.05));
+            border-left: 4px solid #10388c;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .info-row {
+            margin-bottom: 16px;
+        }
+        
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .info-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(16, 56, 140, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        
+        .info-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #282f3d;
+            line-height: 1.5;
+        }
+        
+        .info-value a {
+            color: #10388c;
+            text-decoration: none;
+        }
+        
+        .message-box {
+            background: #ffffff;
+            border: 2px solid rgba(96, 149, 198, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+        }
+        
+        .message-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #10388c;
+            margin-bottom: 12px;
+            display: block;
+        }
+        
+        .message-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #282f3d;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .action-section {
+            text-align: center;
+            margin: 32px 0 24px;
+        }
+        
+        .btn-reply {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #10388c, #6095c6);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            box-shadow: 0 8px 24px rgba(16, 56, 140, 0.25);
+        }
+        
+        .email-footer {
+            background: #f8faff;
+            padding: 32px 30px;
+            border-top: 1px solid rgba(96, 149, 198, 0.2);
+        }
+        
+        .footer-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .company-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #10388c;
+            margin: 0 0 8px 0;
+        }
+        
+        .company-details {
+            font-size: 13px;
+            color: rgba(40, 47, 61, 0.7);
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(96, 149, 198, 0.3), transparent);
+            margin: 20px 0;
+        }
+        
+        .footer-note {
+            text-align: center;
+            font-size: 12px;
+            color: rgba(40, 47, 61, 0.6);
+            margin: 16px 0 0 0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <div class="logo-wrapper">
+                <h1 class="logo-text">FlowEdge Solutions</h1>
+                <p class="header-subtitle">Effektiv · Strategisch · Individuell</p>
+            </div>
+        </div>
+        
+        <div class="email-content">
+            <h2 class="section-title">🎯 Neue Kontaktanfrage</h2>
+            
+            <div class="info-card">
+                <div class="info-row">
+                    <div class="info-label">Von</div>
+                    <div class="info-value">${document.getElementById('from_name').value}</div>
+                </div>
+                
+                <div class="info-row">
+                    <div class="info-label">E-Mail</div>
+                    <div class="info-value">
+                        <a href="mailto:${document.getElementById('from_email').value}">${document.getElementById('from_email').value}</a>
+                    </div>
+                </div>
+                
+                <div class="info-row">
+                    <div class="info-label">Unternehmen</div>
+                    <div class="info-value">${document.getElementById('company').value}</div>
+                </div>
+                
+                <div class="info-row">
+                    <div class="info-label">Telefon</div>
+                    <div class="info-value">
+                        <a href="tel:${document.getElementById('phone').value}">${document.getElementById('phone').value}</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="message-box">
+                <span class="message-label">💬 Nachricht:</span>
+                <div class="message-text">${document.getElementById('message').value}</div>
+            </div>
+            
+            <div class="action-section">
+                <a href="mailto:${document.getElementById('from_email').value}" class="btn-reply">
+                    Jetzt antworten
+                </a>
+            </div>
+        </div>
+        
+        <div class="email-footer">
+            <div class="footer-info">
+                <p class="company-name">FlowEdge Solutions</p>
+                <p class="company-details">
+                    Inhaber: Khaled Ayub<br>
+                    Königsallee 63 · 40215 Düsseldorf<br>
+                    <a href="tel:+4915560814385" style="color: #6095c6; text-decoration: none;">+49 15560 814 385</a> · 
+                    <a href="mailto:info@flowedge.de" style="color: #6095c6; text-decoration: none;">info@flowedge.de</a>
+                </p>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <p class="footer-note">
+                Diese E-Mail wurde automatisch über das FlowEdge Solutions Kontaktformular gesendet.<br>
+                © 2025 FlowEdge Solutions · Alle Rechte vorbehalten
+            </p>
+        </div>
+    </div>
+</body>
+</html>`;
+
+            const iframe = document.getElementById('preview-frame');
+            iframe.srcdoc = templateContent;
+        }
+
+        // Initial load
+        updatePreview();
+    </script>
+</body>
+</html>

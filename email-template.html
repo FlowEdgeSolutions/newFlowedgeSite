@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neue Kontaktanfrage - FlowEdge Solutions</title>
+    <style>
+        /* Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
+        
+        /* CSS Variables für Light/Dark Mode */
+        :root {
+            color-scheme: light dark;
+            
+            /* Light Mode Colors */
+            --bg-body: #f0f4ff;
+            --bg-container: #ffffff;
+            --bg-header-start: #10388c;
+            --bg-header-end: #6095c6;
+            --bg-info-card-start: rgba(16, 56, 140, 0.03);
+            --bg-info-card-end: rgba(96, 149, 198, 0.05);
+            --bg-message-box: #ffffff;
+            --bg-footer: #f8faff;
+            
+            --text-primary: #ffffff;
+            --text-secondary: #282f3d;
+            --text-muted: rgba(40, 47, 61, 0.7);
+            --text-label: rgba(16, 56, 140, 0.7);
+            
+            --border-color: rgba(96, 149, 198, 0.2);
+            --border-accent: #10388c;
+            --divider-color: rgba(96, 149, 198, 0.3);
+            
+            --link-color: #10388c;
+            --link-hover: #6095c6;
+        }
+        
+        /* Dark Mode Colors */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-body: #1a1f2e;
+                --bg-container: #242938;
+                --bg-header-start: #10388c;
+                --bg-header-end: #6095c6;
+                --bg-info-card-start: rgba(96, 149, 198, 0.08);
+                --bg-info-card-end: rgba(16, 56, 140, 0.12);
+                --bg-message-box: #2d3346;
+                --bg-footer: #1f2433;
+                
+                --text-primary: #ffffff;
+                --text-secondary: #e5e7eb;
+                --text-muted: rgba(229, 231, 235, 0.7);
+                --text-label: rgba(96, 149, 198, 0.9);
+                
+                --border-color: rgba(96, 149, 198, 0.3);
+                --border-accent: #6095c6;
+                --divider-color: rgba(96, 149, 198, 0.2);
+                
+                --link-color: #6095c6;
+                --link-hover: #8ab4db;
+            }
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: var(--bg-body);
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: var(--bg-container);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(16, 56, 140, 0.15);
+        }
+        
+        /* Dark Mode: Stärkere Schatten */
+        @media (prefers-color-scheme: dark) {
+            .email-container {
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            }
+        }
+        
+        /* Header mit Gradient */
+        .email-header {
+            background: linear-gradient(135deg, var(--bg-header-start) 0%, var(--bg-header-end) 100%);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .email-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -30px); }
+        }
+        
+        .logo-wrapper {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 16px;
+        }
+        
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-subtitle {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 8px 0 0 0;
+            font-weight: 500;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .header-subtitle {
+                color: rgba(255, 255, 255, 0.95);
+            }
+        }
+        
+        /* Content Area */
+        .email-content {
+            padding: 40px 30px;
+        }
+        
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--border-accent);
+            margin: 0 0 24px 0;
+            letter-spacing: -0.01em;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .section-title {
+                color: var(--link-color);
+            }
+        }
+        
+        /* Info Card */
+        .info-card {
+            background: linear-gradient(135deg, var(--bg-info-card-start), var(--bg-info-card-end));
+            border-left: 4px solid var(--border-accent);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .info-row {
+            margin-bottom: 16px;
+        }
+        
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .info-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-label);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        
+        .info-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        
+        .info-value a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .info-value a:hover {
+            color: var(--link-hover);
+        }
+        
+        /* Message Box */
+        .message-box {
+            background: var(--bg-message-box);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+        }
+        
+        .message-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--border-accent);
+            margin-bottom: 12px;
+            display: block;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .message-label {
+                color: var(--link-color);
+            }
+        }
+        
+        .message-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        /* Action Button */
+        .action-section {
+            text-align: center;
+            margin: 32px 0 24px;
+        }
+        
+        .btn-reply {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--bg-header-start), var(--bg-header-end));
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            box-shadow: 0 8px 24px rgba(16, 56, 140, 0.25);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-reply:hover {
+            box-shadow: 0 12px 36px rgba(16, 56, 140, 0.35);
+            transform: translateY(-2px);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .btn-reply {
+                box-shadow: 0 8px 24px rgba(96, 149, 198, 0.3);
+            }
+            
+            .btn-reply:hover {
+                box-shadow: 0 12px 36px rgba(96, 149, 198, 0.4);
+            }
+        }
+        
+        /* Footer */
+        .email-footer {
+            background: var(--bg-footer);
+            padding: 32px 30px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .company-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--border-accent);
+            margin: 0 0 8px 0;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .company-name {
+                color: var(--link-color);
+            }
+        }
+        
+        .company-details {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--divider-color), transparent);
+            margin: 20px 0;
+        }
+        
+        .footer-links {
+            text-align: center;
+            margin: 16px 0;
+        }
+        
+        .footer-links a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 13px;
+            margin: 0 12px;
+            font-weight: 500;
+        }
+        
+        .footer-links a:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+        
+        .footer-note {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin: 16px 0 0 0;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                margin: 20px 10px;
+            }
+            
+            .email-header {
+                padding: 32px 20px;
+            }
+            
+            .logo-text {
+                font-size: 26px;
+            }
+            
+            .email-content {
+                padding: 32px 20px;
+            }
+            
+            .section-title {
+                font-size: 20px;
+            }
+            
+            .info-card {
+                padding: 20px;
+            }
+            
+            .message-box {
+                padding: 20px;
+            }
+            
+            .email-footer {
+                padding: 24px 20px;
+            }
+            
+            .footer-links a {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="email-header">
+            <div class="logo-wrapper">
+                <h1 class="logo-text">FlowEdge Solutions</h1>
+                <p class="header-subtitle">Effektiv · Strategisch · Individuell</p>
+            </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="email-content">
+            <h2 class="section-title">🎯 Neue Kontaktanfrage</h2>
+            
+            <!-- Contact Info Card -->
+            <div class="info-card">
+                <div class="info-row">
+                    <div class="info-label">Von</div>
+                    <div class="info-value">{{from_name}}</div>
+                </div>
+                
+                <div class="info-row">
+                    <div class="info-label">E-Mail</div>
+                    <div class="info-value">
+                        <a href="mailto:{{from_email}}">{{from_email}}</a>
+                    </div>
+                </div>
+                
+                <div class="info-row">
+                    <div class="info-label">Unternehmen</div>
+                    <div class="info-value">{{company}}</div>
+                </div>
+                
+                <div class="info-row">
+                    <div class="info-label">Telefon</div>
+                    <div class="info-value">
+                        <a href="tel:{{phone}}">{{phone}}</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Message -->
+            <div class="message-box">
+                <span class="message-label">💬 Nachricht:</span>
+                <div class="message-text">{{message}}</div>
+            </div>
+            
+            <!-- Action Button -->
+            <div class="action-section">
+                <a href="mailto:{{from_email}}" class="btn-reply">
+                    Jetzt antworten
+                </a>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="email-footer">
+            <div class="footer-info">
+                <p class="company-name">FlowEdge Solutions</p>
+                <p class="company-details">
+                    Inhaber: Khaled Ayub<br>
+                    Königsallee 63 · 40215 Düsseldorf<br>
+                    <a href="tel:+4915560814385" style="color: #6095c6; text-decoration: none;">+49 15560 814 385</a> · 
+                    <a href="mailto:info@flowedge.de" style="color: #6095c6; text-decoration: none;">info@flowedge.de</a>
+                </p>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="footer-links">
+                <a href="https://www.flowedge.de">Website</a>
+                <a href="https://www.flowedge.de/impressum">Impressum</a>
+                <a href="https://www.flowedge.de/datenschutz">Datenschutz</a>
+                <a href="https://www.linkedin.com/company/flow-edge-solutions/">LinkedIn</a>
+            </div>
+            
+            <p class="footer-note">
+                Diese E-Mail wurde automatisch über das FlowEdge Solutions Kontaktformular gesendet.<br>
+                © 2025 FlowEdge Solutions · Alle Rechte vorbehalten
+            </p>
+        </div>
+    </div>
+</body>
+</html>

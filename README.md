@@ -1,6 +1,6 @@
-# FlowEdge AI
+# FlowEdge Solutions
 
-Eine moderne, professionelle Website für KI-Strategie, Automatisierung und Softwareentwicklung.
+Eine moderne, professionelle Website für IT-Beratung, Prozessautomatisierung und KI-Entwicklung.
 
 ## 🎨 Design-System
 
@@ -21,7 +21,7 @@ Eine moderne, professionelle Website für KI-Strategie, Automatisierung und Soft
 
 ### Installation
 ```bash
-cd angular_FlowEdge AI
+cd angular_flowedge
 npm install
 ```
 
@@ -55,15 +55,70 @@ npm run build
 - ✅ Animierte Übergänge
 - ✅ Moderne UI mit Corporate Blue Theme
 - ✅ SEO-optimiert
-- ✅ DSGVO-konform
+- ✅ DSGVO-konform mit Cookie-Banner
+- ✅ Kontaktformular mit E-Mail-Integration (EmailJS + Netlify Forms)
+
+## 📧 E-Mail-Backend einrichten
+
+Das Kontaktformular verwendet ein Dual-System:
+1. **Primär**: EmailJS (direkte E-Mail-Zustellung)
+2. **Fallback**: Netlify Forms (zuverlässige Datenspeicherung)
+
+### Quick Setup für Microsoft Outlook:
+📚 **Ausführliche Anleitung**: Siehe [`OUTLOOK_SETUP.md`](./OUTLOOK_SETUP.md)
+
+**Kurzversion:**
+1. Registrieren auf [EmailJS.com](https://www.emailjs.com/)
+2. Microsoft Outlook Account verbinden
+3. E-Mail-Template erstellen
+4. IDs in `src/app/services/email.service.ts` eintragen:
+   ```typescript
+   private readonly SERVICE_ID = 'IHRE_SERVICE_ID';
+   private readonly TEMPLATE_ID = 'IHRE_TEMPLATE_ID';
+   private readonly PUBLIC_KEY = 'IHR_PUBLIC_KEY';
+   ```
+5. Testen und deployen!
+
+### Alternative E-Mail-Provider:
+📚 **Allgemeine Anleitung**: Siehe [`EMAIL_SETUP.md`](./EMAIL_SETUP.md)  
+(Unterstützt: Gmail, Outlook, SendGrid, und mehr)
+
+## 📋 Rechtliche Seiten
+
+- **Impressum**: `/impressum` - Vollständige Unternehmensdaten
+- **Datenschutz**: `/datenschutz` - DSGVO-konforme Datenschutzerklärung
+- **AGB**: `/agb` - Allgemeine Geschäftsbedingungen
+- **Cookie-Banner**: Automatischer DSGVO-konformer Cookie-Banner
+
+## 📦 Deployment
+
+### Netlify Deployment
+
+Das Projekt ist für Netlify optimiert:
+
+```bash
+npm run build
+```
+
+**Netlify Konfiguration:**
+- **Build command**: `npm run build`
+- **Publish directory**: `dist/angular_flowedge/browser`
+- **Node version**: 18.x oder höher
+
+**Nach dem Deployment:**
+1. Netlify Forms wird automatisch aktiviert
+2. Cookie-Banner funktioniert sofort
+3. E-Mail-Backend nach EmailJS-Setup aktiv
 
 ## 📞 Kontakt
 
-**FlowEdge AI**
-- Adresse: Königsallee 63-65, 40215 Düsseldorf
-- E-Mail: kontakt@FlowEdge AI.de
-- Telefon: +49 15560 814 385
+**FlowEdge Solutions**
+- **Inhaber**: Khaled Ayub
+- **Adresse**: Königsallee 63, 40215 Düsseldorf
+- **E-Mail**: info@flowedge.de
+- **Telefon**: +49 15560 814 385
+- **LinkedIn**: [FlowEdge Solutions](https://www.linkedin.com/company/flow-edge-solutions/)
 
-## 📄 Lizenz
+## 📝 Lizenz
 
-© 2025 FlowEdge AI · Alle Rechte vorbehalten
+© 2025 FlowEdge Solutions · Alle Rechte vorbehalten

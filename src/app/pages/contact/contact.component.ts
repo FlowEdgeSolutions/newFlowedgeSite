@@ -7,8 +7,10 @@ import {
   heroEnvelope,
   heroMapPin,
   heroClock,
-  heroCheckCircle
+  heroCheckCircle,
+  heroExclamationCircle
 } from '@ng-icons/heroicons/outline';
+import { EmailService } from '../../services/email.service';
 
 @Component({
   selector: 'app-contact',
@@ -21,12 +23,15 @@ import {
     heroEnvelope,
     heroMapPin,
     heroClock,
-    heroCheckCircle
+    heroCheckCircle,
+    heroExclamationCircle
   })]
 })
 export class ContactComponent {
   contactForm: FormGroup;
   isSubmitted = false;
+  isLoading = false;
+  errorMessage = '';
 
   contactInfo = [
     {
@@ -44,8 +49,8 @@ export class ContactComponent {
     {
       icon: 'heroMapPin',
       label: 'Adresse',
-      value: 'Königsallee 63–65, 40215 Düsseldorf',
-      link: 'https://maps.google.com/?q=Königsallee+63-65+Düsseldorf'
+      value: 'Königsallee 63, 40215 Düsseldorf',
+      link: 'https://maps.google.com/?q=Königsallee+63+Düsseldorf'
     },
     {
       icon: 'heroClock',
@@ -55,7 +60,10 @@ export class ContactComponent {
     }
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private emailService: EmailService
+  ) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -65,16 +73,53 @@ export class ContactComponent {
     });
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (this.contactForm.valid) {
-      console.log('Form submitted:', this.contactForm.value);
-      this.isSubmitted = true;
+      this.isLoading = true;
+      this.errorMessage = '';
       
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        this.contactForm.reset();
-        this.isSubmitted = false;
-      }, 3000);
+      const formData = {
+        from_name: this.contactForm.value.name,
+        from_email: this.contactForm.value.email,
+        company: this.contactForm.value.company,
+        phone: this.contactForm.value.phone,
+        message: this.contactForm.value.message
+      };
+
+      try {
+        // Versuch 1: EmailJS
+        const emailSuccess = await this.emailService.sendEmail(formData);
+        
+        if (emailSuccess) {
+          this.isSubmitted = true;
+          this.isLoading = false;
+          
+          // Reset form after 3 seconds
+          setTimeout(() => {
+            this.contactForm.reset();
+            this.isSubmitted = false;
+          }, 3000);
+        } else {
+          // Fallback: Netlify Forms
+          const netlifySuccess = await this.emailService.sendViaNetlify(this.contactForm.value);
+          
+          if (netlifySuccess) {
+            this.isSubmitted = true;
+            this.isLoading = false;
+            
+            setTimeout(() => {
+              this.contactForm.reset();
+              this.isSubmitted = false;
+            }, 3000);
+          } else {
+            throw new Error('E-Mail konnte nicht gesendet werden');
+          }
+        }
+      } catch (error) {
+        this.isLoading = false;
+        this.errorMessage = 'Es gab ein Problem beim Versenden Ihrer Nachricht. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail.';
+        console.error('Fehler beim Absenden:', error);
+      }
     } else {
       // Mark all fields as touched to show validation errors
       Object.keys(this.contactForm.controls).forEach(key => {

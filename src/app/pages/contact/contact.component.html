@@ -30,7 +30,20 @@ Fü<div class="contact-page">
             <h2 class="section-title">Ihre Nachricht</h2>
             <p class="section-subtitle">Füllen Sie das Formular aus und wir melden uns zeitnah bei Ihnen.</p>
             
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <!-- Netlify Forms Hidden Fields -->
+              <input type="hidden" name="form-name" value="contact" />
+              <div style="display: none;">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+              </div>
+              
+              <!-- Error Message -->
+              @if (errorMessage) {
+                <div class="error-banner">
+                  <ng-icon name="heroExclamationCircle" size="20"></ng-icon>
+                  <span>{{ errorMessage }}</span>
+                </div>
+              }
               <div class="form-row">
                 <div class="form-group">
                   <label for="name" class="form-label">Name *</label>
@@ -106,8 +119,13 @@ Fü<div class="contact-page">
                 type="submit" 
                 class="submit-button"
                 [class.submitted]="isSubmitted"
+                [class.loading]="isLoading"
+                [disabled]="isLoading"
               >
-                @if (isSubmitted) {
+                @if (isLoading) {
+                  <div class="spinner"></div>
+                  <span>Wird gesendet...</span>
+                } @else if (isSubmitted) {
                   <ng-icon name="heroCheckCircle" size="24"></ng-icon>
                   <span>Nachricht gesendet!</span>
                 } @else {
@@ -152,9 +170,9 @@ Fü<div class="contact-page">
     <div class="map-placeholder">
       <div class="map-overlay">
         <h3 class="map-title">Besuchen Sie uns in Düsseldorf</h3>
-        <p class="map-address">Königsallee 63–65 · 40215 Düsseldorf</p>
+        <p class="map-address">Königsallee 63 · 40215 Düsseldorf</p>
         <a 
-          href="https://maps.google.com/?q=Königsallee+63-65+Düsseldorf" 
+          href="https://maps.google.com/?q=Königsallee+63+Düsseldorf" 
           target="_blank" 
           class="map-button"
         >

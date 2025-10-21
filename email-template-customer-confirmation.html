@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ihre Nachricht ist angekommen - FlowEdge AI</title>
+    <style>
+        /* Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
+        
+        /* CSS Variables für Light/Dark Mode */
+        :root {
+            color-scheme: light dark;
+            
+            /* Light Mode Colors */
+            --bg-body: #f0f4ff;
+            --bg-container: #ffffff;
+            --bg-header-start: #10388c;
+            --bg-header-end: #6095c6;
+            --bg-success-box: #f0f9ff;
+            --bg-info-card: #f8faff;
+            --bg-footer: #f8faff;
+            
+            --text-primary: #ffffff;
+            --text-secondary: #282f3d;
+            --text-muted: rgba(40, 47, 61, 0.7);
+            --text-success: #10388c;
+            
+            --border-color: rgba(96, 149, 198, 0.2);
+            --border-accent: #10388c;
+            --border-success: #6095c6;
+            
+            --link-color: #10388c;
+            --link-hover: #6095c6;
+        }
+        
+        /* Dark Mode Colors */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-body: #1a1f2e;
+                --bg-container: #242938;
+                --bg-header-start: #10388c;
+                --bg-header-end: #6095c6;
+                --bg-success-box: rgba(96, 149, 198, 0.1);
+                --bg-info-card: #2d3346;
+                --bg-footer: #1f2433;
+                
+                --text-primary: #ffffff;
+                --text-secondary: #e5e7eb;
+                --text-muted: rgba(229, 231, 235, 0.7);
+                --text-success: #6095c6;
+                
+                --border-color: rgba(96, 149, 198, 0.3);
+                --border-accent: #6095c6;
+                --border-success: #8ab4db;
+            }
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: var(--bg-body);
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: var(--bg-container);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(16, 56, 140, 0.15);
+        }
+        
+        /* Dark Mode: Stärkere Schatten */
+        @media (prefers-color-scheme: dark) {
+            .email-container {
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            }
+        }
+        
+        /* Header mit Gradient */
+        .email-header {
+            background: linear-gradient(135deg, var(--bg-header-start) 0%, var(--bg-header-end) 100%);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .email-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -30px); }
+        }
+        
+        .logo-wrapper {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 16px;
+        }
+        
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-subtitle {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 8px 0 0 0;
+            font-weight: 500;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .header-subtitle {
+                color: rgba(255, 255, 255, 0.95);
+            }
+        }
+        
+        /* Content Area */
+        .email-content {
+            padding: 40px 30px;
+        }
+        
+        /* Success Box */
+        .success-box {
+            background: var(--bg-success-box);
+            border: 2px solid var(--border-success);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        
+        .success-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        
+        .success-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-success);
+            margin: 0 0 12px 0;
+            letter-spacing: -0.01em;
+        }
+        
+        .success-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        /* Message Preview */
+        .message-preview {
+            background: var(--bg-info-card);
+            border-left: 4px solid var(--border-accent);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 32px;
+        }
+        
+        .preview-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        
+        .preview-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin: 0;
+            font-style: italic;
+        }
+        
+        /* Info Section */
+        .info-section {
+            margin-bottom: 32px;
+        }
+        
+        .info-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin: 0 0 16px 0;
+        }
+        
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .info-list li {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            padding-left: 24px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+        
+        .info-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--border-accent);
+            font-weight: bold;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .info-list li::before {
+                color: var(--border-success);
+            }
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--bg-info-card);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        
+        .contact-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin: 0 0 12px 0;
+        }
+        
+        .contact-info {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin: 0;
+        }
+        
+        .contact-info a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-info a:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        .email-footer {
+            background: var(--bg-footer);
+            padding: 24px 30px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-text {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 0 0 8px 0;
+        }
+        
+        .footer-address {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .footer-link {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .footer-link:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+        
+        .signature {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 24px 0 0 0;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="email-header">
+            <div class="logo-wrapper">
+                <h1 class="logo-text">FlowEdge AI</h1>
+            </div>
+            <p class="header-subtitle">Ihr Partner für KI-gestützte Workflow-Optimierung</p>
+        </div>
+        
+        <!-- Content -->
+        <div class="email-content">
+            <!-- Success Message -->
+            <div class="success-box">
+                <div class="success-icon">✅</div>
+                <h2 class="success-title">Nachricht erfolgreich erhalten!</h2>
+                <p class="success-text">
+                    Vielen Dank für Ihre Kontaktaufnahme. Wir haben Ihre Nachricht erhalten und werden uns schnellstmöglich bei Ihnen melden.
+                </p>
+            </div>
+            
+            <!-- Message Preview -->
+            <div class="message-preview">
+                <div class="preview-label">Ihre Nachricht:</div>
+                <p class="preview-text">"{{message}}"</p>
+            </div>
+            
+            <!-- What Happens Next -->
+            <div class="info-section">
+                <h3 class="info-title">📋 Wie geht es weiter?</h3>
+                <ul class="info-list">
+                    <li>Wir prüfen Ihre Anfrage innerhalb von 24 Stunden</li>
+                    <li>Sie erhalten eine persönliche Antwort von unserem Team</li>
+                    <li>Bei dringenden Anliegen können Sie uns auch telefonisch erreichen</li>
+                </ul>
+            </div>
+            
+            <!-- Contact Section -->
+            <div class="contact-section">
+                <h4 class="contact-title">💬 Dringende Fragen?</h4>
+                <p class="contact-info">
+                    Telefon: <a href="tel:+4915560814385">+49 15560 814 385</a><br>
+                    E-Mail: <a href="mailto:info@flowedge.de">info@flowedge.de</a>
+                </p>
+            </div>
+            
+            <!-- Signature -->
+            <p class="signature">
+                Mit freundlichen Grüßen<br>
+                <strong>Ihr FlowEdge AI Team</strong>
+            </p>
+        </div>
+        
+        <!-- Footer -->
+        <div class="email-footer">
+            <p class="footer-text">
+                <strong>FlowEdge AI</strong>
+            </p>
+            <p class="footer-address">
+                Königsallee 63 • 40215 Düsseldorf<br>
+                <a href="mailto:info@flowedge.de" class="footer-link">info@flowedge.de</a> • 
+                <a href="tel:+4915560814385" class="footer-link">+49 15560 814 385</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
