@@ -2,6 +2,14 @@
   command = "npm run build"
   publish = "dist/angular_FlowEdge_AI/browser"
 
+# Redirect www to non-www
+[[redirects]]
+  from = "https://www.flowedge.de/*"
+  to = "https://flowedge.de/:splat"
+  status = 301
+  force = true
+
+# Angular SPA routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
