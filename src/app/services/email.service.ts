@@ -14,16 +14,11 @@ export interface EmailData {
 })
 export class EmailService {
   // EmailJS Konfiguration für Microsoft Outlook
-  // TODO: Nach EmailJS-Setup diese Werte durch Ihre eigenen ersetzen:
-  // 1. Gehe zu https://dashboard.emailjs.com/admin
-  // 2. Kopiere deine Service ID (Email Services)
-  // 3. Kopiere beide Template IDs (Email Templates)
-  // 4. Kopiere deinen Public Key (Account → General)
+  // Einfacher Workflow: Kunde sendet → Du erhältst E-Mail → Keine Auto-Reply
   
   private readonly SERVICE_ID = 'service_3sythiy';           // Outlook Service
-  private readonly TEMPLATE_NOTIFICATION = 'template_spgd84g';  // Template: An dich (Auto-Reply = Benachrichtigung)
-  private readonly TEMPLATE_CONFIRMATION = 'template_924xkrg';  // Template: An Kunde (Welcome = Bestätigung)
-  private readonly PUBLIC_KEY = 'o3pAfQOWRpEuNjHBK';            // Public Key
+  private readonly TEMPLATE_ID = 'template_spgd84g';         // Template: Kundenanfrage an info@flowedge.de
+  private readonly PUBLIC_KEY = 'o3pAfQOWRpEuNjHBK';         // Public Key
 
   constructor() {
     // Initialize EmailJS
@@ -39,24 +34,24 @@ export class EmailService {
         company: data.company || 'Nicht angegeben',
         phone: data.phone || 'Nicht angegeben',
         message: data.message,
-        to_name: data.from_name, // Für personalisierte Kundenmail
-        reply_to: data.from_email // Wichtig für Auto-Reply
+        reply_to: data.from_email // Ermöglicht direktes Antworten auf Kundenanfrage
       };
 
-      console.log('📧 Sende E-Mail mit Parametern:', templateParams);
+      console.log('📧 Sende Kundenanfrage an info@flowedge.de:', templateParams);
 
-      // Sende NUR das Notification-Template
-      // Die Kundenbestätigung wird automatisch via Auto-Reply in EmailJS gesendet
+      // Sende E-Mail nur an dich (info@flowedge.de)
+      // KEIN Auto-Reply → Kunde erhält keine automatische Bestätigung per E-Mail
+      // Bestätigung erfolgt nur über UI auf der Webseite
       const response = await emailjs.send(
         this.SERVICE_ID,
-        this.TEMPLATE_NOTIFICATION, // Template: Auto-Reply (mit aktivierter Auto-Reply Funktion)
+        this.TEMPLATE_ID,
         templateParams
       );
 
       console.log('✅ E-Mail-Status:', response.status, response.text);
       
       if (response.status === 200) {
-        console.log('✅ Benachrichtigung gesendet + Auto-Reply aktiviert');
+        console.log('✅ Kundenanfrage erfolgreich gesendet');
         return true;
       }
       
