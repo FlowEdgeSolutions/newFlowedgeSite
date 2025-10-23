@@ -12,6 +12,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ImpressumComponent } from './pages/impressum/impressum.component';
 import { DatenschutzComponent } from './pages/datenschutz/datenschutz.component';
 import { AgbComponent } from './pages/agb/agb.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 
 // Main Home Component
 @Component({
@@ -42,6 +44,8 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'philosophie', component: PhilosophyComponent },
   { path: 'loesungen', component: SolutionsPageComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'blog/:id', component: BlogDetailComponent },
   { path: 'kontakt', component: ContactComponent },
   { path: 'impressum', component: ImpressumComponent },
   { path: 'datenschutz', component: DatenschutzComponent },

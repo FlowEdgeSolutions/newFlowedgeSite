@@ -1,0 +1,54 @@
+<div class="blog-detail-page" *ngIf="post">
+  <!-- Header -->
+  <section class="detail-hero">
+    <div class="container">
+      <button class="back-btn" (click)="goBack()">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Zurück zum Blog
+      </button>
+
+      <div class="hero-content">
+        <div class="category-tag">{{ post.category }}</div>
+        <h1 class="article-title">{{ post.title }}</h1>
+        <p class="article-subtitle">{{ post.subtitle }}</p>
+        
+        <div class="article-meta">
+          <span class="author">{{ post.author }}</span>
+          <span class="separator">·</span>
+          <span class="date">{{ post.date }}</span>
+          <span class="separator">·</span>
+          <span class="read-time">{{ post.readTime }}</span>
+        </div>
+
+        <div class="tags">
+          @for (tag of post.tags; track tag) {
+            <span class="tag">{{ tag }}</span>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <section class="article-section">
+    <div class="container">
+      <article class="article-content" [innerHTML]="post.content"></article>
+
+      <!-- CTA Box -->
+      <div class="article-cta">
+        <div class="cta-content">
+          <h3>Interessiert an unseren Lösungen?</h3>
+          <p>Lassen Sie uns gemeinsam Ihre KI-Strategie entwickeln – strategisch durchdacht, technologisch präzise und praxisnah umgesetzt.</p>
+          <button class="cta-button" (click)="scrollToContact()">
+            Strategiegespräch starten
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,6 +1,59 @@
 <section class="mission-teaser">
   <div class="container">
     <div class="mission-content">
+      <!-- Mission Icon -->
+      <div class="mission-icon-wrapper">
+        <!-- Brain Icon with Neural Network -->
+        <svg class="mission-icon" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Brain outline -->
+          <path d="M60 20C45 20 35 30 32 40C30 35 25 32 20 35C15 38 15 45 18 50C15 52 12 56 12 62C12 68 15 72 20 74C18 78 18 84 22 88C26 92 32 92 36 90C38 95 42 100 50 100C52 100 54 99 56 98C58 99 60 100 62 100C70 100 76 95 78 88C82 90 88 90 92 86C96 82 96 76 94 72C99 70 102 66 102 60C102 54 99 50 96 48C99 43 99 36 94 32C89 28 84 31 82 36C79 26 69 20 60 20Z" 
+                stroke="url(#brainGradient)" stroke-width="3" fill="rgba(96, 149, 198, 0.05)"/>
+          
+          <!-- Neural connections -->
+          <circle cx="40" cy="45" r="4" fill="#10388c">
+            <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="60" cy="50" r="4" fill="#6095c6">
+            <animate attributeName="opacity" values="1;0.3;1" dur="2.5s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="80" cy="48" r="4" fill="#10388c">
+            <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="50" cy="70" r="4" fill="#6095c6">
+            <animate attributeName="opacity" values="1;0.4;1" dur="2.2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="70" cy="72" r="4" fill="#10388c">
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" repeatCount="indefinite"/>
+          </circle>
+          
+          <!-- Connection lines -->
+          <line x1="40" y1="45" x2="60" y2="50" stroke="url(#lineGradient)" stroke-width="2" opacity="0.4">
+            <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2s" repeatCount="indefinite"/>
+          </line>
+          <line x1="60" y1="50" x2="80" y2="48" stroke="url(#lineGradient)" stroke-width="2" opacity="0.4">
+            <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2.5s" repeatCount="indefinite"/>
+          </line>
+          <line x1="60" y1="50" x2="50" y2="70" stroke="url(#lineGradient)" stroke-width="2" opacity="0.4">
+            <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.2s" repeatCount="indefinite"/>
+          </line>
+          <line x1="60" y1="50" x2="70" y2="72" stroke="url(#lineGradient)" stroke-width="2" opacity="0.4">
+            <animate attributeName="opacity" values="0.7;0.3;0.7" dur="2.8s" repeatCount="indefinite"/>
+          </line>
+          
+          <!-- Gradients -->
+          <defs>
+            <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#10388c"/>
+              <stop offset="100%" stop-color="#6095c6"/>
+            </linearGradient>
+            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#10388c"/>
+              <stop offset="100%" stop-color="#6095c6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      
       <div class="mission-text">
         <h2 class="mission-title">Unsere Mission</h2>
         <p class="mission-description">
@@ -12,12 +65,12 @@
         </p>
       </div>
       <div class="mission-link">
-        <a routerLink="/philosophie" class="mission-button">
-          Mehr über unsere Mission
+        <button (click)="scrollToContact()" class="mission-button">
+          Strategiegespräch starten
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-        </a>
+        </button>
       </div>
     </div>
   </div>

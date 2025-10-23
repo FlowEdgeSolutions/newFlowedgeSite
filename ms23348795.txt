@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Überprüfungsdatei für Domänen-Eigentümerschaft für Microsoft 365-Position im Website-Root",
+  "Domain": "flowedge.de",
+  "Id": "9daf15cb-854e-4634-9e47-36f265074a87"
+}

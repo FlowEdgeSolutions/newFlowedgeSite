@@ -1,0 +1,109 @@
+<div class="blog-page">
+  <!-- Hero Section -->
+  <section class="blog-hero">
+    <div class="hero-background">
+      <div class="flow-particle particle-1"></div>
+      <div class="flow-particle particle-2"></div>
+      <div class="flow-particle particle-3"></div>
+    </div>
+    
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title animate-fade-in">
+          FlowEdge AI Blog
+        </h1>
+        <p class="hero-subtitle animate-slide-up">
+          Einblicke in KI-Strategie, Automatisierung und intelligente Lösungen
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Filter -->
+  <section class="category-section">
+    <div class="container">
+      <div class="category-filter">
+        @for (category of categories; track category) {
+          <button 
+            class="category-btn" 
+            [class.active]="selectedCategory === category"
+            (click)="selectCategory(category)">
+            {{ category }}
+          </button>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Posts Grid -->
+  <section class="blog-posts-section">
+    <div class="container">
+      <div class="posts-grid">
+        @for (post of filteredPosts; track post.id; let i = $index) {
+          <article class="blog-card animate-slide-up-{{ i + 1 }}">
+            <!-- Card Image -->
+            <div class="card-image-wrapper">
+              <div class="card-image-placeholder">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                  @if (post.category === 'Strategie') {
+                    <!-- Schach-Springer Icon -->
+                    <path d="M30 20L35 15L40 20L45 15L50 25L45 30L50 35L45 40L35 35L30 40L25 30L30 25L25 20L30 20Z" 
+                          stroke="url(#iconGradient)" stroke-width="2.5" fill="rgba(96, 149, 198, 0.1)"/>
+                  }
+                  @if (post.category === 'Automatisierung') {
+                    <!-- Zahnrad Icon -->
+                    <circle cx="40" cy="40" r="12" stroke="url(#iconGradient)" stroke-width="2.5" fill="rgba(96, 149, 198, 0.1)"/>
+                    <path d="M40 20V28M40 52V60M60 40H52M28 40H20M52.5 27.5L46.5 33.5M33.5 46.5L27.5 52.5M52.5 52.5L46.5 46.5M33.5 33.5L27.5 27.5" 
+                          stroke="url(#iconGradient)" stroke-width="2.5" stroke-linecap="round"/>
+                  }
+                  @if (post.category === 'KI-Entwicklung') {
+                    <!-- Gehirn Icon -->
+                    <circle cx="30" cy="35" r="3" fill="#10388c"/>
+                    <circle cx="40" cy="40" r="3" fill="#6095c6"/>
+                    <circle cx="50" cy="37" r="3" fill="#10388c"/>
+                    <line x1="30" y1="35" x2="40" y2="40" stroke="url(#iconGradient)" stroke-width="2"/>
+                    <line x1="40" y1="40" x2="50" y2="37" stroke="url(#iconGradient)" stroke-width="2"/>
+                  }
+                  <defs>
+                    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#10388c"/>
+                      <stop offset="100%" stop-color="#6095c6"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Card Content -->
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="category-tag">{{ post.category }}</span>
+                <span class="read-time">{{ post.readTime }}</span>
+              </div>
+              
+              <h2 class="card-title">{{ post.title }}</h2>
+              <p class="card-subtitle">{{ post.subtitle }}</p>
+              <p class="card-excerpt">{{ post.excerpt }}</p>
+              
+              <div class="card-footer">
+                <div class="author-info">
+                  <span class="author">{{ post.author }}</span>
+                  <span class="date">{{ post.date }}</span>
+                </div>
+                <button class="read-more-btn" (click)="readMore(post.id)">
+                  Weiterlesen
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Glass Effect -->
+            <div class="card-glass-effect"></div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+</div>

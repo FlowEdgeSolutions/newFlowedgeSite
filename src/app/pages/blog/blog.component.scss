@@ -1,0 +1,348 @@
+.blog-page {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+// Hero Section
+.blog-hero {
+  position: relative;
+  padding: 180px 0 100px;
+  background: linear-gradient(135deg, rgba(16, 56, 140, 0.03) 0%, rgba(96, 149, 198, 0.05) 100%);
+  overflow: hidden;
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+  .flow-particle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(96, 149, 198, 0.15) 0%, transparent 70%);
+    filter: blur(40px);
+    animation: float 20s ease-in-out infinite;
+
+    &.particle-1 {
+      top: -100px;
+      left: -100px;
+      animation-delay: 0s;
+    }
+
+    &.particle-2 {
+      top: 50%;
+      right: -150px;
+      animation-delay: 5s;
+    }
+
+    &.particle-3 {
+      bottom: -100px;
+      left: 50%;
+      animation-delay: 10s;
+    }
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #10388c, #6095c6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.02em;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.hero-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  color: rgba(40, 47, 61, 0.8);
+  line-height: 1.6;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+// Category Section
+.category-section {
+  padding: 2rem 0;
+  background: white;
+  border-bottom: 1px solid rgba(96, 149, 198, 0.15);
+}
+
+.category-filter {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  font-family: 'Space Grotesk', sans-serif;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(40, 47, 61, 0.7);
+  background: rgba(96, 149, 198, 0.05);
+  border: 2px solid transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #10388c;
+    background: rgba(96, 149, 198, 0.1);
+  }
+
+  &.active {
+    color: white;
+    background: linear-gradient(135deg, #10388c, #6095c6);
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(16, 56, 140, 0.2);
+  }
+}
+
+// Blog Posts Section
+.blog-posts-section {
+  padding: 80px 0 120px;
+  background: #ffffff;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+// Blog Card
+.blog-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(96, 149, 198, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(16, 56, 140, 0.08);
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(16, 56, 140, 0.15);
+    border-color: rgba(96, 149, 198, 0.4);
+
+    .card-glass-effect {
+      opacity: 1;
+    }
+
+    .read-more-btn svg {
+      transform: translateX(4px);
+    }
+  }
+}
+
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(16, 56, 140, 0.05) 0%, rgba(96, 149, 198, 0.08) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(96, 149, 198, 0.15);
+}
+
+.card-image-placeholder {
+  filter: drop-shadow(0 4px 12px rgba(16, 56, 140, 0.15));
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.category-tag {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.375rem 0.875rem;
+  background: linear-gradient(135deg, #10388c, #6095c6);
+  color: white;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.read-time {
+  font-size: 0.875rem;
+  color: rgba(40, 47, 61, 0.6);
+  font-weight: 500;
+}
+
+.card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #282f3d;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6095c6;
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+}
+
+.card-excerpt {
+  font-size: 0.9375rem;
+  color: rgba(40, 47, 61, 0.75);
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(96, 149, 198, 0.15);
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.author {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #282f3d;
+}
+
+.date {
+  font-size: 0.8125rem;
+  color: rgba(40, 47, 61, 0.6);
+}
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #10388c;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    color: #6095c6;
+  }
+}
+
+.card-glass-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(96, 149, 198, 0.05) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+// Animations
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out 0.2s both;
+}
+
+@for $i from 1 through 3 {
+  .animate-slide-up-#{$i} {
+    animation: slideUp 0.8s ease-out #{$i * 0.15}s both;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
