@@ -13,7 +13,8 @@ import {
   heroLink,
   heroRocketLaunch,
   heroLightBulb,
-  heroChartBar
+  heroChartBar,
+  heroCog6Tooth
 } from '@ng-icons/heroicons/outline';
 
 @Component({
@@ -33,7 +34,8 @@ import {
     heroLink,
     heroRocketLaunch,
     heroLightBulb,
-    heroChartBar
+    heroChartBar,
+    heroCog6Tooth
   })]
 })
 export class PhilosophyComponent {
