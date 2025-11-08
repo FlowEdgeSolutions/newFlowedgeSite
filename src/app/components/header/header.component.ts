@@ -10,6 +10,7 @@ import { Router, RouterLink } from '@angular/router';
 export class HeaderComponent {
   isScrolled = signal(false);
   isMobileMenuOpen = signal(false);
+  isDropdownOpen = signal(false);
 
   constructor(private router: Router) {}
 
@@ -40,5 +41,22 @@ export class HeaderComponent {
     this.router.navigate(['/']).then(() => {
       window.scrollTo({ top: 0, behavior: 'instant' });
     });
+  }
+
+  showDropdown() {
+    this.isDropdownOpen.set(true);
+  }
+
+  hideDropdown() {
+    this.isDropdownOpen.set(false);
+  }
+
+  navigateToSolution(solution: string) {
+    // Hier können Sie später zu spezifischen Lösungsseiten navigieren
+    this.router.navigate(['/loesungen'], { fragment: solution }).then(() => {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    });
+    this.isDropdownOpen.set(false);
+    this.closeMobileMenu();
   }
 }

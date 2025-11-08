@@ -3,8 +3,8 @@
     <nav class="nav">
       <div class="logo" (click)="navigateToHome()" style="cursor: pointer;">
         <div class="logo-container">
-          <img src="/Logo/logo_icon.png" alt="FlowEdge AI Icon" class="logo-icon">
-          <span class="logo-text-gradient">FlowEdge AI</span>
+          <img src="/Logo/logo_icon.png" alt="FlowEdge Solutions Icon" class="logo-icon">
+          <span class="logo-text-gradient">FlowEdge Solutions</span>
         </div>
       </div>
 
@@ -17,7 +17,67 @@
       <ul class="nav-menu" [class.active]="isMobileMenuOpen()">
         <li><a routerLink="/" (click)="closeMobileMenu()">Home</a></li>
         <li><a routerLink="/philosophie" (click)="closeMobileMenu()">Mission</a></li>
-        <li><a routerLink="/loesungen" (click)="closeMobileMenu()">Lösungen</a></li>
+        <li class="dropdown" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+          <a class="dropdown-toggle" [class.active]="isDropdownOpen()">
+            Lösungen
+            <svg class="dropdown-arrow" [class.rotated]="isDropdownOpen()" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+              <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="dropdown-menu" [class.show]="isDropdownOpen()">
+            <div class="dropdown-header">
+              <h3>Aider KI-Agenten</h3>
+              <p>Intelligente AI-Lösungen für verschiedene Anwendungsbereiche</p>
+            </div>
+            <div class="dropdown-grid">
+              <a class="dropdown-item" (click)="navigateToSolution('voiceaider')">
+                <div class="item-icon voice-icon">
+                  <img src="/mockup/tel.avif" alt="VoiceAider AI" class="icon-image">
+                </div>
+                <div class="item-content">
+                  <h4>VoiceAider AI</h4>
+                  <p>Spracherkennung & -verarbeitung</p>
+                </div>
+              </a>
+              <a class="dropdown-item" (click)="navigateToSolution('mailaider')">
+                <div class="item-icon mail-icon">
+                  <img src="/mockup/Doc2.avif" alt="MailAider AI" class="icon-image">
+                </div>
+                <div class="item-content">
+                  <h4>MailAider AI</h4>
+                  <p>E-Mail-Automatisierung</p>
+                </div>
+              </a>
+              <a class="dropdown-item" (click)="navigateToSolution('legalaider')">
+                <div class="item-icon legal-icon">
+                  <img src="/mockup/doc1.avif" alt="LegalAider AI" class="icon-image">
+                </div>
+                <div class="item-content">
+                  <h4>LegalAider AI</h4>
+                  <p>Rechtliche Dokumentenanalyse</p>
+                </div>
+              </a>
+              <a class="dropdown-item" (click)="navigateToSolution('writeaider')">
+                <div class="item-icon write-icon">
+                  <img src="/mockup/schreib.avif" alt="WriteAider AI" class="icon-image">
+                </div>
+                <div class="item-content">
+                  <h4>WriteAider AI</h4>
+                  <p>Content-Erstellung & Copywriting</p>
+                </div>
+              </a>
+              <a class="dropdown-item" (click)="navigateToSolution('medaider')">
+                <div class="item-icon med-icon">
+                  <img src="/mockup/person.avif" alt="MedAider AI" class="icon-image">
+                </div>
+                <div class="item-content">
+                  <h4>MedAider AI</h4>
+                  <p>Medizinische Datenanalyse</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
         <li><a routerLink="/blog" (click)="closeMobileMenu()">Blog</a></li>
         <li><a routerLink="/kontakt" (click)="closeMobileMenu()">Kontakt</a></li>
       </ul>
