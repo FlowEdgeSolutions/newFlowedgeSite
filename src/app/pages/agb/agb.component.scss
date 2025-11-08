@@ -2,8 +2,8 @@
 // AGB PAGE STYLES
 // ========================================
 
-// Importiere gemeinsame Legal-Styles
-@import '../impressum/impressum.component.scss';
+// Importiere gemeinsame Legal-Styles mit @use statt @import
+@use '../impressum/impressum.component.scss';
 
 // AGB-spezifische Ergänzungen
 .agb-page {

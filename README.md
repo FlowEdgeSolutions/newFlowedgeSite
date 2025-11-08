@@ -1,4 +1,4 @@
-# FlowEdge AI
+# FlowEdge Solutions
 
 Eine moderne, professionelle Website für IT-Beratung, Prozessautomatisierung und KI-Entwicklung.
 
@@ -112,7 +112,7 @@ npm run build
 
 ## 📞 Kontakt
 
-**FlowEdge AI**
+**FlowEdge Solutions**
 - **Inhaber**: Khaled Ayub
 - **Adresse**: Königsallee 63, 40215 Düsseldorf
 - **E-Mail**: info@flowedge.de
@@ -121,4 +121,4 @@ npm run build
 
 ## 📝 Lizenz
 
-© 2025 FlowEdge AI · Alle Rechte vorbehalten
+© 2025 FlowEdge Solutions · Alle Rechte vorbehalten

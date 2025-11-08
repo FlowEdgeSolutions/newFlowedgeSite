@@ -28,7 +28,7 @@ export class AiSolutionComponent {
       features: [
         'Entwicklung auf Wunsch (Azure, M365, eigene APIs)',
         'Schnelle Prototypen, stabile Produktivsysteme',
-        'Betrieb, Monitoring & Support durch FlowEdge AI'
+        'Betrieb, Monitoring & Support durch FlowEdge Solutions'
       ],
       icon: 'development'
     }

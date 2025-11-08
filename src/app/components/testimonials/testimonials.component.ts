@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 export class TestimonialsComponent {
   testimonials = [
     {
-      quote: 'FlowEdge AI hat uns geholfen, KI strategisch in unsere Prozesse zu integrieren. Die Beratung war praxisnah und die Umsetzung schnell und professionell.',
+      quote: 'FlowEdge Solutions hat uns geholfen, KI strategisch in unsere Prozesse zu integrieren. Die Beratung war praxisnah und die Umsetzung schnell und professionell.',
       author: 'Dr. Michael Schneider',
       position: 'Geschäftsführer',
       company: 'TechVision GmbH',
@@ -25,7 +25,7 @@ export class TestimonialsComponent {
       rating: 5
     },
     {
-      quote: 'Besonders beeindruckend war das Change Management. FlowEdge AI hat unser Team optimal auf die neuen KI-Tools vorbereitet – die Akzeptanz ist enorm hoch.',
+      quote: 'Besonders beeindruckend war das Change Management. FlowEdge Solutions hat unser Team optimal auf die neuen KI-Tools vorbereitet – die Akzeptanz ist enorm hoch.',
       author: 'Thomas Müller',
       position: 'IT-Leiter',
       company: 'Innovation Labs',

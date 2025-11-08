@@ -93,7 +93,7 @@ export class BlogDetailComponent implements OnInit {
 
         <p><strong>Bereit für Ihre KI-Strategie?</strong> Lassen Sie uns gemeinsam Ihre Roadmap entwickeln.</p>
       `,
-      author: 'FlowEdge AI Team',
+      author: 'FlowEdge Solutions Team',
       date: '2025-01-15',
       readTime: '8 Min.',
       category: 'Strategie',
@@ -181,7 +181,7 @@ export class BlogDetailComponent implements OnInit {
 
         <p><strong>Bereit, Ihre Prozesse zu optimieren?</strong> Lassen Sie uns gemeinsam Ihre Automatisierungspotenziale identifizieren.</p>
       `,
-      author: 'FlowEdge AI Team',
+      author: 'FlowEdge Solutions Team',
       date: '2025-01-10',
       readTime: '6 Min.',
       category: 'Automatisierung',
@@ -317,7 +317,7 @@ export class BlogDetailComponent implements OnInit {
 
         <p><strong>Bereit für den nächsten Schritt?</strong> Lassen Sie uns Ihre KI-Integration gemeinsam planen und umsetzen.</p>
       `,
-      author: 'FlowEdge AI Team',
+      author: 'FlowEdge Solutions Team',
       date: '2025-01-05',
       readTime: '10 Min.',
       category: 'KI-Entwicklung',

@@ -16,5 +16,5 @@ import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.
   styleUrl: './app.scss'
 })
 export class App {
-  title = 'FlowEdge AI';
+  title = 'FlowEdge Solutions';
 }

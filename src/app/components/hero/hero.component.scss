@@ -1,68 +1,6 @@
 // ========================================
-// MIXINS - Wiederverwendbare Styles
+// HERO COMPONENT STYLES - Optimized
 // ========================================
-
-// Glasmorphismus-Basis
-@mixin glass-base($bg-color, $blur: 20px, $border-opacity: 0.3) {
-  background: $bg-color;
-  backdrop-filter: blur($blur);
-  -webkit-backdrop-filter: blur($blur);
-  border: 1px solid rgba(255, 255, 255, $border-opacity);
-}
-
-// Glasreflexion-Effekt
-@mixin glass-reflection($angle: 135deg) {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    $angle,
-    rgba(255, 255, 255, 0.4) 0%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.2) 100%
-  );
-  transform: rotate(45deg);
-  pointer-events: none;
-}
-
-// Shimmer-Effekt
-@mixin shimmer-effect {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  animation: shimmer 3s infinite;
-  pointer-events: none;
-}
-
-// Wasser-Wellen-Effekt
-@mixin water-ripple {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    circle at 50% 120%,
-    rgba(96, 149, 198, 0.3) 0%,
-    transparent 70%
-  );
-  animation: waterRipple 4s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 1;
-}
 
 // ========================================
 // HERO SECTION
@@ -464,12 +402,7 @@
   }
 }
 
-@keyframes shimmerBadge {
-  0% { left: -100%; }
-  100% { left: 200%; }
-}
-
-// Industry Cards entfernt
+// Unused keyframes removed for optimization
 
 // ========================================
 // KEYFRAME ANIMATIONEN
@@ -501,21 +434,7 @@
   }
 }
 
-@keyframes shimmer {
-  0% { left: -100%; }
-  100% { left: 100%; }
-}
-
-@keyframes waterRipple {
-  0%, 100% {
-    transform: scale(1) translateY(0);
-    opacity: 0.3;
-  }
-  50% {
-    transform: scale(1.1) translateY(-5px);
-    opacity: 0.5;
-  }
-}
+// Optimized keyframes - removed unused shimmer and waterRipple
 
 @keyframes slideUp {
   from {
@@ -612,13 +531,7 @@
   opacity: 0;
 }
 
-.animate-slide-left {
-  --slide-x: 30px;
-  animation: slideHorizontal 0.6s ease-out 0.5s forwards;
-  opacity: 0;
-}
-
-// Card Animation Klassen entfernt
+// Unused slide animations removed for optimization
 
 .animate-bounce {
   animation: bounce 2s ease-in-out infinite;
@@ -684,88 +597,7 @@
     height: 360px;
   }
   
-  // Cards für Tablet anpassen
-  .flip-card {
-    width: 180px;
-    height: 220px;
-    
-    &.card-1 {
-      top: 10%;
-      right: 25%;
-    }
-    
-    &.card-2 {
-      top: 54%;
-      right: 10%;
-    }
-    
-    &.card-3 {
-      top: 54%;
-      left: 10%;
-    }
-  }
-  
-  .card-icon {
-    width: 56px;
-    height: 56px;
-  }
-  
-  .card-title {
-    font-size: 1.125rem;
-  }
-  
-  .card-back-title {
-    font-size: 1rem;
-  }
-  
-  .card-back-text {
-    font-size: 0.85rem;
-  }
-  
-  .card-flip-container {
-    width: 160px;
-    height: 180px;
-    
-    &.card-1 {
-      right: 12rem;
-      top: calc(55% - 90px);
-    }
-    
-    &.card-2 {
-      right: 5rem;
-      top: calc(35% - 90px);
-    }
-    
-    &.card-3 {
-      right: -1.5rem;
-      top: calc(55% - 90px);
-    }
-  }
-  
-  .card-front,
-  .card-back {
-    padding: 1.25rem 1rem;
-  }
-  
-  .card-icon {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 0.75rem;
-  }
-  
-  .card-title {
-    font-size: 0.95rem;
-  }
-  
-  .feature-item {
-    font-size: 0.75rem;
-    gap: 0.5rem;
-    
-    .feature-icon {
-      width: 14px;
-      height: 14px;
-    }
-  }
+  // Tablet optimizations removed - not used
 }
 
 @media (max-width: 768px) {
@@ -902,11 +734,7 @@
     font-size: 0.7rem;
   }
   
-  // Industry Cards ausblenden auf Mobile
-  .industry-cards,
-  .card-flip-container {
-    display: none;
-  }
+  // Unused elements hidden on mobile
 }
 
 // Small Mobile Optimierungen
