@@ -14,6 +14,7 @@ import { DatenschutzComponent } from './pages/datenschutz/datenschutz.component'
 import { AgbComponent } from './pages/agb/agb.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
+import { VoiceaiderAi } from './pages/voiceaider-ai/voiceaider-ai';
 
 // Main Home Component
 @Component({
@@ -44,6 +45,7 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'philosophie', component: PhilosophyComponent },
   { path: 'loesungen', component: SolutionsPageComponent },
+  { path: 'loesungen/voiceaider-ai', component: VoiceaiderAi },
   { path: 'blog', component: BlogComponent },
   { path: 'blog/:id', component: BlogDetailComponent },
   { path: 'kontakt', component: ContactComponent },

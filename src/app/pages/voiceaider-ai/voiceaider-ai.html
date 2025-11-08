@@ -1,0 +1,224 @@
+<!-- VoiceAider AI Page -->
+<div class="voiceaider-page">
+  
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            VoiceAider AI – Ihr intelligenter Telefonassistent.
+          </h1>
+          <p class="hero-subtitle">
+            VoiceAider AI führt Kundengespräche, vereinbart Termine, nimmt Anrufe entgegen und ruft aktiv Kunden an – 24/7, mehrsprachig und vollständig DSGVO-konform.
+          </p>
+          <div class="hero-cta">
+            <button class="btn btn-primary" (click)="requestDemo()">
+              👉 Demo vereinbaren
+            </button>
+            <button class="btn btn-secondary" (click)="testLiveCall()">
+              📞 Live-Anruf testen
+            </button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="phone-animation">
+            <div class="phone-device">
+              <div class="phone-screen">
+                <div class="voice-wave wave-1"></div>
+                <div class="voice-wave wave-2"></div>
+                <div class="voice-wave wave-3"></div>
+                <div class="voice-wave wave-4"></div>
+              </div>
+            </div>
+            <div class="floating-particles">
+              <div class="particle"></div>
+              <div class="particle"></div>
+              <div class="particle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1 - Was VoiceAider AI kann -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Automatisierte Anrufe, die klingen wie echte Gespräche.</h2>
+        <p class="section-description">
+          VoiceAider AI übernimmt Ihre Telefonkommunikation – freundlich, zuverlässig und immer erreichbar.
+          Der KI-Agent erkennt Anliegen, beantwortet Fragen, leitet bei Bedarf weiter oder erstellt Termine direkt in Ihrem Kalender.
+          Auch Outbound-Anrufe für Erinnerungen oder Vertriebsaktionen sind möglich.
+        </p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card" *ngFor="let feature of features">
+          <div class="feature-icon">{{ feature.icon }}</div>
+          <h3 class="feature-title">{{ feature.title }}</h3>
+          <p class="feature-description">{{ feature.description }}</p>
+        </div>
+      </div>
+      
+      <div class="section-cta">
+        <button class="btn btn-primary" (click)="requestDemo()">
+          Jetzt Demo anfordern
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 - So funktioniert es -->
+  <section class="how-it-works-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Einfache Integration, sofort startklar.</h2>
+      </div>
+      
+      <div class="steps-container">
+        <div class="step" *ngFor="let step of steps; let i = index">
+          <div class="step-number">{{ i + 1 }}</div>
+          <div class="step-content">
+            <h3 class="step-title">{{ step.title }}</h3>
+            <p class="step-description">{{ step.description }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <div class="info-icon">💡</div>
+        <p>
+          <strong>Keine zusätzliche Hardware. Kein Callcenter.</strong><br>
+          Nur intelligente Software, die im Hintergrund arbeitet.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 - Warum VoiceAider AI -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Schluss mit verpassten Anrufen und langen Warteschleifen.</h2>
+      </div>
+      
+      <div class="benefits-grid">
+        <div class="benefit-item" *ngFor="let benefit of benefits">
+          <div class="benefit-icon">✅</div>
+          <p class="benefit-text">{{ benefit }}</p>
+        </div>
+      </div>
+      
+      <div class="testimonial-box">
+        <blockquote>
+          „Seit VoiceAider AI verpassen wir keinen Anruf mehr – und unsere Kunden werden sofort betreut."
+        </blockquote>
+        <cite>– Beispielkunde (Praxis, Agentur o. Ä.)</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 - Anwendungsbeispiele -->
+  <section class="use-cases-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Vielfältige Einsatzmöglichkeiten in verschiedenen Branchen.</h2>
+      </div>
+      
+      <div class="use-cases-grid">
+        <div class="use-case-card" *ngFor="let useCase of useCases">
+          <div class="use-case-icon">{{ useCase.icon }}</div>
+          <h3 class="use-case-title">{{ useCase.title }}</h3>
+          <p class="use-case-description">{{ useCase.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5 - Datenschutz & Integration -->
+  <section class="privacy-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Datenschutz made in Germany – nahtlos integriert in Ihre Systeme.</h2>
+        <p class="section-description">
+          VoiceAider AI verarbeitet alle Gesprächsdaten DSGVO-konform in europäischen Rechenzentren.
+          Die Lösung lässt sich mühelos in Microsoft 365, Teams, Power Automate oder CRM-Systeme integrieren.
+        </p>
+      </div>
+      
+      <div class="compliance-badges">
+        <div class="badge">
+          <div class="badge-icon">🔒</div>
+          <span>DSGVO Compliant</span>
+        </div>
+        <div class="badge">
+          <div class="badge-icon">🇪🇺</div>
+          <span>EU Hosting</span>
+        </div>
+        <div class="badge">
+          <div class="badge-icon">🤝</div>
+          <span>Microsoft Partner</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6 - Preise -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Starten Sie einfach – ganz ohne Risiko.</h2>
+        <p class="section-description">
+          Testen Sie VoiceAider AI kostenlos in einer Live-Demo oder beginnen Sie direkt mit dem Einstiegspaket.
+        </p>
+      </div>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card" *ngFor="let plan of pricingPlans">
+          <div class="plan-header">
+            <h3 class="plan-name">{{ plan.name }}</h3>
+            <div class="plan-price">
+              <span class="price">{{ plan.price }}</span>
+              <span class="period" *ngIf="plan.period">{{ plan.period }}</span>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li *ngFor="let feature of plan.features">{{ feature }}</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="pricing-cta">
+        <button class="btn btn-primary" (click)="requestDemo()">
+          Demo buchen
+        </button>
+        <button class="btn btn-secondary" (click)="requestQuote()">
+          Individuelles Angebot anfordern
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7 - Final CTA -->
+  <section class="final-cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Lassen Sie VoiceAider AI für Sie sprechen.</h2>
+        <p>
+          Keine verpassten Anrufe mehr, keine Wartezeiten – einfach intelligente Kommunikation.
+        </p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary" (click)="requestDemo()">
+            Jetzt kostenlose Demo vereinbaren
+          </button>
+          <button class="btn btn-secondary" (click)="bookConsultation()">
+            Beratungsgespräch buchen
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

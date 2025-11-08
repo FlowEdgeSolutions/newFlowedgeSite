@@ -52,8 +52,25 @@ export class HeaderComponent {
   }
 
   navigateToSolution(solution: string) {
-    // Hier können Sie später zu spezifischen Lösungsseiten navigieren
-    this.router.navigate(['/loesungen'], { fragment: solution }).then(() => {
+    // Navigation zu spezifischen Lösungsseiten
+    let route = '/loesungen';
+    
+    switch(solution) {
+      case 'voiceaider':
+        route = '/loesungen/voiceaider-ai';
+        break;
+      case 'mailaider':
+      case 'legalaider':
+      case 'writeaider':
+      case 'medaider':
+        // Für zukünftige Seiten
+        route = `/loesungen/${solution}-ai`;
+        break;
+      default:
+        route = '/loesungen';
+    }
+    
+    this.router.navigate([route]).then(() => {
       window.scrollTo({ top: 0, behavior: 'instant' });
     });
     this.isDropdownOpen.set(false);
