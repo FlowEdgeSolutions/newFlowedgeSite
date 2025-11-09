@@ -1,68 +1,158 @@
 <section id="hero" class="hero">
-  <!-- SVG Symbol Definitions -->
-  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <symbol id="icon-check" viewBox="0 0 24 24">
-        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      </symbol>
-      <symbol id="icon-strategy" viewBox="0 0 24 24">
-        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      </symbol>
-      <symbol id="icon-implementation" viewBox="0 0 24 24">
-        <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      </symbol>
-      <symbol id="icon-change" viewBox="0 0 24 24">
-        <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      </symbol>
-    </defs>
-  </svg>
-
   <div class="container">
     <div class="hero-content">
-      <div class="hero-text">
-        <div class="hero-logo-wrapper animate-slide-up">
-          <img src="/Logo/logo_icon.png" alt="FlowEdge Solutions Icon" class="hero-logo-icon">
-          <div class="hero-logo-text">
-            <span class="logo-text-gradient">FlowEdge Solutions</span>
-          </div>
-        </div>
-        <h2 class="hero-title animate-fade-in-delay">
-          <em>Strategie trifft auf Intelligenz</em>
-        </h2>
-        <p class="hero-subtitle animate-slide-up-delay-1">
-          Wir verbinden KI-Technologie, Automatisierung und Beratung zu integrierten Lösungen, die messbare Ergebnisse liefern – effizient, sicher und skalierbar.
-        </p>
-        <div class="hero-cta animate-slide-up-delay-2">
-          <button (click)="scrollToContact()" class="btn btn-primary animate-bounce">
-          Beratung anfragen
-          </button>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="gradient-sphere animate-pulse"></div>
-        <div class="floating-particles">
-          <div class="particle"></div>
-          <div class="particle"></div>
-          <div class="particle"></div>
-          <div class="particle"></div>
-          <div class="particle"></div>
-        </div>
+      <!-- Carousel Container -->
+      <div class="carousel-container" 
+           (touchstart)="onTouchStart($event)" 
+           (touchend)="onTouchEnd($event)">
         
-        <!-- Floating Mini Features -->
-        <div class="floating-features">
-          @for (feature of features; track feature.title; let i = $index) {
-            <div class="feature-card feature-{{ i + 1 }} animate-pop-{{ i + 1 }}">
-              <div class="feature-glow"></div>
-              <div class="feature-icon-wrapper">
-                <ng-icon [name]="feature.icon" size="32" class="feature-icon"></ng-icon>
+        <!-- Slides -->
+        <div class="carousel-track">
+          <!-- First Slide: Original Hero -->
+          <div class="carousel-slide original-hero" 
+               [class.active]="0 === currentSlide()"
+               [class.prev]="0 === currentSlide() - 1 || (currentSlide() === 0 && 0 === aiders.length)"
+               [class.next]="0 === currentSlide() + 1">
+            
+            <div class="hero-text">
+              <div class="hero-logo-wrapper">
+                <img src="/Logo/logo_icon.png" alt="FlowEdge Solutions Icon" class="hero-logo-icon">
+                <div class="hero-logo-text">
+                  <span class="logo-text-gradient">FlowEdge Solutions</span>
+                </div>
               </div>
-              <div class="feature-content">
-                <h4 class="feature-title">{{ feature.title }}</h4>
-                <p class="feature-desc">{{ feature.description }}</p>
+              <h2 class="hero-title">
+                <em>Strategie trifft auf Intelligenz</em>
+              </h2>
+              <p class="hero-subtitle">
+                Wir verbinden KI-Technologie, Automatisierung und Beratung zu integrierten Lösungen, die messbare Ergebnisse liefern – effizient, sicher und skalierbar.
+              </p>
+              <div class="hero-cta">
+                <button (click)="scrollToContact()" class="btn btn-primary">
+                  Beratung anfragen
+                </button>
+              </div>
+            </div>
+            
+            <div class="hero-visual">
+              <div class="gradient-sphere"></div>
+              <div class="floating-particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+              </div>
+              
+              <!-- Floating Mini Features -->
+              <div class="floating-features">
+                @for (feature of features; track feature.title; let i = $index) {
+                  <div class="feature-card feature-{{ i + 1 }}">
+                    <div class="feature-glow"></div>
+                    <div class="feature-icon-wrapper">
+                      <ng-icon [name]="feature.icon" size="32" class="feature-icon"></ng-icon>
+                    </div>
+                    <div class="feature-content">
+                      <h4 class="feature-title">{{ feature.title }}</h4>
+                      <p class="feature-desc">{{ feature.description }}</p>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+
+          <!-- Aider Slides -->
+          @for (aider of aiders; track aider.id; let i = $index) {
+            <div class="carousel-slide aider-slide" 
+                 [class.active]="i + 1 === currentSlide()"
+                 [class.prev]="i + 1 === currentSlide() - 1 || (currentSlide() === 0 && i === aiders.length - 1)"
+                 [class.next]="i + 1 === currentSlide() + 1 || (currentSlide() === aiders.length && i === 0)">
+              
+              <div class="slide-content">
+                <!-- Icon & Title -->
+                <div class="slide-header">
+                  <div class="icon-wrapper" [style.background]="aider.gradient">
+                    <ng-icon [name]="aider.icon" size="64" class="aider-icon"></ng-icon>
+                  </div>
+                  <div class="text-content">
+                    <h1 class="aider-name">{{ aider.name }}</h1>
+                    <p class="aider-tagline">{{ aider.tagline }}</p>
+                  </div>
+                </div>
+
+                <!-- Description -->
+                <p class="aider-description">{{ aider.description }}</p>
+
+                <!-- Features -->
+                <div class="features-grid">
+                  @for (feature of aider.features; track feature) {
+                    <div class="feature-badge">
+                      <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      <span>{{ feature }}</span>
+                    </div>
+                  }
+                </div>
+
+                <!-- CTA -->
+                <div class="slide-cta">
+                  <button (click)="scrollToContact()" class="btn btn-primary">
+                    Mehr erfahren
+                  </button>
+                  <button class="btn btn-secondary">
+                    Demo ansehen
+                  </button>
+                </div>
+              </div>
+
+              <!-- Visual Element -->
+              <div class="slide-visual">
+                <div class="gradient-orb" [style.background]="aider.gradient"></div>
+                <div class="floating-elements">
+                  <div class="float-element el-1"></div>
+                  <div class="float-element el-2"></div>
+                  <div class="float-element el-3"></div>
+                </div>
               </div>
             </div>
           }
         </div>
+
+        <!-- Navigation Arrows -->
+        <button class="carousel-btn prev" (click)="prevSlide()" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="carousel-btn next" (click)="nextSlide()" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Pagination Dots -->
+      <div class="carousel-dots">
+        <!-- Dot for original hero -->
+        <button 
+          class="dot" 
+          [class.active]="0 === currentSlide()"
+          (click)="goToSlide(0)"
+          aria-label="Go to home slide">
+          <span class="dot-inner"></span>
+        </button>
+        <!-- Dots for aiders -->
+        @for (aider of aiders; track aider.id; let i = $index) {
+          <button 
+            class="dot" 
+            [class.active]="i + 1 === currentSlide()"
+            (click)="goToSlide(i + 1)"
+            [attr.aria-label]="'Go to ' + aider.name + ' slide'">
+            <span class="dot-inner"></span>
+          </button>
+        }
       </div>
     </div>
   </div>
