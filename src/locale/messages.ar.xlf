@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="de" target-language="ar" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="home.hero.title" datatype="html">
+        <source>Strategie trifft auf Intelligenz</source>
+        <target>الاستراتيجية تلتقي بالذكاء</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/hero/hero.component.html</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.hero.subtitle" datatype="html">
+        <source>Wir verbinden KI-Technologie, Automatisierung und Beratung zu integrierten Lösungen, die messbare Ergebnisse liefern – effizient, sicher und skalierbar.</source>
+        <target>نجمع بين تقنيات الذكاء الاصطناعي والأتمتة والاستشارات في حلول متكاملة تحقق نتائج قابلة للقياس — بكفاءة وأمان وقابلية للتوسّع.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/hero/hero.component.html</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.hero.cta" datatype="html">
+        <source>Beratung anfragen</source>
+        <target>اطلب استشارة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/hero/hero.component.html</context>
+        </context-group>
+      </trans-unit>
+
+      <!-- Hero features from $localize -->
+      <trans-unit id="home.features.strategy.title" datatype="html">
+        <source>KI-Strategie</source>
+        <target>استراتيجية الذكاء الاصطناعي</target>
+      </trans-unit>
+      <trans-unit id="home.features.strategy.desc" datatype="html">
+        <source>Zukunftssicher planen</source>
+        <target>تخطيط مستقبلي آمن</target>
+      </trans-unit>
+      <trans-unit id="home.features.automation.title" datatype="html">
+        <source>Automatisierung</source>
+        <target>الأتمتة</target>
+      </trans-unit>
+      <trans-unit id="home.features.automation.desc" datatype="html">
+        <source>Intelligente Abläufe</source>
+        <target>عمليات ذكية</target>
+      </trans-unit>
+      <trans-unit id="home.features.consulting.title" datatype="html">
+        <source>Beratung</source>
+        <target>الاستشارات</target>
+      </trans-unit>
+      <trans-unit id="home.features.consulting.desc" datatype="html">
+        <source>Persönlich &amp; praxisnah</source>
+        <target>شخصية وعملية</target>
+      </trans-unit>
+
+      <!-- Footer -->
+      <trans-unit id="footer.tagline" datatype="html">
+        <source>Effektiv · Strategisch · Individuell</source>
+        <target>فعّال · استراتيجي · مخصص</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.html</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footer.contact.title" datatype="html">
+        <source>Kontakt</source>
+        <target>تواصل</target>
+      </trans-unit>
+      <trans-unit id="footer.contact.email" datatype="html">
+        <source>E-Mail:</source>
+        <target>البريد الإلكتروني:</target>
+      </trans-unit>
+      <trans-unit id="footer.contact.phone" datatype="html">
+        <source>Telefon:</source>
+        <target>الهاتف:</target>
+      </trans-unit>
+      <trans-unit id="footer.legal.title" datatype="html">
+        <source>Rechtliches</source>
+        <target>الجوانب القانونية</target>
+      </trans-unit>
+      <trans-unit id="footer.legal.imprint" datatype="html">
+        <source>Impressum</source>
+        <target>بيان النشر</target>
+      </trans-unit>
+      <trans-unit id="footer.legal.privacy" datatype="html">
+        <source>Datenschutz</source>
+        <target>سياسة الخصوصية</target>
+      </trans-unit>
+      <trans-unit id="footer.legal.terms" datatype="html">
+        <source>AGB</source>
+        <target>الشروط والأحكام</target>
+      </trans-unit>
+      <trans-unit id="footer.social.title" datatype="html">
+        <source>Social Media</source>
+        <target>وسائل التواصل الاجتماعي</target>
+      </trans-unit>
+      <trans-unit id="footer.copyright" datatype="html">
+        <source>Alle Rechte vorbehalten</source>
+        <target>جميع الحقوق محفوظة</target>
+      </trans-unit>
+      <trans-unit id="menu.home" datatype="html">
+        <source>Home</source>
+        <target>الرئيسية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">18,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.mission" datatype="html">
+        <source>Mission</source>
+        <target>المهمة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.solutions" datatype="html">
+        <source>Lösungen</source>
+        <target>الحلول</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">21,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.dropdown.title" datatype="html">
+        <source>Aider KI-Agenten</source>
+        <target>وكلاء Aider للذكاء الاصطناعي</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.dropdown.subtitle" datatype="html">
+        <source>Intelligente AI-Lösungen für verschiedene Anwendungsbereiche</source>
+        <target>حلول ذكاء اصطناعي ذكية لمجالات استخدام متعددة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">30,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.solutions.voiceaider" datatype="html">
+        <source>Spracherkennung &amp; -verarbeitung</source>
+        <target>التعرّف على الكلام ومعالجته</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">39,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.solutions.mailaider" datatype="html">
+        <source>E-Mail-Automatisierung</source>
+        <target>أتمتة البريد الإلكتروني</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">48,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.solutions.legalaider" datatype="html">
+        <source>Rechtliche Dokumentenanalyse</source>
+        <target>تحليل المستندات القانونية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">57,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.solutions.writeaider" datatype="html">
+        <source>Content-Erstellung &amp; Copywriting</source>
+        <target>إنشاء المحتوى والكتابة الإعلانية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">66,68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.solutions.medaider" datatype="html">
+        <source>Medizinische Datenanalyse</source>
+        <target>تحليل البيانات الطبية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">75,77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.blog" datatype="html">
+        <source>Blog</source>
+        <target>المدونة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">81,82</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.contact" datatype="html">
+        <source>Kontakt</source>
+        <target>اتصل بنا</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">83,84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.hero.title" datatype="html">
+        <source> VoiceAider AI – Ihr intelligenter Telefonassistent. </source>
+        <target> VoiceAider AI – مساعدك الهاتفي الذكي. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">10,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.hero.subtitle" datatype="html">
+        <source> VoiceAider AI führt Kundengespräche, vereinbart Termine, nimmt Anrufe entgegen und ruft aktiv Kunden an – 24/7, mehrsprachig und vollständig DSGVO-konform. </source>
+        <target> تقوم VoiceAider AI بإجراء محادثات العملاء، وتحديد المواعيد، واستقبال المكالمات والاتصال بالعملاء بشكل نشط — على مدار الساعة، وبشكل متعدد اللغات وبامتثال كامل للائحة GDPR. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">13,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.hero.demo-btn" datatype="html">
+        <source> 👉 Demo vereinbaren </source>
+        <target> 👉 احجز عرضًا توضيحيًا </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">17,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.hero.test-btn" datatype="html">
+        <source> 📞 Live-Anruf testen </source>
+        <target> 📞 جرّب مكالمة مباشرة </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">20,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.features.header" datatype="html">
+        <source>Automatisierte Anrufe, die klingen wie echte Gespräche.</source>
+        <target>مكالمات مؤتمتة تبدو كأنها محادثات حقيقية.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">49,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.features.description" datatype="html">
+        <source> VoiceAider AI übernimmt Ihre Telefonkommunikation – freundlich, zuverlässig und immer erreichbar. Der KI-Agent erkennt Anliegen, beantwortet Fragen, leitet bei Bedarf weiter oder erstellt Termine direkt in Ihrem Kalender. Auch Outbound-Anrufe für Erinnerungen oder Vertriebsaktionen sind möglich. </source>
+        <target> تتولى VoiceAider AI اتصالاتك الهاتفية — بلطف وموثوقية وتوافر دائم. يتعرّف الوكيل الذكي على الطلبات، يجيب عن الأسئلة، يحوّل عند الحاجة أو ينشئ المواعيد مباشرة في تقويمك. كما يمكن إجراء مكالمات صادرة للتذكير أو لحملات المبيعات. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">51,54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.features.cta" datatype="html">
+        <source> Jetzt Demo anfordern </source>
+        <target> اطلب العرض الآن </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">67,69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.how-it-works.title" datatype="html">
+        <source>Einfache Integration, sofort startklar.</source>
+        <target>تكامل سهل، جاهز للعمل فورًا.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">77,80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.how-it-works.info" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Keine zusätzliche Hardware. Kein Callcenter.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Nur intelligente Software, die im Hintergrund arbeitet. </source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>لا أجهزة إضافية. لا مركز اتصال.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> مجرد برنامج ذكي يعمل في الخلفية. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">93,95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.benefits.title" datatype="html">
+        <source>Schluss mit verpassten Anrufen und langen Warteschleifen.</source>
+        <target>لا مزيد من المكالمات الفائتة ولا طوابير الانتظار.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">104,107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.benefits.testimonial" datatype="html">
+        <source> „Seit VoiceAider AI verpassen wir keinen Anruf mehr – und unsere Kunden werden sofort betreut.&quot; </source>
+        <target> "منذ استخدام VoiceAider AI لم نفوّت أي مكالمة — ويتم خدمة عملائنا على الفور." </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">116,118</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.benefits.testimonial-author" datatype="html">
+        <source>– Beispielkunde (Praxis, Agentur o. Ä.)</source>
+        <target>– عميل نموذجي (عيادة، وكالة، إلخ.)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">118,123</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.use-cases.title" datatype="html">
+        <source>Vielfältige Einsatzmöglichkeiten in verschiedenen Branchen.</source>
+        <target>سيناريوهات استخدام متعددة في قطاعات مختلفة.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">127,130</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.privacy.title" datatype="html">
+        <source>Datenschutz made in Germany – nahtlos integriert in Ihre Systeme.</source>
+        <target>حماية بيانات مصممة في ألمانيا — ومتكاملة بسلاسة مع أنظمتك.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">144,145</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.privacy.description" datatype="html">
+        <source> VoiceAider AI verarbeitet alle Gesprächsdaten DSGVO-konform in europäischen Rechenzentren. Die Lösung lässt sich mühelos in Microsoft 365, Teams, Power Automate oder CRM-Systeme integrieren. </source>
+        <target> تعالج VoiceAider AI جميع بيانات المكالمات بما يتوافق مع اللائحة العامة لحماية البيانات (GDPR) في مراكز بيانات أوروبية. ويمكن دمج الحل بسهولة مع Microsoft 365 وTeams وPower Automate أو أنظمة إدارة علاقات العملاء. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">146,149</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.privacy.badge.gdpr" datatype="html">
+        <source>DSGVO Compliant</source>
+        <target>متوافق مع GDPR</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">154,156</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.privacy.badge.eu" datatype="html">
+        <source>EU Hosting</source>
+        <target>استضافة داخل الاتحاد الأوروبي</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">158,160</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.privacy.badge.partner" datatype="html">
+        <source>Microsoft Partner</source>
+        <target>شريك Microsoft</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">162,165</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.pricing.title" datatype="html">
+        <source>Starten Sie einfach – ganz ohne Risiko.</source>
+        <target>ابدأ بسهولة — وبدون مخاطرة.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">172,173</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.pricing.description" datatype="html">
+        <source> Testen Sie VoiceAider AI kostenlos in einer Live-Demo oder beginnen Sie direkt mit dem Einstiegspaket. </source>
+        <target> جرّب VoiceAider AI مجانًا في عرض مباشر أو ابدأ مباشرة مع باقة البداية. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">174,177</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.pricing.demo-btn" datatype="html">
+        <source> Demo buchen </source>
+        <target> احجز عرضًا توضيحيًا </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">195,197</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.pricing.quote-btn" datatype="html">
+        <source> Individuelles Angebot anfordern </source>
+        <target> اطلب عرضًا مخصصًا </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">198,200</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.final-cta.title" datatype="html">
+        <source>Lassen Sie VoiceAider AI für Sie sprechen.</source>
+        <target>دع VoiceAider AI يتحدث بالنيابة عنك.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">208,209</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.final-cta.description" datatype="html">
+        <source> Keine verpassten Anrufe mehr, keine Wartezeiten – einfach intelligente Kommunikation. </source>
+        <target> لا مكالمات فائتة بعد اليوم، ولا أوقات انتظار — تواصل ذكي ببساطة. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">210,212</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.final-cta.demo-btn" datatype="html">
+        <source> Jetzt kostenlose Demo vereinbaren </source>
+        <target> احجز عرضًا مجانيًا الآن </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">214,216</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.final-cta.consultation-btn" datatype="html">
+        <source> Beratungsgespräch buchen </source>
+        <target> احجز استشارة </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">217,220</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

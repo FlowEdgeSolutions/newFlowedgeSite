@@ -1,0 +1,148 @@
+<div class="va-demo">
+  <header class="demo-topbar">
+    <nav class="tabs" role="tablist" aria-label="VoiceAider demo tabs">
+      <button *ngFor="let t of tabs"
+              class="tab"
+              [class.active]="t === activeTab"
+              (click)="setTab(t)"
+              role="tab"
+              [attr.aria-selected]="t === activeTab">
+        <span class="tab-icon" aria-hidden="true">{{ t === 'Actions' ? '⚡' : (t === 'Test Calls' ? '📞' : (t === 'Flow Designer' ? '🧠' : (t === 'Knowledge Base' ? '📚' : '🧩'))) }}</span>
+        {{ t }}
+      </button>
+    </nav>
+  </header>
+
+  <!-- Use Case -->
+  <section *ngIf="activeTab === 'Use Case'" class="screen use-case">
+    <h1 class="title">Hear AI Voice Agents in Action</h1>
+    <p class="subtitle">Choose a call type to see how Synthflow AI agents handle real conversations.</p>
+
+    <div class="card-grid">
+      <article class="uc-card" *ngFor="let uc of useCases; let i = index" [class.accent]="i === 2">
+        <div class="uc-header">
+          <span class="chip">{{ uc.category }}</span>
+        </div>
+        <div class="uc-body">
+          <div class="avatar" aria-hidden="true">🎙️</div>
+          <h3 class="uc-title">{{ uc.title }}</h3>
+          <div class="uc-tags">
+            <span class="tag" *ngFor="let tag of uc.tags">{{ tag }}</span>
+          </div>
+          <p class="uc-desc">{{ uc.description }}</p>
+        </div>
+      </article>
+    </div>
+
+    <footer class="demo-footer">
+      <div class="note">This is a simplified demo. Full editing is available in the platform.</div>
+      <button class="btn btn-primary">Try the Full Platform</button>
+    </footer>
+  </section>
+
+  <!-- Flow Designer -->
+  <section *ngIf="activeTab === 'Flow Designer'" class="screen flow-designer">
+    <aside class="sidebar">
+      <h3 class="side-title">Flow Preview</h3>
+      <p class="side-sub">This agent follows a predefined logic flow to simulate real conversations.</p>
+      <div class="mode-list">
+        <button class="mode active">Flow View</button>
+        <button class="mode">Prompt View</button>
+      </div>
+    </aside>
+
+    <div class="flow-canvas">
+      <div class="node" *ngFor="let n of flowNodes; let idx = index">
+        <div class="node-icon">🔹</div>
+        <div class="node-main">
+          <div class="node-title">{{ n.title }}</div>
+          <div class="node-snippet">{{ n.snippet }}</div>
+        </div>
+        <div class="connector" *ngIf="idx < flowNodes.length - 1"></div>
+      </div>
+
+      <div class="canvas-cta">
+        <button class="btn btn-secondary">Explore the agent's knowledge base →</button>
+      </div>
+    </div>
+
+    <footer class="demo-footer">
+      <div class="note">This is a simplified demo. Full editing is available in the platform.</div>
+      <button class="btn btn-primary">Try the Full Platform</button>
+    </footer>
+  </section>
+
+  <!-- Knowledge Base -->
+  <section *ngIf="activeTab === 'Knowledge Base'" class="screen knowledge">
+    <aside class="sidebar">
+      <h3 class="side-title">Knowledge Base</h3>
+      <p class="side-sub">This agent can answer questions using trusted internal documents or URLs.</p>
+
+      <div class="upload">
+        <h4 class="muted">Upload Files</h4>
+        <button class="upload-btn active">Attached PDF</button>
+        <button class="upload-btn" disabled>Web Content Import</button>
+        <button class="upload-btn" disabled>Integrated Help Center</button>
+        <div class="add-content">
+          <button class="btn btn-secondary small">Add Content</button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="kb-editor" role="textbox" aria-label="Knowledge base text preview">
+      <pre>{{ kbText }}</pre>
+    </div>
+
+    <footer class="demo-footer">
+      <div class="note">This is a simplified demo. Full editing is available in the platform.</div>
+      <button class="btn btn-primary">Try the Full Platform</button>
+    </footer>
+  </section>
+
+  <!-- Actions -->
+  <section *ngIf="activeTab === 'Actions'" class="screen actions">
+    <h2 class="title">Actions</h2>
+    <p class="subtitle">This agent can perform real-time actions as part of the conversation.</p>
+
+    <div class="card-grid">
+      <div class="action-card">
+        <div class="icon">📅</div>
+        <div class="label enabled">Enabled</div>
+        <h3>Real-Time Booking</h3>
+        <p>Let the agent book a meeting or viewing directly in your calendar, based on lead availability.</p>
+      </div>
+      <div class="action-card">
+        <div class="icon">📞</div>
+        <div class="label enabled">Enabled</div>
+        <h3>Warm Transfer</h3>
+        <p>Seamlessly transfer high-intent leads to a human agent or sales rep in real time.</p>
+      </div>
+      <div class="action-card">
+        <div class="icon">🧭</div>
+        <div class="label enabled">Enabled</div>
+        <h3>IVR</h3>
+        <p>Extracts buyer preferences like budget, location, and property type from their responses.</p>
+      </div>
+      <div class="action-card custom">
+        <div class="icon">⚙️</div>
+        <h3>Create Custom Action</h3>
+        <p>Create your own actions using APIs, business logic, CRMs, and more. Available in the full platform.</p>
+        <button class="btn btn-secondary small">Try it in a test call →</button>
+      </div>
+    </div>
+
+    <footer class="demo-footer">
+      <div class="note">This is a simplified demo. Full editing is available in the platform.</div>
+      <button class="btn btn-primary">Try the Full Platform</button>
+    </footer>
+  </section>
+
+  <!-- Test Calls -->
+  <section *ngIf="activeTab === 'Test Calls'" class="screen test-calls">
+    <div class="test-box">
+      <h3>Test Calls</h3>
+      <p>Simulate a quick call with the current configuration. (Static preview in this demo.)</p>
+      <button class="btn btn-primary">Start Test Call</button>
+    </div>
+  </section>
+</div>

@@ -9,7 +9,18 @@
   status = 301
   force = true
 
-# Angular SPA routing
+# Locale specific SPA fallbacks (put before the generic catch-all)
+[[redirects]]
+  from = "/en/*"
+  to = "/en/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ar/*"
+  to = "/ar/index.html"
+  status = 200
+
+# Angular SPA routing (generic catch-all last)
 [[redirects]]
   from = "/*"
   to = "/index.html"

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="de" target-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="home.hero.title" datatype="html">
+        <source>Strategie trifft auf Intelligenz</source>
+        <target>Strategy meets intelligence</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/hero/hero.component.html</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.hero.subtitle" datatype="html">
+        <source>Wir verbinden KI-Technologie, Automatisierung und Beratung zu integrierten Lösungen, die messbare Ergebnisse liefern – effizient, sicher und skalierbar.</source>
+        <target>We combine AI technology, automation, and consulting into integrated solutions that deliver measurable results — efficient, secure, and scalable.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/hero/hero.component.html</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.hero.cta" datatype="html">
+        <source>Beratung anfragen</source>
+        <target>Request consultation</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/hero/hero.component.html</context>
+        </context-group>
+      </trans-unit>
+
+      <!-- Hero features from $localize -->
+      <trans-unit id="home.features.strategy.title" datatype="html">
+        <source>KI-Strategie</source>
+        <target>AI strategy</target>
+      </trans-unit>
+      <trans-unit id="home.features.strategy.desc" datatype="html">
+        <source>Zukunftssicher planen</source>
+        <target>Plan for the future</target>
+      </trans-unit>
+      <trans-unit id="home.features.automation.title" datatype="html">
+        <source>Automatisierung</source>
+        <target>Automation</target>
+      </trans-unit>
+      <trans-unit id="home.features.automation.desc" datatype="html">
+        <source>Intelligente Abläufe</source>
+        <target>Smart workflows</target>
+      </trans-unit>
+      <trans-unit id="home.features.consulting.title" datatype="html">
+        <source>Beratung</source>
+        <target>Consulting</target>
+      </trans-unit>
+      <trans-unit id="home.features.consulting.desc" datatype="html">
+        <source>Persönlich &amp; praxisnah</source>
+        <target>Personal and practical</target>
+      </trans-unit>
+
+      <!-- Footer -->
+      <trans-unit id="footer.tagline" datatype="html">
+        <source>Effektiv · Strategisch · Individuell</source>
+        <target>Effective · Strategic · Individual</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.html</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footer.contact.title" datatype="html">
+        <source>Kontakt</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="footer.contact.email" datatype="html">
+        <source>E-Mail:</source>
+        <target>Email:</target>
+      </trans-unit>
+      <trans-unit id="footer.contact.phone" datatype="html">
+        <source>Telefon:</source>
+        <target>Phone:</target>
+      </trans-unit>
+      <trans-unit id="footer.legal.title" datatype="html">
+        <source>Rechtliches</source>
+        <target>Legal</target>
+      </trans-unit>
+      <trans-unit id="footer.legal.imprint" datatype="html">
+        <source>Impressum</source>
+        <target>Imprint</target>
+      </trans-unit>
+      <trans-unit id="footer.legal.privacy" datatype="html">
+        <source>Datenschutz</source>
+        <target>Privacy Policy</target>
+      </trans-unit>
+      <trans-unit id="footer.legal.terms" datatype="html">
+        <source>AGB</source>
+        <target>Terms &amp; Conditions</target>
+      </trans-unit>
+      <trans-unit id="footer.social.title" datatype="html">
+        <source>Social Media</source>
+        <target>Social media</target>
+      </trans-unit>
+      <trans-unit id="footer.copyright" datatype="html">
+        <source>Alle Rechte vorbehalten</source>
+        <target>All rights reserved</target>
+      </trans-unit>
+      <trans-unit id="menu.home" datatype="html">
+        <source>Home</source>
+        <target>Home</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">18,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.mission" datatype="html">
+        <source>Mission</source>
+        <target>Mission</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.solutions" datatype="html">
+        <source>Lösungen</source>
+        <target>Solutions</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">21,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.dropdown.title" datatype="html">
+        <source>Aider KI-Agenten</source>
+        <target>Aider AI Agents</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.dropdown.subtitle" datatype="html">
+        <source>Intelligente AI-Lösungen für verschiedene Anwendungsbereiche</source>
+        <target>Intelligent AI solutions for various application areas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">30,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.solutions.voiceaider" datatype="html">
+        <source>Spracherkennung &amp; -verarbeitung</source>
+        <target>Speech Recognition &amp; Processing</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">39,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.solutions.mailaider" datatype="html">
+        <source>E-Mail-Automatisierung</source>
+        <target>Email Automation</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">48,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.solutions.legalaider" datatype="html">
+        <source>Rechtliche Dokumentenanalyse</source>
+        <target>Legal Document Analysis</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">57,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.solutions.writeaider" datatype="html">
+        <source>Content-Erstellung &amp; Copywriting</source>
+        <target>Content Creation &amp; Copywriting</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">66,68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.solutions.medaider" datatype="html">
+        <source>Medizinische Datenanalyse</source>
+        <target>Medical Data Analysis</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">75,77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.blog" datatype="html">
+        <source>Blog</source>
+        <target>Blog</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">82,83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu.contact" datatype="html">
+        <source>Kontakt</source>
+        <target>Contact</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">83,84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.hero.title" datatype="html">
+        <source> VoiceAider AI – Ihr intelligenter Telefonassistent. </source>
+        <target> VoiceAider AI – Your intelligent phone assistant. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">10,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.hero.subtitle" datatype="html">
+        <source> VoiceAider AI führt Kundengespräche, vereinbart Termine, nimmt Anrufe entgegen und ruft aktiv Kunden an – 24/7, mehrsprachig und vollständig DSGVO-konform. </source>
+        <target> VoiceAider AI conducts customer conversations, schedules appointments, answers calls and actively calls customers – 24/7, multilingual and fully GDPR compliant. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">13,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.hero.demo-btn" datatype="html">
+        <source> 👉 Demo vereinbaren </source>
+        <target> 👉 Book a demo </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">17,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.hero.test-btn" datatype="html">
+        <source> 📞 Live-Anruf testen </source>
+        <target> 📞 Try a live call </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">20,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.features.header" datatype="html">
+        <source>Automatisierte Anrufe, die klingen wie echte Gespräche.</source>
+        <target>Automated calls that sound like real conversations.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">49,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.features.description" datatype="html">
+        <source> VoiceAider AI übernimmt Ihre Telefonkommunikation – freundlich, zuverlässig und immer erreichbar. Der KI-Agent erkennt Anliegen, beantwortet Fragen, leitet bei Bedarf weiter oder erstellt Termine direkt in Ihrem Kalender. Auch Outbound-Anrufe für Erinnerungen oder Vertriebsaktionen sind möglich. </source>
+        <target> VoiceAider AI handles your phone communication — friendly, reliable, and always available. The AI agent understands requests, answers questions, forwards when needed, or creates appointments directly in your calendar. Outbound calls for reminders or sales campaigns are also possible. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">51,54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.features.cta" datatype="html">
+        <source> Jetzt Demo anfordern </source>
+        <target> Request a demo now </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">67,69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.how-it-works.title" datatype="html">
+        <source>Einfache Integration, sofort startklar.</source>
+        <target>Easy integration, ready to go instantly.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">77,80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.how-it-works.info" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Keine zusätzliche Hardware. Kein Callcenter.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Nur intelligente Software, die im Hintergrund arbeitet. </source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>No extra hardware. No call center.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Just intelligent software running in the background. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">93,95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.benefits.title" datatype="html">
+        <source>Schluss mit verpassten Anrufen und langen Warteschleifen.</source>
+        <target>No more missed calls or long waiting queues.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">104,107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.benefits.testimonial" datatype="html">
+        <source> „Seit VoiceAider AI verpassen wir keinen Anruf mehr – und unsere Kunden werden sofort betreut.&quot; </source>
+        <target> “Since using VoiceAider AI, we haven’t missed a single call — and our customers are assisted immediately.” </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">116,118</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.benefits.testimonial-author" datatype="html">
+        <source>– Beispielkunde (Praxis, Agentur o. Ä.)</source>
+        <target>– Sample customer (clinic, agency, etc.)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">118,123</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.use-cases.title" datatype="html">
+        <source>Vielfältige Einsatzmöglichkeiten in verschiedenen Branchen.</source>
+        <target>Wide range of use cases across industries.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">127,130</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.privacy.title" datatype="html">
+        <source>Datenschutz made in Germany – nahtlos integriert in Ihre Systeme.</source>
+        <target>Data protection made in Germany — seamlessly integrated into your systems.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">144,145</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.privacy.description" datatype="html">
+        <source> VoiceAider AI verarbeitet alle Gesprächsdaten DSGVO-konform in europäischen Rechenzentren. Die Lösung lässt sich mühelos in Microsoft 365, Teams, Power Automate oder CRM-Systeme integrieren. </source>
+        <target> VoiceAider AI processes all conversation data in compliance with GDPR in European data centers. The solution integrates effortlessly with Microsoft 365, Teams, Power Automate, or CRM systems. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">146,149</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.privacy.badge.gdpr" datatype="html">
+        <source>DSGVO Compliant</source>
+        <target>GDPR Compliant</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">154,156</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.privacy.badge.eu" datatype="html">
+        <source>EU Hosting</source>
+        <target>EU Hosting</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">158,160</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.privacy.badge.partner" datatype="html">
+        <source>Microsoft Partner</source>
+        <target>Microsoft Partner</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">162,165</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.pricing.title" datatype="html">
+        <source>Starten Sie einfach – ganz ohne Risiko.</source>
+        <target>Get started easily — with no risk.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">172,173</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.pricing.description" datatype="html">
+        <source> Testen Sie VoiceAider AI kostenlos in einer Live-Demo oder beginnen Sie direkt mit dem Einstiegspaket. </source>
+        <target> Try VoiceAider AI for free in a live demo or start right away with the starter package. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">174,177</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.pricing.demo-btn" datatype="html">
+        <source> Demo buchen </source>
+        <target> Book a demo </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">195,197</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.pricing.quote-btn" datatype="html">
+        <source> Individuelles Angebot anfordern </source>
+        <target> Request a custom quote </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">198,200</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.final-cta.title" datatype="html">
+        <source>Lassen Sie VoiceAider AI für Sie sprechen.</source>
+        <target>Let VoiceAider AI speak for you.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">208,209</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.final-cta.description" datatype="html">
+        <source> Keine verpassten Anrufe mehr, keine Wartezeiten – einfach intelligente Kommunikation. </source>
+        <target> No more missed calls, no waiting times — just intelligent communication. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">210,212</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.final-cta.demo-btn" datatype="html">
+        <source> Jetzt kostenlose Demo vereinbaren </source>
+        <target> Schedule a free demo now </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">214,216</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="voiceaider.final-cta.consultation-btn" datatype="html">
+        <source> Beratungsgespräch buchen </source>
+        <target> Book a consultation </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/voiceaider-ai/voiceaider-ai.html</context>
+          <context context-type="linenumber">217,220</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

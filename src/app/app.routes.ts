@@ -15,6 +15,7 @@ import { AgbComponent } from './pages/agb/agb.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 import { VoiceaiderAi } from './pages/voiceaider-ai/voiceaider-ai';
+import { VoiceaiderAiDemoComponent } from './pages/voiceaider-ai-demo/voiceaider-ai-demo';
 
 // Main Home Component
 @Component({
@@ -46,6 +47,7 @@ export const routes: Routes = [
   { path: 'philosophie', component: PhilosophyComponent },
   { path: 'loesungen', component: SolutionsPageComponent },
   { path: 'loesungen/voiceaider-ai', component: VoiceaiderAi },
+  { path: 'loesungen/voiceaider-ai-demo', component: VoiceaiderAiDemoComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'blog/:id', component: BlogDetailComponent },
   { path: 'kontakt', component: ContactComponent },

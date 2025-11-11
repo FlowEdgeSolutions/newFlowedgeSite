@@ -1,9 +1,10 @@
 import { Component, signal, HostListener } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink],
+  imports: [RouterLink, LanguageSwitcherComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

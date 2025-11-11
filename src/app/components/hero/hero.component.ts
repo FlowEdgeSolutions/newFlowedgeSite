@@ -51,18 +51,18 @@ export class HeroComponent implements OnInit, OnDestroy {
   features = [
     {
       icon: 'heroSparkles',
-      title: 'KI-Strategie',
-      description: 'Zukunftssicher planen'
+      title: $localize`:@@home.features.strategy.title:KI-Strategie`,
+      description: $localize`:@@home.features.strategy.desc:Zukunftssicher planen`
     },
     {
       icon: 'heroCog6Tooth',
-      title: 'Automatisierung',
-      description: 'Intelligente Abläufe'
+      title: $localize`:@@home.features.automation.title:Automatisierung`,
+      description: $localize`:@@home.features.automation.desc:Intelligente Abläufe`
     },
     {
       icon: 'heroUserGroup',
-      title: 'Beratung',
-      description: 'Persönlich & praxisnah'
+      title: $localize`:@@home.features.consulting.title:Beratung`,
+      description: $localize`:@@home.features.consulting.desc:Persönlich & praxisnah`
     }
   ];
 

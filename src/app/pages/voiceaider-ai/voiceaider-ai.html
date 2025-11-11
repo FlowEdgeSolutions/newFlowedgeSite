@@ -6,17 +6,17 @@
     <div class="container">
       <div class="hero-content">
         <div class="hero-text">
-          <h1 class="hero-title">
+          <h1 class="hero-title" i18n="@@voiceaider.hero.title">
             VoiceAider AI – Ihr intelligenter Telefonassistent.
           </h1>
-          <p class="hero-subtitle">
+          <p class="hero-subtitle" i18n="@@voiceaider.hero.subtitle">
             VoiceAider AI führt Kundengespräche, vereinbart Termine, nimmt Anrufe entgegen und ruft aktiv Kunden an – 24/7, mehrsprachig und vollständig DSGVO-konform.
           </p>
           <div class="hero-cta">
-            <button class="btn btn-primary" (click)="requestDemo()">
+            <button class="btn btn-primary" (click)="requestDemo()" i18n="@@voiceaider.hero.demo-btn">
               👉 Demo vereinbaren
             </button>
-            <button class="btn btn-secondary" (click)="testLiveCall()">
+            <button class="btn btn-secondary" (click)="testLiveCall()" i18n="@@voiceaider.hero.test-btn">
               📞 Live-Anruf testen
             </button>
           </div>
@@ -46,8 +46,8 @@
   <section class="features-section">
     <div class="container">
       <div class="section-header">
-        <h2>Automatisierte Anrufe, die klingen wie echte Gespräche.</h2>
-        <p class="section-description">
+        <h2 i18n="@@voiceaider.features.header">Automatisierte Anrufe, die klingen wie echte Gespräche.</h2>
+        <p class="section-description" i18n="@@voiceaider.features.description">
           VoiceAider AI übernimmt Ihre Telefonkommunikation – freundlich, zuverlässig und immer erreichbar.
           Der KI-Agent erkennt Anliegen, beantwortet Fragen, leitet bei Bedarf weiter oder erstellt Termine direkt in Ihrem Kalender.
           Auch Outbound-Anrufe für Erinnerungen oder Vertriebsaktionen sind möglich.
@@ -63,7 +63,7 @@
       </div>
       
       <div class="section-cta">
-        <button class="btn btn-primary" (click)="requestDemo()">
+        <button class="btn btn-primary" (click)="requestDemo()" i18n="@@voiceaider.features.cta">
           Jetzt Demo anfordern
         </button>
       </div>
@@ -74,7 +74,7 @@
   <section class="how-it-works-section">
     <div class="container">
       <div class="section-header">
-        <h2>Einfache Integration, sofort startklar.</h2>
+        <h2 i18n="@@voiceaider.how-it-works.title">Einfache Integration, sofort startklar.</h2>
       </div>
       
       <div class="steps-container">
@@ -89,7 +89,7 @@
       
       <div class="info-box">
         <div class="info-icon">💡</div>
-        <p>
+        <p i18n="@@voiceaider.how-it-works.info">
           <strong>Keine zusätzliche Hardware. Kein Callcenter.</strong><br>
           Nur intelligente Software, die im Hintergrund arbeitet.
         </p>
@@ -101,7 +101,7 @@
   <section class="benefits-section">
     <div class="container">
       <div class="section-header">
-        <h2>Schluss mit verpassten Anrufen und langen Warteschleifen.</h2>
+        <h2 i18n="@@voiceaider.benefits.title">Schluss mit verpassten Anrufen und langen Warteschleifen.</h2>
       </div>
       
       <div class="benefits-grid">
@@ -112,10 +112,10 @@
       </div>
       
       <div class="testimonial-box">
-        <blockquote>
+        <blockquote i18n="@@voiceaider.benefits.testimonial">
           „Seit VoiceAider AI verpassen wir keinen Anruf mehr – und unsere Kunden werden sofort betreut."
         </blockquote>
-        <cite>– Beispielkunde (Praxis, Agentur o. Ä.)</cite>
+        <cite i18n="@@voiceaider.benefits.testimonial-author">– Beispielkunde (Praxis, Agentur o. Ä.)</cite>
       </div>
     </div>
   </section>
@@ -124,7 +124,7 @@
   <section class="use-cases-section">
     <div class="container">
       <div class="section-header">
-        <h2>Vielfältige Einsatzmöglichkeiten in verschiedenen Branchen.</h2>
+        <h2 i18n="@@voiceaider.use-cases.title">Vielfältige Einsatzmöglichkeiten in verschiedenen Branchen.</h2>
       </div>
       
       <div class="use-cases-grid">
@@ -141,8 +141,8 @@
   <section class="privacy-section">
     <div class="container">
       <div class="section-header">
-        <h2>Datenschutz made in Germany – nahtlos integriert in Ihre Systeme.</h2>
-        <p class="section-description">
+        <h2 i18n="@@voiceaider.privacy.title">Datenschutz made in Germany – nahtlos integriert in Ihre Systeme.</h2>
+        <p class="section-description" i18n="@@voiceaider.privacy.description">
           VoiceAider AI verarbeitet alle Gesprächsdaten DSGVO-konform in europäischen Rechenzentren.
           Die Lösung lässt sich mühelos in Microsoft 365, Teams, Power Automate oder CRM-Systeme integrieren.
         </p>
@@ -151,15 +151,15 @@
       <div class="compliance-badges">
         <div class="badge">
           <div class="badge-icon">🔒</div>
-          <span>DSGVO Compliant</span>
+          <span i18n="@@voiceaider.privacy.badge.gdpr">DSGVO Compliant</span>
         </div>
         <div class="badge">
           <div class="badge-icon">🇪🇺</div>
-          <span>EU Hosting</span>
+          <span i18n="@@voiceaider.privacy.badge.eu">EU Hosting</span>
         </div>
         <div class="badge">
           <div class="badge-icon">🤝</div>
-          <span>Microsoft Partner</span>
+          <span i18n="@@voiceaider.privacy.badge.partner">Microsoft Partner</span>
         </div>
       </div>
     </div>
@@ -169,8 +169,8 @@
   <section class="pricing-section">
     <div class="container">
       <div class="section-header">
-        <h2>Starten Sie einfach – ganz ohne Risiko.</h2>
-        <p class="section-description">
+        <h2 i18n="@@voiceaider.pricing.title">Starten Sie einfach – ganz ohne Risiko.</h2>
+        <p class="section-description" i18n="@@voiceaider.pricing.description">
           Testen Sie VoiceAider AI kostenlos in einer Live-Demo oder beginnen Sie direkt mit dem Einstiegspaket.
         </p>
       </div>
@@ -191,10 +191,10 @@
       </div>
       
       <div class="pricing-cta">
-        <button class="btn btn-primary" (click)="requestDemo()">
+        <button class="btn btn-primary" (click)="requestDemo()" i18n="@@voiceaider.pricing.demo-btn">
           Demo buchen
         </button>
-        <button class="btn btn-secondary" (click)="requestQuote()">
+        <button class="btn btn-secondary" (click)="requestQuote()" i18n="@@voiceaider.pricing.quote-btn">
           Individuelles Angebot anfordern
         </button>
       </div>
@@ -205,15 +205,15 @@
   <section class="final-cta-section">
     <div class="container">
       <div class="cta-content">
-        <h2>Lassen Sie VoiceAider AI für Sie sprechen.</h2>
-        <p>
+        <h2 i18n="@@voiceaider.final-cta.title">Lassen Sie VoiceAider AI für Sie sprechen.</h2>
+        <p i18n="@@voiceaider.final-cta.description">
           Keine verpassten Anrufe mehr, keine Wartezeiten – einfach intelligente Kommunikation.
         </p>
         <div class="cta-buttons">
-          <button class="btn btn-primary" (click)="requestDemo()">
+          <button class="btn btn-primary" (click)="requestDemo()" i18n="@@voiceaider.final-cta.demo-btn">
             Jetzt kostenlose Demo vereinbaren
           </button>
-          <button class="btn btn-secondary" (click)="bookConsultation()">
+          <button class="btn btn-secondary" (click)="bookConsultation()" i18n="@@voiceaider.final-cta.consultation-btn">
             Beratungsgespräch buchen
           </button>
         </div>

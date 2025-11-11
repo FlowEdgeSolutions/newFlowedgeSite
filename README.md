@@ -110,7 +110,14 @@ npm run build
 2. Cookie-Banner funktioniert sofort
 3. E-Mail-Backend nach EmailJS-Setup aktiv
 
-## 📞 Kontakt
+## � VoiceAider AI Demos
+
+- Marketingseite: `/loesungen/voiceaider-ai`
+- Interaktive Demo (Screenshots nachgebaut): `/loesungen/voiceaider-ai-demo`
+
+Die Demo ist rein statisch und dient als UI-Vorschau mit Tabs (Use Case, Flow Designer, Knowledge Base, Actions, Test Calls).
+
+## �📞 Kontakt
 
 **FlowEdge Solutions**
 - **Inhaber**: Khaled Ayub

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <title>FlowEdge Solutions</title>
@@ -10,6 +10,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    // Ensure correct text direction at runtime for Arabic builds or paths
+    (function() {
+      try {
+        var html = document.documentElement;
+        var lang = (html.getAttribute('lang') || '').toLowerCase();
+        var isArabic = lang.startsWith('ar') || (location.pathname || '').startsWith('/ar');
+        html.setAttribute('dir', isArabic ? 'rtl' : 'ltr');
+      } catch (e) {
+        // no-op
+      }
+    })();
+  </script>
 </head>
 <body>
   <app-root></app-root>

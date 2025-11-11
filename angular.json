@@ -13,6 +13,19 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "de",
+        "locales": {
+          "en": {
+            "translation": "src/locale/messages.en.xlf",
+            "baseHref": "/en/"
+          },
+          "ar": {
+            "translation": "src/locale/messages.ar.xlf",
+            "baseHref": "/ar/"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -29,6 +42,9 @@
             ],
             "styles": [
               "src/styles.scss"
+            ],
+            "polyfills": [
+              "@angular/localize/init"
             ]
           },
           "configurations": {
@@ -47,7 +63,44 @@
               ],
               "optimization": true,
               "extractLicenses": true,
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "localize": true
+            },
+            "en": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "600kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "15kB",
+                  "maximumError": "25kB"
+                }
+              ],
+              "optimization": true,
+              "extractLicenses": true,
+              "outputHashing": "all",
+              "localize": ["en"]
+            },
+            "ar": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "600kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "15kB",
+                  "maximumError": "25kB"
+                }
+              ],
+              "optimization": true,
+              "extractLicenses": true,
+              "outputHashing": "all",
+              "localize": ["ar"]
             },
             "development": {
               "optimization": false,
@@ -65,6 +118,12 @@
             },
             "development": {
               "buildTarget": "angular_FlowEdge_AI:build:development"
+            },
+            "en": {
+              "buildTarget": "angular_FlowEdge_AI:build:en"
+            },
+            "ar": {
+              "buildTarget": "angular_FlowEdge_AI:build:ar"
             }
           },
           "defaultConfiguration": "development"
@@ -85,6 +144,9 @@
             ],
             "styles": [
               "src/styles.scss"
+            ],
+            "polyfills": [
+              "@angular/localize/init"
             ]
           }
         }
