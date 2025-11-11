@@ -45,18 +45,18 @@ export class HeroComponent {
   features = [
     {
       icon: 'heroSparkles',
-      title: $localize`:@@home.features.strategy.title:KI-Strategie`,
-      description: $localize`:@@home.features.strategy.desc:Zukunftssicher planen`
+      title: 'KI-Strategie',
+      description: 'Zukunftssicher planen'
     },
     {
       icon: 'heroCog6Tooth',
-      title: $localize`:@@home.features.automation.title:Automatisierung`,
-      description: $localize`:@@home.features.automation.desc:Intelligente Abläufe`
+      title: 'Automatisierung',
+      description: 'Intelligente Abläufe'
     },
     {
       icon: 'heroUserGroup',
-      title: $localize`:@@home.features.consulting.title:Beratung`,
-      description: $localize`:@@home.features.consulting.desc:Persönlich & praxisnah`
+      title: 'Beratung',
+      description: 'Persönlich & praxisnah'
     }
   ];
 

@@ -1,5 +1,5 @@
 {
-  "name": "angular-FlowEdge Solutions",
+  "name": "angular-flowedge-solutions",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -39,7 +39,6 @@
     "@angular/build": "^20.3.6",
     "@angular/cli": "^20.3.6",
     "@angular/compiler-cli": "^20.3.0",
-    "@angular/localize": "^20.3.6",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",
