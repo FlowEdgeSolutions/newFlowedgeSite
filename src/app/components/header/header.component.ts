@@ -10,7 +10,7 @@ import { Router, RouterLink } from '@angular/router';
 export class HeaderComponent {
   isScrolled = signal(false);
   isMobileMenuOpen = signal(false);
-  isDropdownOpen = signal(false);
+  openDropdowns = signal<Set<string>>(new Set());
 
   constructor(private router: Router) {}
 
@@ -43,12 +43,24 @@ export class HeaderComponent {
     });
   }
 
-  showDropdown() {
-    this.isDropdownOpen.set(true);
+  showDropdown(dropdownId: string) {
+    this.openDropdowns.update(dropdowns => {
+      const newDropdowns = new Set(dropdowns);
+      newDropdowns.add(dropdownId);
+      return newDropdowns;
+    });
   }
 
-  hideDropdown() {
-    this.isDropdownOpen.set(false);
+  hideDropdown(dropdownId: string) {
+    this.openDropdowns.update(dropdowns => {
+      const newDropdowns = new Set(dropdowns);
+      newDropdowns.delete(dropdownId);
+      return newDropdowns;
+    });
+  }
+
+  isDropdownOpen(dropdownId: string): boolean {
+    return this.openDropdowns().has(dropdownId);
   }
 
   navigateToSolution(solution: string) {
@@ -57,14 +69,13 @@ export class HeaderComponent {
     
     switch(solution) {
       case 'voiceaider':
-        route = '/loesungen/voiceaider-ai';
+        route = '/loesungen/voice-agent';
         break;
-      case 'mailaider':
-      case 'legalaider':
-      case 'writeaider':
       case 'medaider':
-        // Für zukünftige Seiten
-        route = `/loesungen/${solution}-ai`;
+        route = '/loesungen/med-agent';
+        break;
+      case 'writeaider':
+        route = '/loesungen/write-agent';
         break;
       default:
         route = '/loesungen';
@@ -73,7 +84,7 @@ export class HeaderComponent {
     this.router.navigate([route]).then(() => {
       window.scrollTo({ top: 0, behavior: 'instant' });
     });
-    this.isDropdownOpen.set(false);
+    this.openDropdowns.set(new Set());
     this.closeMobileMenu();
   }
 }

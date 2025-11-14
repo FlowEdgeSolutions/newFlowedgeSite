@@ -47,11 +47,20 @@ export const routes: Routes = [
   { path: 'philosophie', component: PhilosophyComponent },
   { path: 'loesungen', component: SolutionsPageComponent },
   { path: 'loesungen/voiceaider-ai', component: VoiceaiderAi },
+  { path: 'loesungen/voice-agent', component: VoiceaiderAi },
   { path: 'loesungen/voiceaider-ai-demo', component: VoiceaiderAiDemoComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'blog/:id', component: BlogDetailComponent },
   { path: 'kontakt', component: ContactComponent },
   { path: 'impressum', component: ImpressumComponent },
   { path: 'datenschutz', component: DatenschutzComponent },
-  { path: 'agb', component: AgbComponent }
+  { path: 'agb', component: AgbComponent },
+  { path: 'ueber-uns', component: PhilosophyComponent },
+  { path: 'ressourcen', component: BlogComponent },
+  { path: 'branchen/health-ai', component: BlogComponent },
+  { path: 'branchen/legal-ai', component: BlogComponent },
+  { path: 'beratung/ki-strategie', component: BlogComponent },
+  { path: 'beratung/it-integration', component: BlogComponent },
+  { path: 'loesungen/med-agent', component: SolutionsPageComponent },
+  { path: 'loesungen/write-agent', component: SolutionsPageComponent }
 ];
