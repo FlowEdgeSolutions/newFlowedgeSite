@@ -1,0 +1,33 @@
+<div class="vapi-widget-container">
+  <div class="card vapi-card fade-in-up">
+    <div class="vapi-header">
+      <div>
+        <div class="vapi-label text-primary">Voice Assistant</div>
+        <div class="vapi-status-text">
+          {{ isCalling ? 'Aktiv' : 'Bereit' }}
+        </div>
+      </div>
+      <span
+        class="vapi-status-dot"
+        [class.vapi-status-dot--active]="isCalling"
+      ></span>
+    </div>
+
+    <div class="vapi-log">
+      <p *ngIf="logs.length === 0" class="vapi-log-empty">
+        Noch keine Unterhaltung.
+      </p>
+      <div *ngFor="let line of logs">
+        {{ line }}
+      </div>
+    </div>
+
+    <button
+      class="btn"
+      [ngClass]="isCalling ? 'btn-secondary vapi-btn-stop' : 'btn-primary'"
+      (click)="toggleCall()"
+    >
+      {{ isCalling ? 'Call beenden' : 'Mit Assistent sprechen' }}
+    </button>
+  </div>
+</div>

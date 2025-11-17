@@ -325,6 +325,40 @@
   gap: 2rem;
 }
 
+// Booking Card
+.booking-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 2rem;
+  border: 1px solid rgba(96, 149, 198, 0.2);
+  box-shadow: 0 8px 32px rgba(16, 56, 140, 0.08);
+  
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgba(40, 47, 61, 0.7);
+    margin: 0 0 1.5rem 0;
+  }
+  
+  #my-cal-inline-erstgesprach-digitale-prozesse-automatisierung {
+    min-height: 600px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(16, 56, 140, 0.1);
+    border: 1px solid rgba(96, 149, 198, 0.15);
+    background: #ffffff;
+  }
+}
+
 .info-card {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(12px);
@@ -514,6 +548,61 @@
   }
 }
 
+// Booking Section
+.booking-section {
+  padding: 60px 0 100px;
+  background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%);
+}
+
+.booking-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 0.75rem 0;
+    text-align: center;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(40, 47, 61, 0.7);
+    margin: 0 0 2.5rem 0;
+    text-align: center;
+  }
+  
+  #my-cal-inline-erstgesprach-digitale-prozesse-automatisierung {
+    min-height: 800px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(16, 56, 140, 0.1);
+    border: 1px solid rgba(96, 149, 198, 0.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-section {
+    padding: 40px 0 60px;
+  }
+  
+  .booking-content {
+    padding: 0 1rem;
+    
+    .section-title {
+      font-size: 1.75rem;
+    }
+    
+    #my-cal-inline-erstgesprach-digitale-prozesse-automatisierung {
+      min-height: 600px;
+    }
+  }
+}
+
 // Animations
 .animate-fade-in {
   animation: fadeIn 1s ease-out forwards;
@@ -564,6 +653,12 @@
   .hero-headline {
     font-size: 2.5rem;
   }
+  
+  .booking-card {
+    #my-cal-inline-erstgesprach-digitale-prozesse-automatisierung {
+      min-height: 500px;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -613,5 +708,17 @@
   .icon-wrapper {
     width: 40px;
     height: 40px;
+  }
+  
+  .booking-card {
+    padding: 1.5rem;
+    
+    .section-title {
+      font-size: 1.375rem;
+    }
+    
+    #my-cal-inline-erstgesprach-digitale-prozesse-automatisierung {
+      min-height: 400px;
+    }
   }
 }

@@ -1,0 +1,97 @@
+:host {
+  // Floating Position
+  .vapi-widget-container {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 9999;
+  }
+
+  // Karte – nutzt dein globales .card-Design als Basis
+  .vapi-card {
+    @extend .card !optional;
+    width: 320px;
+    max-width: 100vw;
+    padding: var(--spacing-sm);
+  }
+
+  // Header mit Status
+  .vapi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
+
+    .vapi-label {
+      font-size: var(--font-size-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gray-500);
+    }
+
+    .vapi-status-text {
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+  }
+
+  // Statuspunkt
+  .vapi-status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background-color: var(--gray-300);
+    box-shadow: var(--shadow-sm);
+
+    &--active {
+      // ergibt .vapi-status-dot--active
+      background-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(96, 149, 198, 0.25);
+    }
+  }
+
+  // Log-Bereich
+  .vapi-log {
+    height: 140px;
+    margin: var(--spacing-xs) 0 var(--spacing-sm);
+    padding-right: 4px;
+    overflow-y: auto;
+    font-size: var(--font-size-sm);
+    color: var(--gray-700);
+    border-radius: var(--radius-sm);
+    background-color: var(--gray-50);
+    border: 1px solid var(--gray-200);
+
+    &-empty {
+      // .vapi-log-empty
+      color: var(--gray-500);
+      font-size: var(--font-size-sm);
+    }
+  }
+
+  // Button-Stopp-Variante (Basis: globales .btn & .btn-secondary)
+  .vapi-btn-stop {
+    background-color: #ffffff;
+    color: #b91c1c;
+    border-color: #b91c1c;
+
+    &:hover {
+      background-color: #b91c1c;
+      color: #ffffff;
+    }
+  }
+
+  // Responsive
+  @media (max-width: 600px) {
+    .vapi-widget-container {
+      right: var(--spacing-sm);
+      left: var(--spacing-sm);
+      bottom: var(--spacing-sm);
+    }
+
+    .vapi-card {
+      width: 100%;
+    }
+  }
+}

@@ -1,72 +1,12 @@
-<!doctype html>
-<html lang="de">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>FlowEdge Solutions</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" href="/Logo/logo_icon.png">
-  <link rel="apple-touch-icon" href="/Logo/logo_icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <script>
-    // Ensure correct text direction at runtime for Arabic builds or paths
-    (function() {
-      try {
-        var html = document.documentElement;
-        var lang = (html.getAttribute('lang') || '').toLowerCase();
-        var isArabic = lang.startsWith('ar') || (location.pathname || '').startsWith('/ar');
-        html.setAttribute('dir', isArabic ? 'rtl' : 'ltr');
-      } catch (e) {
-        // no-op
-      }
-    })();
-  </script>
+  <meta charset="utf-8" />
+  <title>FlowedgeSite</title>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 </head>
 <body>
   <app-root></app-root>
-  
-  <!-- Custom styles for VAPI widget -->
-  <style>
-    /* Make user message text white for better contrast */
-    [data-message-type="user"] {
-      color: #ffffff !important;
-    }
-    
-    /* Alternative: target message bubbles directly */
-    .vapi-message-user {
-      color: #ffffff !important;
-    }
-  </style>
-  
-  <!-- VAPI AI Widget (English configuration) -->
-  <vapi-widget
-    public-key="7bc69af2-2b07-43ab-9264-2d83d1948958"
-    assistant-id="37382601-51e2-4689-b4b6-32ec62bf34b5"
-    mode="chat"
-    theme="light"
-    base-bg-color="#ffffff"
-    accent-color="#82b1d8"
-    cta-button-color="#82b1d8"
-    cta-button-text-color="#ffffff"
-    border-radius="large"
-    size="compact"
-    position="bottom-right"
-    title="FLOWEDGE KI-CHAT"
-    start-button-text="Start"
-    end-button-text="Beenden"
-    chat-first-message="Hallo, hier ist der FlowEdge KI-Chat."
-    chat-placeholder="Nachricht eingeben..."
-    voice-show-transcript="true"
-    consent-required="true"
-    consent-title="Allgemeine Geschäftsbedingungen"
-    consent-content='Durch Klicken auf "Zustimmen" und bei jeder Interaktion mit diesem KI-Agenten stimme ich der Aufzeichnung, Speicherung und Weitergabe meiner Kommunikation an Drittanbieter zu, wie in unseren Allgemeinen Geschäftsbedingungen beschrieben.'
-    consent-storage-key="vapi_widget_consent"
-  ></vapi-widget>
-
-<script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async type="text/javascript"></script>
-
 </body>
 </html>
