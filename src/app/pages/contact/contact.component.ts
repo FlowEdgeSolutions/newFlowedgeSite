@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
+import { CalBookingComponent } from '../../components/cal-booking/cal-booking.component';
 import { 
   heroPhone,
   heroEnvelope,
@@ -15,7 +16,7 @@ import { EmailService } from '../../services/email.service';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, NgIconComponent],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, NgIconComponent, CalBookingComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
   viewProviders: [provideIcons({ 
@@ -27,7 +28,7 @@ import { EmailService } from '../../services/email.service';
     heroExclamationCircle
   })]
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent {
   contactForm: FormGroup;
   isSubmitted = false;
   isLoading = false;
@@ -71,80 +72,6 @@ export class ContactComponent implements OnInit {
       phone: [''],
       message: ['', Validators.required]
     });
-  }
-
-  ngOnInit() {
-    // Load Cal.com script after view init
-    this.loadCalComScript();
-  }
-
-  loadCalComScript() {
-    // Check if script is already loaded
-    if (typeof window !== 'undefined' && !(window as any).Cal) {
-      const script = document.createElement('script');
-      script.src = 'https://app.cal.com/embed/embed.js';
-      script.async = true;
-      script.onload = () => {
-        this.initializeCalCom();
-      };
-      document.head.appendChild(script);
-    } else if ((window as any).Cal) {
-      this.initializeCalCom();
-    }
-  }
-
-  initializeCalCom() {
-    // Initialize Cal.com inline calendar
-    if (typeof window !== 'undefined' && (window as any).Cal) {
-      const Cal = (window as any).Cal;
-      
-      // Make sure the namespace is initialized
-      if (!Cal.ns["erstgesprach-digitale-prozesse-automatisierung"]) {
-        Cal("init", "erstgesprach-digitale-prozesse-automatisierung", {origin:"https://app.cal.com"});
-      }
-      
-      // Small delay to ensure DOM is ready
-      setTimeout(() => {
-        try {
-          // Check if the container element exists
-          const container = document.getElementById("my-cal-inline-erstgesprach-digitale-prozesse-automatisierung");
-          if (container) {
-            Cal.ns["erstgesprach-digitale-prozesse-automatisierung"]("inline", {
-              elementOrSelector:"#my-cal-inline-erstgesprach-digitale-prozesse-automatisierung",
-              config: {"layout":"month_view","theme":"auto"},
-              calLink: "flowedge/erstgesprach-digitale-prozesse-automatisierung",
-            });
-            
-            Cal.ns["erstgesprach-digitale-prozesse-automatisierung"]("ui", {
-              "cssVarsPerTheme":{"light":{"cal-brand":"#147dc8"},"dark":{"cal-brand":"#fafafa"}},
-              "hideEventTypeDetails":false,
-              "layout":"month_view"
-            });
-            
-            console.log("Cal.com inline calendar initialized successfully");
-          } else {
-            console.error("Cal.com container element not found");
-          }
-        } catch (e) {
-          console.log("Cal.com initialization failed, retrying...", e);
-          // Retry once more after a delay
-          setTimeout(() => {
-            try {
-              const container = document.getElementById("my-cal-inline-erstgesprach-digitale-prozesse-automatisierung");
-              if (container) {
-                Cal.ns["erstgesprach-digitale-prozesse-automatisierung"]("inline", {
-                  elementOrSelector:"#my-cal-inline-erstgesprach-digitale-prozesse-automatisierung",
-                  config: {"layout":"month_view","theme":"auto"},
-                  calLink: "flowedge/erstgesprach-digitale-prozesse-automatisierung",
-                });
-              }
-            } catch (e2) {
-              console.error("Cal.com initialization failed after retry", e2);
-            }
-          }, 1000);
-        }
-      }, 500);
-    }
   }
 
   async onSubmit() {
