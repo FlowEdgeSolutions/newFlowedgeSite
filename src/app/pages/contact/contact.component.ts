@@ -88,34 +88,20 @@ export class ContactComponent {
       };
 
       try {
-        // Versuch 1: EmailJS
         const emailSuccess = await this.emailService.sendEmail(formData);
-        
-        if (emailSuccess) {
-          this.isSubmitted = true;
-          this.isLoading = false;
-          
-          // Reset form after 3 seconds
-          setTimeout(() => {
-            this.contactForm.reset();
-            this.isSubmitted = false;
-          }, 3000);
-        } else {
-          // Fallback: Netlify Forms
-          const netlifySuccess = await this.emailService.sendViaNetlify(this.contactForm.value);
-          
-          if (netlifySuccess) {
-            this.isSubmitted = true;
-            this.isLoading = false;
-            
-            setTimeout(() => {
-              this.contactForm.reset();
-              this.isSubmitted = false;
-            }, 3000);
-          } else {
-            throw new Error('E-Mail konnte nicht gesendet werden');
-          }
+
+        if (!emailSuccess) {
+          throw new Error('E-Mail konnte nicht gesendet werden');
         }
+
+        this.isSubmitted = true;
+        this.isLoading = false;
+
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          this.contactForm.reset();
+          this.isSubmitted = false;
+        }, 3000);
       } catch (error) {
         this.isLoading = false;
         this.errorMessage = 'Es gab ein Problem beim Versenden Ihrer Nachricht. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail.';

@@ -1,0 +1,23 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/angular_FlowEdge_AI/browser",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.flowedge.de"
+        }
+      ],
+      "destination": "https://flowedge.de/$1",
+      "permanent": true
+    }
+  ]
+}

@@ -1,33 +1,33 @@
-# 📧 E-Mail Backend Einrichtung
+﻿# ­ƒôº E-Mail Backend Einrichtung
 
-Dieses Projekt verwendet **EmailJS** für den E-Mail-Versand aus dem Kontaktformular. Hier ist die Schritt-für-Schritt-Anleitung zur Einrichtung.
+Dieses Projekt verwendet **EmailJS** f├╝r den E-Mail-Versand aus dem Kontaktformular. Hier ist die Schritt-f├╝r-Schritt-Anleitung zur Einrichtung.
 
 ---
 
-## 🔧 Schritt 1: EmailJS Account erstellen
+## ­ƒöº Schritt 1: EmailJS Account erstellen
 
 1. Gehen Sie zu [https://www.emailjs.com/](https://www.emailjs.com/)
 2. Klicken Sie auf **"Sign Up"** und erstellen Sie einen kostenlosen Account
-3. Bestätigen Sie Ihre E-Mail-Adresse
+3. Best├ñtigen Sie Ihre E-Mail-Adresse
 
 ---
 
-## 📬 Schritt 2: E-Mail-Service verbinden
+## ­ƒô¼ Schritt 2: E-Mail-Service verbinden
 
 1. Nach dem Login gehen Sie zu **"Email Services"**
 2. Klicken Sie auf **"Add New Service"**
-3. Wählen Sie Ihren E-Mail-Provider (z.B. Gmail, Outlook, etc.)
-4. Folgen Sie den Anweisungen zur Verknüpfung Ihres E-Mail-Accounts
+3. W├ñhlen Sie Ihren E-Mail-Provider (z.B. Gmail, Outlook, etc.)
+4. Folgen Sie den Anweisungen zur Verkn├╝pfung Ihres E-Mail-Accounts
 5. **Notieren Sie sich die `Service ID`** (z.B. `service_abc123`)
 
 ### Empfohlene Provider:
 - **Gmail** - Einfach einzurichten
-- **Outlook/Office365** - Für Geschäftskonten
-- **SendGrid** - Für hohe Volumina
+- **Outlook/Office365** - F├╝r Gesch├ñftskonten
+- **SendGrid** - F├╝r hohe Volumina
 
 ---
 
-## 📝 Schritt 3: E-Mail-Template erstellen
+## ­ƒôØ Schritt 3: E-Mail-Template erstellen
 
 1. Gehen Sie zu **"Email Templates"**
 2. Klicken Sie auf **"Create New Template"**
@@ -42,7 +42,7 @@ Neue Kontaktanfrage von {{from_name}}
 
 **Body:**
 ```
-Neue Nachricht über das Kontaktformular:
+Neue Nachricht ├╝ber das Kontaktformular:
 
 Von: {{from_name}}
 E-Mail: {{from_email}}
@@ -53,7 +53,7 @@ Nachricht:
 {{message}}
 
 ---
-Diese E-Mail wurde automatisch über das FlowEdge Solutions Kontaktformular gesendet.
+Diese E-Mail wurde automatisch ├╝ber das FlowEdge Solutions Kontaktformular gesendet.
 ```
 
 4. Klicken Sie auf **"Save"**
@@ -61,17 +61,17 @@ Diese E-Mail wurde automatisch über das FlowEdge Solutions Kontaktformular gese
 
 ---
 
-## 🔑 Schritt 4: Public Key abrufen
+## ­ƒöæ Schritt 4: Public Key abrufen
 
-1. Gehen Sie zu **"Account"** → **"General"**
+1. Gehen Sie zu **"Account"** ÔåÆ **"General"**
 2. Im Abschnitt **"API Keys"** finden Sie Ihren **Public Key**
 3. **Notieren Sie sich den `Public Key`** (z.B. `user_pqr456`)
 
 ---
 
-## ⚙️ Schritt 5: Konfiguration in Angular eintragen
+## ÔÜÖ´©Å Schritt 5: Konfiguration in Angular eintragen
 
-Öffnen Sie die Datei:
+├ûffnen Sie die Datei:
 ```
 src/app/services/email.service.ts
 ```
@@ -86,9 +86,9 @@ private readonly PUBLIC_KEY = 'user_pqr456';        // Ihr Public Key
 
 ---
 
-## 🎯 Schritt 6: E-Mail-Empfänger konfigurieren
+## ­ƒÄ» Schritt 6: E-Mail-Empf├ñnger konfigurieren
 
-In der gleichen Datei (`email.service.ts`) können Sie die Empfänger-E-Mail anpassen:
+In der gleichen Datei (`email.service.ts`) k├Ânnen Sie die Empf├ñnger-E-Mail anpassen:
 
 ```typescript
 to_email: 'info@flowedge.de' // Ihre E-Mail-Adresse
@@ -96,7 +96,7 @@ to_email: 'info@flowedge.de' // Ihre E-Mail-Adresse
 
 ---
 
-## 🧪 Schritt 7: Testen
+## ­ƒº¬ Schritt 7: Testen
 
 1. Starten Sie die Anwendung lokal:
    ```bash
@@ -105,93 +105,69 @@ to_email: 'info@flowedge.de' // Ihre E-Mail-Adresse
 
 2. Navigieren Sie zur Kontaktseite: `http://localhost:4200/kontakt`
 
-3. Füllen Sie das Formular aus und senden Sie eine Test-Nachricht
+3. F├╝llen Sie das Formular aus und senden Sie eine Test-Nachricht
 
-4. Überprüfen Sie Ihr E-Mail-Postfach (auch Spam-Ordner!)
-
----
-
-## 🌐 Netlify Forms als Fallback
-
-Zusätzlich zu EmailJS ist **Netlify Forms** als Fallback konfiguriert:
-
-### Netlify Forms Einrichtung:
-
-1. Nach dem Deployment auf Netlify gehen Sie zu:
-   **Site settings → Forms**
-
-2. Aktivieren Sie **Form notifications**
-
-3. Fügen Sie Ihre E-Mail-Adresse hinzu für Benachrichtigungen
-
-4. Alle Formular-Einreichungen werden auch im Netlify Dashboard unter **"Forms"** gespeichert
+4. ├£berpr├╝fen Sie Ihr E-Mail-Postfach (auch Spam-Ordner!)
 
 ---
 
-## 📊 Kostenlose Limits
+## ­ƒôè Kostenlose Limits
 
 ### EmailJS Free Tier:
-- ✅ 200 E-Mails pro Monat
-- ✅ 2 E-Mail-Services
-- ✅ 1 E-Mail-Template
-
-### Netlify Forms Free Tier:
-- ✅ 100 Formular-Einreichungen pro Monat
-- ✅ Spam-Filterung inklusive
-- ✅ Export als CSV möglich
+- Ô£à 200 E-Mails pro Monat
+- Ô£à 2 E-Mail-Services
+- Ô£à 1 E-Mail-Template
 
 ---
 
-## 🔒 Sicherheit
+## ­ƒöÆ Sicherheit
 
 ### Wichtige Hinweise:
 
-1. ✅ **Public Key ist sicher**: Der EmailJS Public Key kann im Frontend-Code bleiben
-2. ✅ **Kein API-Secret nötig**: EmailJS verwendet OAuth für Gmail/Outlook
-3. ⚠️ **Rate Limiting**: EmailJS hat automatisches Rate Limiting gegen Missbrauch
-4. ⚠️ **Spam-Schutz**: Netlify Forms hat eingebauten Spam-Schutz (Honeypot-Field)
+1. Ô£à **Public Key ist sicher**: Der EmailJS Public Key kann im Frontend-Code bleiben
+2. Ô£à **Kein API-Secret n├Âtig**: EmailJS verwendet OAuth f├╝r Gmail/Outlook
+3. ÔÜá´©Å **Rate Limiting**: EmailJS hat automatisches Rate Limiting gegen Missbrauch
 
 ---
 
-## 🚀 Deployment-Checklist
+## ­ƒÜÇ Deployment-Checklist
 
 Vor dem Deployment:
 
 - [ ] EmailJS Service ID eingetragen
 - [ ] EmailJS Template ID eingetragen
 - [ ] EmailJS Public Key eingetragen
-- [ ] E-Mail-Empfänger konfiguriert
+- [ ] E-Mail-Empf├ñnger konfiguriert
 - [ ] Lokaler Test erfolgreich
-- [ ] Netlify Forms aktiviert
 - [ ] Spam-Benachrichtigungen konfiguriert
 
 ---
 
-## 🆘 Troubleshooting
+## ­ƒåÿ Troubleshooting
 
 ### Problem: E-Mails kommen nicht an
 
-**Lösung 1:** Überprüfen Sie Spam-Ordner
-**Lösung 2:** Prüfen Sie EmailJS Dashboard → "Logs"
-**Lösung 3:** Testen Sie die E-Mail-Verbindung in EmailJS
+**L├Âsung 1:** ├£berpr├╝fen Sie Spam-Ordner
+**L├Âsung 2:** Pr├╝fen Sie EmailJS Dashboard ÔåÆ "Logs"
+**L├Âsung 3:** Testen Sie die E-Mail-Verbindung in EmailJS
 
 ### Problem: "Invalid template ID"
 
-**Lösung:** Template ID nochmal aus EmailJS Dashboard kopieren
+**L├Âsung:** Template ID nochmal aus EmailJS Dashboard kopieren
 
 ### Problem: CORS-Fehler
 
-**Lösung:** EmailJS erlaubt alle Origins standardmäßig - überprüfen Sie Ihre Service-Konfiguration
+**L├Âsung:** EmailJS erlaubt alle Origins standardm├ñ├ƒig - ├╝berpr├╝fen Sie Ihre Service-Konfiguration
 
 ---
 
-## 📞 Support
+## ­ƒô× Support
 
 Bei Fragen:
 - EmailJS Docs: [https://www.emailjs.com/docs/](https://www.emailjs.com/docs/)
-- Netlify Forms Docs: [https://docs.netlify.com/forms/setup/](https://docs.netlify.com/forms/setup/)
 
 ---
 
 **Stand:** Januar 2025
 **FlowEdge Solutions**
+

@@ -1,15 +1,15 @@
-# FlowEdge Solutions
+﻿# FlowEdge Solutions
 
-Eine moderne, professionelle Website für IT-Beratung, Prozessautomatisierung und KI-Entwicklung.
+Eine moderne, professionelle Website fÃ¼r IT-Beratung, Prozessautomatisierung und KI-Entwicklung.
 
-## 🎨 Design-System
+## ðŸŽ¨ Design-System
 
 ### Farbschema (Corporate Blue)
-- **Primary Dark**: `#10388c` - Hauptfarbe für Buttons und Überschriften
-- **Primary Light**: `#6095c6` - Hover-Effekte und sekundäre Akzente
+- **Primary Dark**: `#10388c` - Hauptfarbe fÃ¼r Buttons und Ãœberschriften
+- **Primary Light**: `#6095c6` - Hover-Effekte und sekundÃ¤re Akzente
 - **Accent**: `#6095c6` - Call-to-Action Elemente
 - **Background**: `#ffffff` - Haupthintergrund
-- **Text Dark**: `#282f3d` - Primäre Textfarbe
+- **Text Dark**: `#282f3d` - PrimÃ¤re Textfarbe
 
 ### Technologie-Stack
 - **Framework**: Angular 19+ (zoneless)
@@ -17,7 +17,7 @@ Eine moderne, professionelle Website für IT-Beratung, Prozessautomatisierung un
 - **TypeScript**: Standalone Components
 - **Responsive**: Mobile-First Ansatz
 
-## 🚀 Entwicklung
+## ðŸš€ Entwicklung
 
 ### Installation
 ```bash
@@ -29,14 +29,14 @@ npm install
 ```bash
 npm start
 ```
-Die Anwendung läuft auf `http://localhost:4200`
+Die Anwendung lÃ¤uft auf `http://localhost:4200`
 
 ### Build
 ```bash
 npm run build
 ```
 
-## 📦 Komponenten
+## ðŸ“¦ Komponenten
 
 ### Haupt-Sektionen
 1. **Hero** - Einstiegsbereich mit animierter 3D-Sphere
@@ -50,22 +50,20 @@ npm run build
 9. **Footer** - Footer mit Links und Social Media
 
 ### Features
-- ✅ Responsive Design für alle Geräte
-- ✅ Smooth Scroll-Navigation
-- ✅ Animierte Übergänge
-- ✅ Moderne UI mit Corporate Blue Theme
-- ✅ SEO-optimiert
-- ✅ DSGVO-konform mit Cookie-Banner
-- ✅ Kontaktformular mit E-Mail-Integration (EmailJS + Netlify Forms)
+- âœ… Responsive Design fÃ¼r alle GerÃ¤te
+- âœ… Smooth Scroll-Navigation
+- âœ… Animierte ÃœbergÃ¤nge
+- âœ… Moderne UI mit Corporate Blue Theme
+- âœ… SEO-optimiert
+- âœ… DSGVO-konform mit Cookie-Banner
+- âœ… Kontaktformular mit E-Mail-Integration (EmailJS)
 
-## 📧 E-Mail-Backend einrichten
+## ðŸ“§ E-Mail-Backend einrichten
 
-Das Kontaktformular verwendet ein Dual-System:
-1. **Primär**: EmailJS (direkte E-Mail-Zustellung)
-2. **Fallback**: Netlify Forms (zuverlässige Datenspeicherung)
+Das Kontaktformular nutzt EmailJS fuer die Zustellung der Anfragen.
 
-### Quick Setup für Microsoft Outlook:
-📚 **Ausführliche Anleitung**: Siehe [`OUTLOOK_SETUP.md`](./OUTLOOK_SETUP.md)
+### Quick Setup fÃ¼r Microsoft Outlook:
+ðŸ“š **AusfÃ¼hrliche Anleitung**: Siehe [`OUTLOOK_SETUP.md`](./OUTLOOK_SETUP.md)
 
 **Kurzversion:**
 1. Registrieren auf [EmailJS.com](https://www.emailjs.com/)
@@ -80,52 +78,55 @@ Das Kontaktformular verwendet ein Dual-System:
 5. Testen und deployen!
 
 ### Alternative E-Mail-Provider:
-📚 **Allgemeine Anleitung**: Siehe [`EMAIL_SETUP.md`](./EMAIL_SETUP.md)  
-(Unterstützt: Gmail, Outlook, SendGrid, und mehr)
+ðŸ“š **Allgemeine Anleitung**: Siehe [`EMAIL_SETUP.md`](./EMAIL_SETUP.md)  
+(UnterstÃ¼tzt: Gmail, Outlook, SendGrid, und mehr)
 
-## 📋 Rechtliche Seiten
+## ðŸ“‹ Rechtliche Seiten
 
-- **Impressum**: `/impressum` - Vollständige Unternehmensdaten
-- **Datenschutz**: `/datenschutz` - DSGVO-konforme Datenschutzerklärung
-- **AGB**: `/agb` - Allgemeine Geschäftsbedingungen
+- **Impressum**: `/impressum` - VollstÃ¤ndige Unternehmensdaten
+- **Datenschutz**: `/datenschutz` - DSGVO-konforme DatenschutzerklÃ¤rung
+- **AGB**: `/agb` - Allgemeine GeschÃ¤ftsbedingungen
 - **Cookie-Banner**: Automatischer DSGVO-konformer Cookie-Banner
 
-## 📦 Deployment
+## ðŸ“¦ Deployment
 
-### Netlify Deployment
+### Vercel Deployment
 
-Das Projekt ist für Netlify optimiert:
+Das Projekt ist fÃ¼r Vercel optimiert:
 
 ```bash
 npm run build
 ```
 
-**Netlify Konfiguration:**
+**Vercel Konfiguration:**
 - **Build command**: `npm run build`
-- **Publish directory**: `dist/angular_flowedge/browser`
-- **Node version**: 18.x oder höher
+- **Output directory**: `dist/angular_FlowEdge_AI/browser`
+- **Node version**: 20.x oder hoeher
 
 **Nach dem Deployment:**
-1. Netlify Forms wird automatisch aktiviert
+1. SPA-Routing ist ueber `vercel.json` aktiv
 2. Cookie-Banner funktioniert sofort
 3. E-Mail-Backend nach EmailJS-Setup aktiv
 
-## � VoiceAider AI Demos
+## ï¿½ VoiceAider AI Demos
 
 - Marketingseite: `/loesungen/voiceaider-ai`
 - Interaktive Demo (Screenshots nachgebaut): `/loesungen/voiceaider-ai-demo`
 
 Die Demo ist rein statisch und dient als UI-Vorschau mit Tabs (Use Case, Flow Designer, Knowledge Base, Actions, Test Calls).
 
-## �📞 Kontakt
+## ï¿½ðŸ“ž Kontakt
 
 **FlowEdge Solutions**
 - **Inhaber**: Khaled Ayub
-- **Adresse**: Königsallee 63, 40215 Düsseldorf
+- **Adresse**: KÃ¶nigsallee 63, 40215 DÃ¼sseldorf
 - **E-Mail**: info@flowedge.de
 - **Telefon**: +49 15560 814 385
 - **LinkedIn**: [FlowEdge Solutions](https://www.linkedin.com/company/flow-edge-solutions/)
 
-## 📝 Lizenz
+## ðŸ“ Lizenz
 
-© 2025 FlowEdge Solutions · Alle Rechte vorbehalten
+Â© 2025 FlowEdge Solutions Â· Alle Rechte vorbehalten
+
+
+

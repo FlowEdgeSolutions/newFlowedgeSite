@@ -62,26 +62,4 @@ export class EmailService {
     }
   }
 
-  // Fallback: Netlify Forms submission
-  async sendViaNetlify(formData: any): Promise<boolean> {
-    try {
-      const form = new FormData();
-      form.append('form-name', 'contact');
-      
-      Object.keys(formData).forEach(key => {
-        form.append(key, formData[key]);
-      });
-
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(form as any).toString()
-      });
-
-      return response.ok;
-    } catch (error) {
-      console.error('Fehler bei Netlify Forms:', error);
-      return false;
-    }
-  }
 }

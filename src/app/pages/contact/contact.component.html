@@ -30,12 +30,7 @@ Fü<div class="contact-page">
             <h2 class="section-title">Ihre Nachricht</h2>
             <p class="section-subtitle">Füllen Sie das Formular aus und wir melden uns zeitnah bei Ihnen.</p>
             
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-              <!-- Netlify Forms Hidden Fields -->
-              <input type="hidden" name="form-name" value="contact" />
-              <div style="display: none;">
-                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-              </div>
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
               
               <!-- Error Message -->
               @if (errorMessage) {
